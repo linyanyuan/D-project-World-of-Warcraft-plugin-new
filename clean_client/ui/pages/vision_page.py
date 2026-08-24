@@ -32,6 +32,7 @@ class VisionPage(VoidPage):
 
     calibrator_requested = Signal()
     preview_requested = Signal()
+    autofind_requested = Signal()
 
     def __init__(self, parent=None) -> None:
         super().__init__(parent)
@@ -90,6 +91,10 @@ class VisionPage(VoidPage):
         self.calibrator_btn.clicked.connect(self.calibrator_requested.emit)
         card_layout.addWidget(self.calibrator_btn)
 
+        self.autofind_btn = PushButton("自动建议 Skill 区域", card)
+        self.autofind_btn.clicked.connect(self.autofind_requested.emit)
+        card_layout.addWidget(self.autofind_btn)
+
         card_layout.addWidget(section_label("截屏预览", card))
         preview_btns = QHBoxLayout()
         self.preview_btn = PushButton("抓取预览", card)
@@ -121,7 +126,7 @@ class VisionPage(VoidPage):
         card_layout.addWidget(self.preview_label)
 
         self.tip_label = BodyLabel(
-            "提示: 先保存区域，再抓取预览，确认 Skill 框对准 AutoPlayer 色块。",
+            "提示: 可先「自动建议 Skill 区域」，再抓取预览确认框选；也可手动打开标定器精修。",
             card,
         )
         self.tip_label.setWordWrap(True)

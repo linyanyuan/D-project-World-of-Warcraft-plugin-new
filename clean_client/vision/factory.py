@@ -65,6 +65,7 @@ def create_vision(
             regions=regions,
             row_height=opts.get("row_height", 1),
             bindings_row_index=opts.get("bindings_row_index", 2),
+            cooldown_row_index=opts.get("cooldown_row_index", 3),
             default_key=str(opts.get("default_key", "1")),
         )
 

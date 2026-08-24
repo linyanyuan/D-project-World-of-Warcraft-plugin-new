@@ -91,6 +91,7 @@ class MainWindow(FluentWindow):
         self.control_page.stop_requested.connect(self._on_stop)
         self.vision_page.calibrator_requested.connect(self._on_open_calibrator)
         self.vision_page.preview_requested.connect(self._on_preview)
+        self.vision_page.autofind_requested.connect(self._on_autofind_skill)
         self.settings_page.save_btn.clicked.connect(self._on_save_settings)
         self.dry_run_cb.stateChanged.connect(self._on_dry_run_changed)
 
@@ -353,6 +354,83 @@ class MainWindow(FluentWindow):
         self.vision_page.set_status(f"已载入区域目录: {path}")
         self._append_log(f"标定已保存并载入区域目录: {path}")
         self._persist_config(note_prefix="标定目录已写入")
+
+    @Slot()
+    def _on_autofind_skill(self) -> None:
+        """Grab a frame, locate START marker band, save skill_region.txt."""
+        from clean_client.config.loader import save_regions_dir
+        from clean_client.vision.autofind import find_skill_region
+
+        capture = self.control_page.capture_mode()
+        backend_key = self._map_capture_for_calibrator(capture)
+        keywords = tuple(self.settings_page.values().get("window_keywords") or ())
+        hwnd: int | None = None
+        try:
+            hwnd = find_wow_hwnd(keywords)
+        except (RuntimeError, OSError, TypeError, ValueError):
+            hwnd = None
+
+        try:
+            backend = create_backend(capture)
+            frame = backend.grab(hwnd)
+            suggested = find_skill_region(frame)
+        except Exception as exc:  # noqa: BLE001
+            msg = f"自动建议失败: {exc}"
+            self.vision_page.set_status(msg)
+            self.vision_page.set_tip(msg)
+            self._append_log(msg)
+            return
+
+        if suggested is None:
+            msg = (
+                "未找到品红色 START 色块条。请确认 AutoPlayer 已启用，"
+                "或改用手动标定。"
+            )
+            self.vision_page.set_status(msg)
+            self.vision_page.set_tip(msg)
+            self._append_log(msg)
+            # still show preview so user can see the frame
+            self.vision_page.show_preview(
+                frame,
+                capture_label=capture,
+                capture_backend=backend_key,
+                hwnd=hwnd,
+            )
+            return
+
+        regions_dir = self.vision_page.regions_dir() or (self.root / "regions")
+        existing = {}
+        try:
+            from clean_client.config.loader import load_regions_dir
+
+            if regions_dir.exists():
+                existing = load_regions_dir(regions_dir)
+        except ValueError:
+            existing = {}
+        existing["Skill"] = suggested
+        try:
+            save_regions_dir(regions_dir, existing)
+        except OSError as exc:
+            msg = f"写入区域失败: {exc}"
+            self.vision_page.set_status(msg)
+            self._append_log(msg)
+            return
+
+        self._on_regions_saved(regions_dir)
+        self.vision_page.show_preview(
+            frame,
+            capture_label=capture,
+            capture_backend=backend_key,
+            hwnd=hwnd,
+        )
+        msg = (
+            f"已建议 Skill 区域 {suggested[0]} {suggested[1]} "
+            f"{suggested[2]} {suggested[3]} → {regions_dir}"
+        )
+        self.vision_page.set_tip(
+            msg + "。请用预览确认框是否对准色块，必要时再手动标定精修。"
+        )
+        self._append_log(msg)
 
     @Slot()
     def _on_preview(self) -> None:

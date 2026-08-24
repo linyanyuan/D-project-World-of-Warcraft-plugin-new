@@ -1,4 +1,4 @@
-"""One-shot generator for the beginner Chinese DOCX manual."""
+"""Generate CleanClient beginner Chinese DOCX manual (stable usable build)."""
 
 from __future__ import annotations
 
@@ -11,9 +11,7 @@ from docx.oxml.ns import qn
 from docx.shared import Cm, Pt, RGBColor
 
 OUT = Path(__file__).resolve().parent / "CleanClient-小白完整使用手册.docx"
-RELEASE_DOCS = (
-    Path(__file__).resolve().parents[1] / "release" / "CleanClient" / "docs"
-)
+RELEASE_DOCS = Path(__file__).resolve().parents[1] / "release" / "CleanClient" / "docs"
 
 
 def set_run(
@@ -45,13 +43,13 @@ def add_center(
     p.paragraph_format.space_after = Pt(4)
 
 
-def h(doc, text: str, level: int = 1) -> None:
+def h(doc: Any, text: str, level: int = 1) -> None:
     p = doc.add_heading(text, level=level)
     for run in p.runs:
         set_run(run, 16 if level == 1 else 13, True)
 
 
-def para(doc, text: str, bold: bool = False, size: float = 11) -> None:
+def para(doc: Any, text: str, bold: bool = False, size: float = 11) -> None:
     p = doc.add_paragraph()
     run = p.add_run(text)
     set_run(run, size, bold)
@@ -59,7 +57,7 @@ def para(doc, text: str, bold: bool = False, size: float = 11) -> None:
     p.paragraph_format.line_spacing_rule = WD_LINE_SPACING.ONE_POINT_FIVE
 
 
-def bullets(doc, items: list[str]) -> None:
+def bullets(doc: Any, items: list[str]) -> None:
     for item in items:
         p = doc.add_paragraph(style="List Bullet")
         run = p.add_run(item)
@@ -67,7 +65,7 @@ def bullets(doc, items: list[str]) -> None:
         p.paragraph_format.space_after = Pt(2)
 
 
-def numbered(doc, items: list[str]) -> None:
+def numbered(doc: Any, items: list[str]) -> None:
     for item in items:
         p = doc.add_paragraph(style="List Number")
         run = p.add_run(item)
@@ -75,7 +73,7 @@ def numbered(doc, items: list[str]) -> None:
         p.paragraph_format.space_after = Pt(2)
 
 
-def table(doc, headers: list[str], rows: list[list[str]]) -> None:
+def table(doc: Any, headers: list[str], rows: list[list[str]]) -> None:
     t = doc.add_table(rows=1 + len(rows), cols=len(headers))
     t.style = "Table Grid"
     for i, header in enumerate(headers):
@@ -92,7 +90,7 @@ def table(doc, headers: list[str], rows: list[list[str]]) -> None:
     doc.add_paragraph()
 
 
-def path_line(doc, text: str) -> None:
+def path_line(doc: Any, text: str) -> None:
     p = doc.add_paragraph()
     run = p.add_run(text)
     set_run(run, 10.5)
@@ -113,31 +111,31 @@ def build() -> Path:
     add_title(doc, "CleanClient 小白完整使用手册")
     add_center(
         doc,
-        "魔兽世界自动循环客户端（研究 / 开发版）",
+        "稳定可用版（阶段 1–3 已完成）· 研究 / 开发向发版",
         12,
         RGBColor(0x55, 0x55, 0x55),
     )
     add_center(
         doc,
-        "面向完全没有技术背景的使用者 · 按步骤照做即可",
+        "面向零基础用户 · 按步骤照做即可",
         10.5,
         RGBColor(0x77, 0x77, 0x77),
     )
     add_center(
         doc,
-        r"文档位置：docs\CleanClient-小白完整使用手册.docx",
+        r"文档：docs\CleanClient-小白完整使用手册.docx",
         10,
         RGBColor(0x88, 0x88, 0x88),
     )
 
-    para(doc, "先看这三句（非常重要）", bold=True)
+    para(doc, "先看这四句（非常重要）", bold=True)
     bullets(
         doc,
         [
-            "这个软件现在是「研究 / 开发版」，默认只记日志，不会替你按键打怪。",
-            r"发版包里有两样东西：电脑软件 CleanClient.exe，以及魔兽插件 addon\AutoPlayer。"
-            "插件不会自动装进游戏，必须你自己复制。",
-            "如果日志里一直显示「空闲」，在默认「模拟识别」模式下是正常现象，不代表软件坏了。",
+            "这是当前「稳定可用版」，不是永不改动的最终商业正式版；后续还可增强。",
+            "默认「只记日志，不按键」。取消勾选时会弹确认框，确认后才会真按键。",
+            r"发版包里有两样东西：CleanClient.exe（电脑软件）和 addon\AutoPlayer（魔兽插件）。插件必须手动复制进游戏。",
+            "第一次请先干跑看日志出现「动作 法术ID=…」，确认无误后再考虑真按键。",
         ],
     )
 
@@ -145,77 +143,52 @@ def build() -> Path:
     numbered(
         doc,
         [
-            "一台已经能正常登录《魔兽世界》正式服 / 时光服的电脑。",
-            "一份完整的 CleanClient 发版文件夹（不要只有单独一个 exe）。",
-            "知道自己魔兽安装在哪个盘（后面要复制插件）。",
+            "能正常登录《魔兽世界》正式服 / 时光服的电脑。",
+            "完整的 CleanClient 发版文件夹（不要只有单独一个 exe）。",
+            "知道魔兽安装目录（要复制插件）。",
         ],
     )
     para(doc, "发版文件夹通常在：")
     path_line(doc, r"D:\project\World of Warcraft plugin new\release\CleanClient")
-    para(doc, "打开后，正常应看到这些内容：")
+    para(doc, "正常应看到：")
     table(
         doc,
         ["名称", "是什么", "你要做什么"],
         [
-            ["CleanClient.exe", "电脑上的控制软件", "双击打开"],
-            ["_internal", "软件运行依赖", "不要删、不要单独挪走"],
-            [r"addon\AutoPlayer", "魔兽世界插件", "复制到魔兽 AddOns 目录"],
-            ["docs", "说明文档", "不会用时打开查看"],
-            ["请先读-安装说明.txt", "最短安装提醒", "建议先看一遍"],
+            ["CleanClient.exe", "控制软件", "双击打开"],
+            ["_internal", "运行依赖", "不要删、不要只拷 exe"],
+            [r"addon\AutoPlayer", "魔兽插件", "复制到 AddOns"],
+            ["docs", "说明文档", "不会用时查看"],
+            ["请先读-安装说明.txt", "最短提醒", "建议先看"],
         ],
     )
 
-    h(doc, "二、第一步：把插件装进魔兽世界")
-    para(
-        doc,
-        "软件本身不会自动把插件装进游戏。你必须先完成这一步，以后要做真实识别才有基础。",
-    )
-    para(doc, "1）找到发版包里的插件文件夹", bold=True)
-    path_line(doc, r"...\CleanClient\addon\AutoPlayer")
-    para(doc, "确认这个文件夹里能看到 AutoPlayer.toc、AutoPlayer.lua 等文件。")
-
-    para(doc, "2）找到魔兽正式服插件目录", bold=True)
-    para(doc, "正式服 / 时光服一般是：")
-    path_line(doc, r"...\World of Warcraft\_retail_\Interface\AddOns")
-    para(doc, "如果你不知道魔兽装在哪：")
-    bullets(
-        doc,
-        [
-            "打开战网 → 魔兽世界 → 设置（齿轮）→ 查看安装文件夹。",
-            "然后进入：_retail_ → Interface → AddOns。",
-            "如果没有 Interface 或 AddOns 文件夹，可以自己新建同名文件夹。",
-        ],
-    )
-
-    para(doc, "3）复制插件", bold=True)
+    h(doc, "二、安装魔兽插件 AutoPlayer")
     numbered(
         doc,
         [
-            "先完全退出魔兽世界（不要只退到选人界面）。",
-            "把 AutoPlayer 整个文件夹复制到 AddOns 目录下。",
-            "复制完成后路径应类似下面这样。",
+            "完全退出魔兽世界。",
+            r"复制发版包里的 addon\AutoPlayer 到：",
         ],
     )
+    path_line(doc, r"...\World of Warcraft\_retail_\Interface\AddOns\AutoPlayer")
+    para(doc, "正确结果必须能看到：")
     path_line(
         doc,
-        r"...\World of Warcraft\_retail_\Interface\AddOns\AutoPlayer\AutoPlayer.toc",
+        r"...\AddOns\AutoPlayer\AutoPlayer.toc",
     )
-    para(doc, "常见错误：多套了一层文件夹。下面这种是错的：")
+    para(doc, "错误示例（多套一层）：")
     path_line(doc, r"...\AddOns\AutoPlayer\AutoPlayer\AutoPlayer.toc")
-
-    para(doc, "4）在游戏里启用插件", bold=True)
     numbered(
         doc,
         [
-            "重新打开魔兽世界。",
-            "在选角色界面点击「插件」。",
-            "勾选 AutoPlayer。",
-            "进入游戏。若插件正常，通常会出现协议相关的色块 / 像素条（具体外观以插件为准）。",
+            "重新打开魔兽，选人界面点「插件」，勾选 AutoPlayer。",
+            "进游戏后应能看到协议相关色块/像素条（外观以插件为准）。",
         ],
     )
 
-    h(doc, "三、第二步：打开 CleanClient 软件")
-    para(doc, "方式一：双击 exe（推荐小白使用）", bold=True)
+    h(doc, "三、打开软件")
+    para(doc, "方式 A：双击 exe（推荐）", bold=True)
     path_line(
         doc,
         r"D:\project\World of Warcraft plugin new\release\CleanClient\CleanClient.exe",
@@ -223,238 +196,168 @@ def build() -> Path:
     bullets(
         doc,
         [
-            "必须保持整个 CleanClient 文件夹完整。",
-            "不要只把 CleanClient.exe 单独拷到桌面再打开，容易打不开或报错。",
-            "如果 Windows 提示未知发布者 / 杀毒拦截，可先允许本次运行（本软件是本地打包的 Python 程序）。",
+            "保持整个 CleanClient 文件夹完整。",
+            "若杀毒误报，确认来源是你自己打包的结果后再放行。",
+            "源码有更新后，请重新运行 scripts\\pack-CleanClient.bat 再发版。",
         ],
     )
-
-    para(doc, "方式二：用源码启动（给会敲命令的人）", bold=True)
+    para(doc, "方式 B：源码启动", bold=True)
     path_line(doc, r'cd "D:\project\World of Warcraft plugin new"')
-    path_line(doc, r"pip install -r clean_client\requirements.txt")
     path_line(doc, "python -m clean_client.app")
 
-    h(doc, "四、软件界面怎么看")
-    para(doc, "左侧一般有四个页面：控制台、循环、识别、系统设置。")
-
-    h(doc, "1. 控制台（最常用）", 2)
+    h(doc, "四、界面说明")
+    para(doc, "左侧四个页面：控制台 / 循环 / 识别 / 系统设置。")
+    h(doc, "1. 控制台", 2)
     table(
         doc,
-        ["你看到的文字", "作用", "小白建议"],
+        ["控件", "作用", "建议"],
         [
-            ["启动", "开始后台循环", "确认「只记日志」勾选后再点"],
-            ["停止", "结束循环", "不用时点停止"],
-            ["只记日志，不按键", "只写日志，不向游戏发按键", "默认勾着，务必先保持勾选"],
-            ["优先高亮技能", "识别时优先考虑高亮技能", "可先保持默认"],
-            ["截屏方式", "怎么抓游戏画面", "第一次建议选「空（测试）」"],
-            ["周期(ms)", "循环间隔毫秒", "默认约 30，先别改"],
-            ["运行状态 / 待机 / 运行中", "当前是否在跑", "点启动后应变为运行中"],
-            ["窗口句柄", "有没有找到魔兽窗口", "找不到也可能先空着，后面再查"],
-            ["运行日志", "软件输出信息", "重点看这里有没有「空闲 / 动作 / 错误」"],
+            ["启动 / 停止", "开始或结束循环", "先勾选只记日志再启动"],
+            ["只记日志，不按键", "不向游戏发键", "默认勾着；取消会确认"],
+            ["优先高亮技能", "优先选高亮技能", "可保持默认"],
+            ["截屏方式", "抓游戏画面方式", "实机用方式一/二/三，勿用空（测试）"],
+            ["周期(ms)", "循环间隔", "默认约 30，先别改"],
+            ["运行日志", "输出信息", "关注空闲 / 动作 / 提示 / 错误"],
         ],
     )
-
     h(doc, "2. 循环", 2)
-    para(
-        doc,
-        "这里显示当前加载的技能优先级列表（例如邪恶死亡骑士）。当前版本主要是查看，一般不用改。",
-    )
-
-    h(doc, "3. 识别", 2)
+    para(doc, "显示当前技能优先级（如邪恶 DK）。当前主要查看，一般不用改。")
+    h(doc, "3. 识别（重点）", 2)
     table(
         doc,
-        ["选项", "含义", "现在怎么选"],
+        ["功能", "作用"],
         [
-            ["模拟识别（调试）", "不读屏幕，假装没有技能", "当前默认，试用时用这个"],
-            ["像素协议（真实色块）", "读取 AutoPlayer 画出的色块", "以后接好真实识别再用"],
-            ["区域目录", "Skill/Target/Player/Buff 区域文件所在文件夹", "标定保存后可在这里指定"],
-            ["打开标定器", "弹出框选区域的工具", "想练习框选时点它"],
+            ["模拟识别", "不读屏，调试用；日志多为空闲"],
+            ["像素协议", "读取 AutoPlayer 色块（绑定行 + 冷却/高亮行）"],
+            ["区域目录", "Skill/Target/Player/Buff 的 txt 所在文件夹"],
+            ["打开区域标定器", "手动框选并保存区域"],
+            ["自动建议 Skill 区域", "自动找品红色 START 条并写出 skill_region.txt"],
+            ["抓取预览 / 自动刷新", "看截屏和区域框是否对准"],
         ],
     )
-
     h(doc, "4. 系统设置", 2)
     bullets(
         doc,
         [
-            "窗口关键字：默认包含 World of Warcraft、魔兽世界，用于查找游戏窗口。",
-            "冷却就绪窗口、增益匹配阈值：高级参数，小白先保持默认。",
-            "改完后如有保存按钮 / 提示，按界面提示保存到本地配置。",
+            "窗口关键字默认含 World of Warcraft、魔兽世界。",
+            "改完点保存；浏览区域目录后也会自动写入配置。",
         ],
     )
 
-    h(doc, "五、第一次安全试用（强烈建议按这个做）")
-    para(doc, "目标：确认软件能打开、能启动、能出日志。不追求自动打怪。")
+    h(doc, "五、推荐完整流程（实机）")
     numbered(
         doc,
         [
-            "确认魔兽可以正常进入（插件已勾选更好，但第一次即使没装插件也能先测软件本身）。",
+            "安装并启用 AutoPlayer。",
             "打开 CleanClient.exe。",
-            "进入「控制台」。",
-            "确认已勾选「只记日志，不按键」。",
-            "截屏方式先选「空（测试）」。",
-            "点「启动」。",
-            "看运行日志：多半会出现「空闲」。这表示循环在跑，但当前是模拟识别，没有读到真实技能。",
-            "点「停止」结束。",
+            "控制台：勾选「只记日志」；截屏选「方式二」（不行再换一/三）。",
+            "识别页：模式选「像素协议」。",
+            "点「自动建议 Skill 区域」，再点「抓取预览」，确认蓝框大致罩住色块条。",
+            "框不准就打开标定器精修并保存（保存后会自动填回区域目录）。",
+            "回到控制台点「启动」。",
+            "看日志：先可能有一条「提示:…」；正常时应出现「动作 法术ID=… 按键=…」。",
+            "确认按键字母/数字符合你的键位后，如需真按键：取消「只记日志」→ 确认 → 再启动。",
+            "不用时点「停止」。",
         ],
     )
-    para(doc, "只要能启动、能停止、日志有输出，就说明软件本体工作正常。", bold=True)
 
     h(doc, "六、截屏方式怎么选")
     table(
         doc,
-        ["界面选项", "简单理解", "什么时候用"],
+        ["选项", "说明", "何时用"],
         [
-            ["空（测试）", "不真正截屏", "第一次试用、排查界面"],
-            ["方式一", "按窗口内容抓图（PrintWindow）", "窗口模式可优先试"],
-            ["方式二", "抓屏幕上实际看到的画面（MSS）", "一般最稳妥，常作首选"],
-            ["方式三", "更快的桌面复制（DXGI/dxcam）", "方式二不行或想更快时再试"],
-        ],
-    )
-    bullets(
-        doc,
-        [
-            "某种方式黑屏、报错、抓不到图：换另一种即可。",
-            "全屏独占、HDR、多显示器有时会导致某种方式失败，这属于环境差异，不是你操作错了。",
-            "做区域标定时，尽量让截屏方式和以后正式使用时一致。",
+            ["空（测试）", "不真截屏", "只测界面；像素协议下会拒绝启动"],
+            ["方式一", "PrintWindow 抓窗口", "窗口模式可试；需找到魔兽窗口"],
+            ["方式二", "MSS 抓可见画面", "通常最稳，优先"],
+            ["方式三", "DXGI/dxcam", "更快；方式二不行时再试"],
         ],
     )
 
-    h(doc, "七、区域标定（给以后真实识别做准备）")
-    para(doc, "标定的意思：在游戏画面上框出软件要盯着看的几个区域，例如技能条色块区。")
-    para(doc, "打开方式：")
-    bullets(
-        doc,
-        [
-            "在软件「识别」页点击「打开标定器」；或",
-            "命令行运行：python -m clean_client.tools.calibrate_regions",
-        ],
-    )
-    para(doc, "建议练习流程：")
-    numbered(
-        doc,
-        [
-            "截屏先选「空（测试）」，点「抓取画面」，先熟悉界面。",
-            "选择区域类型：技能 / 目标 / 玩家 / 增益。",
-            "在图上按住鼠标拖拽框选；也可以改左侧数字坐标。",
-            "点「保存区域」，选一个文件夹保存。",
-            "保存后通常会生成 skill_region.txt、target_region.txt、player_region.txt、buff_region.txt。",
-        ],
-    )
-    para(
-        doc,
-        "实机标定时：先打开魔兽并启用 AutoPlayer，再用方式一/二/三抓真实画面，重点框准技能（Skill）色块区域。",
-    )
-    para(
-        doc,
-        "说明：标定文件是为后续真实识别准备的。若当前版本主界面还没有完全自动读取你的标定目录，属于功能尚未接完，不是你保存失败。",
-        bold=True,
-    )
-
-    h(doc, "八、现在做得到 / 做不到什么")
+    h(doc, "七、现在能做什么 / 不能做什么")
     table(
         doc,
-        ["事项", "当前状态"],
+        ["事项", "状态"],
         [
-            ["打开中文界面", "可以"],
-            ["启动 / 停止循环", "可以"],
-            ["只记日志，不按键", "可以（默认开启）"],
-            ["查看循环技能列表", "可以"],
-            ["练习区域标定", "可以"],
-            ["自动打怪 / 自动按键输出", "默认不会；真实识别也尚未完全接好"],
-            ["免登录使用", "可以（暂无卡密）"],
+            ["中文界面、启停、只记日志", "可以"],
+            ["标定 / 自动建议 Skill / 预览", "可以"],
+            ["像素协议读绑定 + 冷却/高亮（v1）", "可以（依赖插件编码一致）"],
+            ["确认后真按键", "可以（有风险，需自行确认）"],
+            ["免登录", "可以（暂无卡密）"],
+            ["完整原版一切协议 / 自动找全区域", "未完全等价，后续可增强"],
+            ["保证游戏安全 / 不封号", "无法保证；请自担风险"],
         ],
     )
 
-    h(doc, "九、发给朋友时怎么发")
-    numbered(
-        doc,
-        [
-            "发送整个 CleanClient 文件夹（可打成 zip）。",
-            "让朋友先看「请先读-安装说明.txt」和本手册。",
-            r"朋友必须先把 addon\AutoPlayer 复制到自己的魔兽 AddOns。",
-            "再运行 CleanClient.exe。",
-        ],
-    )
-    para(
-        doc,
-        "如果仓库是 GitHub 私有库：朋友需要你把其加成协作者后，才能下载 Releases。",
-    )
-
-    h(doc, "十、常见问题")
-    faq = [
+    h(doc, "八、常见问题")
+    faqs = [
         (
-            "Q1：为什么打包目录里一开始找不到 AutoPlayer？",
-            r"A：旧版打包可能只打了 exe。现在新打包会把 addon\AutoPlayer、说明文档一起放进 release\CleanClient。"
-            r"若你手里的包没有，请重新运行 scripts\pack-CleanClient.bat。",
+            "Q：这是最终版吗？",
+            "A：是当前稳定可用发版，不是永远不再改的最终商业版。阶段1–3已完成，后续还可增强。",
         ),
         (
-            "Q2：双击打包脚本没反应？",
-            r"A：请改双击 scripts\pack-CleanClient.bat。正常会弹出黑窗口运行约 1.5～2 分钟。若秒退，把窗口里的报错发出来。",
+            "Q：日志一直空闲？",
+            "A：若仍是模拟识别，正常。像素协议下请检查：插件启用、截屏方式、Skill 框是否对准、预览是否有色块。",
         ),
         (
-            "Q3：日志一直是「空闲」？",
-            "A：默认「模拟识别」不读屏，所以一直空闲是正常的。",
+            "Q：提示无法启动？",
+            "A：像素协议必须：真实截屏方式 + 有效 Skill 区域；方式一还要找到魔兽窗口。",
         ),
         (
-            "Q4：会不会给我乱按键？",
-            "A：勾选「只记日志，不按键」时不会。请一直保持勾选，直到你明确知道自己在做什么。",
+            "Q：会不会乱按键？",
+            "A：默认不会。取消只记日志必须确认；建议先干跑看「按键=」是否正确。",
         ),
         (
-            "Q5：插件复制了但游戏里没有？",
-            r"A：检查是否复制到 _retail_\Interface\AddOns；是否多套一层文件夹；是否在选人界面启用；是否完全重启过游戏。",
+            "Q：自动建议的框不准？",
+            "A：它是粗定位。请用预览检查，再用标定器精修。",
         ),
         (
-            "Q6：杀毒软件报毒？",
-            "A：本地 PyInstaller 打包程序常见误报。请先确认文件来源是你自己的项目打包结果，再加入信任区。",
+            "Q：朋友怎么用？",
+            "A：发整个 CleanClient 文件夹；朋友先装插件，再开软件。私有 GitHub 需加协作者才能下 Releases。",
         ),
         (
-            "Q7：我想要真正自动循环，下一步要做什么？",
-            "A：1）装好并启用 AutoPlayer；2）用真实截屏标定 Skill 等区域；3）把识别模式改到像素协议；"
-            "4）确认日志里能看到真实动作后，再考虑取消「只记日志」。当前版本尚未把这条链路完全打通。",
+            "Q：打包脚本双击没反应？",
+            "A：请用 scripts\\pack-CleanClient.bat；正常会有黑窗口跑约 1.5–2 分钟。",
         ),
     ]
-    for q, a in faq:
+    for q, a in faqs:
         para(doc, q, bold=True)
         para(doc, a)
 
-    h(doc, "十一、推荐操作清单（打勾用）")
+    h(doc, "九、验收清单")
     bullets(
         doc,
         [
-            "已拿到完整 CleanClient 文件夹",
-            r"已把 addon\AutoPlayer 复制到 _retail_\Interface\AddOns\AutoPlayer",
-            "游戏选人界面已勾选 AutoPlayer",
-            "已双击 CleanClient.exe 打开软件",
-            "控制台已勾选「只记日志，不按键」",
-            "截屏方式先选「空（测试）」并成功启动 / 停止",
-            "日志能看到「空闲」或其他输出",
-            "（可选）已打开标定器练习框选并保存",
+            "已复制 AutoPlayer 到 _retail_\\Interface\\AddOns 并勾选",
+            "已打开完整 CleanClient 文件夹中的 exe",
+            "只记日志已勾选",
+            "识别=像素协议，截屏=方式一/二/三",
+            "已自动建议或手动标定 Skill，预览框大致正确",
+            "启动后日志出现动作 法术ID=…，按键= 符合键位",
+            "（可选）确认后才关闭只记日志尝试真按键",
         ],
     )
 
-    h(doc, "十二、相关文件位置")
+    h(doc, "十、相关路径")
     table(
         doc,
         ["内容", "路径"],
         [
             ["发版目录", r"release\CleanClient"],
             ["本手册", r"docs\CleanClient-小白完整使用手册.docx"],
-            ["简版安装说明", r"release\CleanClient\请先读-安装说明.txt"],
             ["Markdown 手册", r"docs\使用手册-clean_client.md"],
             ["重新打包", r"scripts\pack-CleanClient.bat"],
-            ["插件源目录", r"addon\AutoPlayer"],
+            ["插件源", r"addon\AutoPlayer"],
         ],
     )
-
     para(
         doc,
-        "—— 文档结束 —— 若某一步和你屏幕上不一致，把截图发出来即可对照修改。",
+        "—— 文档结束 —— 若某一步与屏幕不符，把截图发出来即可对照修改。",
         bold=True,
     )
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     doc.save(str(OUT))
-    if RELEASE_DOCS.exists():
+    if RELEASE_DOCS.parent.exists():
         RELEASE_DOCS.mkdir(parents=True, exist_ok=True)
         doc.save(str(RELEASE_DOCS / OUT.name))
     return OUT

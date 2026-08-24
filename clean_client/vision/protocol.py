@@ -76,6 +76,11 @@ class PixelProtocolVision:
         if not rows:
             return state
 
+        if self.bindings_row_index >= len(rows):
+            state.raw_debug["bindings_error"] = (
+                f"bindings_row_index={self.bindings_row_index} out of range "
+                f"(only {len(rows)} rows)"
+            )
         bind_idx = min(max(self.bindings_row_index, 0), len(rows) - 1)
         try:
             state.bindings = parse_key_bindings_row(
@@ -84,11 +89,20 @@ class PixelProtocolVision:
         except ValueError as exc:
             state.raw_debug["bindings_error"] = str(exc)
 
-        if len(rows) > 0:
-            cd_idx = min(max(self.cooldown_row_index, 0), len(rows) - 1)
-            # Only parse cooldown row when it is a distinct index or same row has CD markers.
-            try:
-                state.cooldowns = parse_cooldowns_row(rows[cd_idx])
-            except ValueError as exc:
-                state.raw_debug["cooldowns_error"] = str(exc)
+        if self.cooldown_row_index >= len(rows):
+            state.raw_debug["cooldowns_error"] = (
+                f"cooldown_row_index={self.cooldown_row_index} out of range "
+                f"(only {len(rows)} rows)"
+            )
+        else:
+            cd_idx = self.cooldown_row_index
+            if cd_idx == bind_idx:
+                state.raw_debug["cooldowns_error"] = (
+                    f"cooldown_row_index aliases bindings row {bind_idx}; skipped"
+                )
+            else:
+                try:
+                    state.cooldowns = parse_cooldowns_row(rows[cd_idx])
+                except ValueError as exc:
+                    state.raw_debug["cooldowns_error"] = str(exc)
         return state

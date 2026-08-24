@@ -66,7 +66,22 @@ def find_skill_region(
         if not xs_all:
             continue
         x1 = max(0, min(xs_all) - pad_x)
-        x2 = min(width, max(xs_all) + pad_x + 1)
+        # START is usually a thin left marker; extend right to END on the
+        # densest row of this band, otherwise take most of the frame width.
+        densest_y = max(range(y1, y2), key=lambda yy: len(row_hits[yy]))
+        end = MARKERS["END"]
+        x2 = max(xs_all) + pad_x + 1
+        for x in range(max(xs_all) + 1, width):
+            try:
+                rgb = _bgr_to_rgb(frame_bgr[densest_y, x])
+            except ValueError:
+                continue
+            if rgb_matches(rgb, end, tol=tol):
+                x2 = min(width, x + pad_x + 1)
+                break
+        else:
+            # No END found — keep a wide crop so SPELL/id pixels are included.
+            x2 = min(width, max(x2, x1 + max(64, width // 2)))
         score = len(xs_all)
         band_h = max(y2 - y1, min_height, prefer_rows)
         y2_pref = min(height, y1 + band_h)

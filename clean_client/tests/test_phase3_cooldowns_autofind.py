@@ -78,3 +78,15 @@ def test_find_skill_region_locates_start_band() -> None:
     assert y2 >= 24
     assert x1 <= 30
     assert x2 >= 90
+
+
+def test_find_skill_region_extends_to_end_marker() -> None:
+    frame = np.zeros((40, 200, 3), dtype=np.uint8)
+    r, g, b = MARKERS["START"]
+    er, eg, eb = MARKERS["END"]
+    frame[10, 5] = (b, g, r)
+    frame[10, 90] = (eb, eg, er)
+    region = find_skill_region(frame, tol=0, prefer_rows=6)
+    assert region is not None
+    x1, y1, x2, y2 = region
+    assert x2 - x1 >= 80

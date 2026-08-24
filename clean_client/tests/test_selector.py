@@ -67,3 +67,21 @@ def test_fallback_pass_without_highlight() -> None:
     chosen = select_action(state, profile["actions"], prefer_highlighted=True)
     assert chosen is not None
     assert chosen.spell_id == 77575
+
+
+def test_profile_fallback_key_overrides_binding_placeholder() -> None:
+    from clean_client.models.state import Action, CombatState, CooldownInfo
+    from clean_client.rotation.selector import select_action
+
+    sid = 77575
+    state = CombatState(
+        bindings={sid: Action(spell_id=sid, key="1", kind="spell")},
+        cooldowns={sid: CooldownInfo(sid, False, False, highlighted=True)},
+    )
+    chosen = select_action(
+        state,
+        [{"spell_id": sid, "name": "Outbreak", "fallback_key": "f1"}],
+        prefer_highlighted=True,
+    )
+    assert chosen is not None
+    assert chosen.key == "f1"

@@ -50,8 +50,13 @@ class EngineLoop:
 
     def stop(self) -> None:
         self._stop.set()
-        if self._thread:
-            self._thread.join(timeout=2.0)
+        thread = self._thread
+        if thread is not None:
+            thread.join(timeout=2.0)
+            if thread.is_alive():
+                self.on_log("警告: 引擎线程停止超时，仍可能在后台运行")
+            else:
+                self._thread = None
 
     def _maybe_vision_tip(self, state: CombatState) -> None:
         if self._vision_tip_sent:
@@ -90,13 +95,15 @@ class EngineLoop:
                 if action is None:
                     self.on_log("空闲")
                 else:
+                    press_cb = self.press
+                    will_press = (not self.dry_run) and (press_cb is not None)
                     msg = (
                         f"动作 法术ID={action.spell_id} 按键={action.key} "
-                        f"只记日志={self.dry_run}"
+                        f"只记日志={self.dry_run} 将按键={will_press}"
                     )
                     self.on_log(msg)
-                    if not self.dry_run and self.press is not None:
-                        self.press(action.key)
+                    if will_press and press_cb is not None:
+                        press_cb(action.key)
             except Exception as exc:  # noqa: BLE001
                 self.on_log(f"错误: {exc}")
             elapsed = (time.perf_counter() - started) * 1000.0

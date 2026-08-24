@@ -61,6 +61,16 @@ def select_action(
                     kind=str(entry.get("kind") or "spell"),
                     name=entry.get("name"),
                 )
+            # Prefer profile fallback_key when present — pixel bindings often
+            # only carry a placeholder key until chord recovery is complete.
+            profile_key = entry.get("fallback_key")
+            if profile_key is not None and str(profile_key).strip():
+                binding = Action(
+                    spell_id=binding.spell_id,
+                    key=str(profile_key),
+                    kind=str(entry.get("kind") or binding.kind),
+                    name=entry.get("name") or binding.name,
+                )
             cd = state.cooldowns.get(spell_id)
             if not is_ready(cd, cd_ready_window_ms=cd_ready_window_ms):
                 continue

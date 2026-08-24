@@ -30,7 +30,13 @@ def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     from clean_client.ui.calibrator import run_calibrator
 
-    return run_calibrator(output_dir=args.dir, capture_mode=args.capture)
+    result = run_calibrator(output_dir=args.dir, capture_mode=args.capture)
+    if isinstance(result, int):
+        try:
+            return int(result)
+        except (TypeError, ValueError):
+            return 1
+    return 0
 
 
 if __name__ == "__main__":

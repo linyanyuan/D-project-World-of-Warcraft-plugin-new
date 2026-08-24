@@ -57,6 +57,7 @@ class MainWindow(FluentWindow):
         profile_rel = str(self._cfg.get("profile") or "profiles/unholy_default.json")
         self._profile = load_profile(self.root / profile_rel)
         self._engine: EngineLoop | None = None
+        self._calibrator_win = None
         self._live_input_confirmed = False
         self._suppress_dry_run_guard = False
         self._log_bridge = _LogBridge(self)
@@ -92,6 +93,7 @@ class MainWindow(FluentWindow):
         self.vision_page.calibrator_requested.connect(self._on_open_calibrator)
         self.vision_page.preview_requested.connect(self._on_preview)
         self.vision_page.autofind_requested.connect(self._on_autofind_skill)
+        self.vision_page.regions_dir_changed.connect(self._on_regions_dir_picked)
         self.settings_page.save_btn.clicked.connect(self._on_save_settings)
         self.dry_run_cb.stateChanged.connect(self._on_dry_run_changed)
 
@@ -351,9 +353,18 @@ class MainWindow(FluentWindow):
         path = Path(directory)
         self.vision_page.set_regions_dir(path)
         self._cfg["regions_dir"] = str(path)
+        capture_backend = self._map_capture_for_calibrator(
+            self.control_page.capture_mode()
+        )
+        self.vision_page.refresh_tip_only(capture_backend=capture_backend)
         self.vision_page.set_status(f"已载入区域目录: {path}")
         self._append_log(f"标定已保存并载入区域目录: {path}")
         self._persist_config(note_prefix="标定目录已写入")
+
+    @Slot(str)
+    def _on_regions_dir_picked(self, directory: str) -> None:
+        """Persist regions dir chosen via Browse…"""
+        self._on_regions_saved(Path(directory))
 
     @Slot()
     def _on_autofind_skill(self) -> None:
@@ -383,8 +394,7 @@ class MainWindow(FluentWindow):
 
         if suggested is None:
             msg = (
-                "未找到品红色 START 色块条。请确认 AutoPlayer 已启用，"
-                "或改用手动标定。"
+                "未找到品红色 START 色块条。请确认 AutoPlayer 已启用，或改用手动标定。"
             )
             self.vision_page.set_status(msg)
             self.vision_page.set_tip(msg)
@@ -476,11 +486,14 @@ class MainWindow(FluentWindow):
         try:
             from clean_client.ui.calibrator import run_calibrator
 
-            run_calibrator(
+            win = run_calibrator(
                 output_dir=output,
                 capture_mode=capture_arg,
                 on_saved=self._on_regions_saved,
+                parent=self,
             )
+            # Retain reference so the window is not garbage-collected.
+            self._calibrator_win = win
             self.vision_page.set_status(f"标定器已打开 → {output}")
             self._append_log(f"已打开标定器 截屏={capture_arg} 目录={output}")
         except Exception as exc:  # noqa: BLE001

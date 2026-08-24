@@ -403,8 +403,9 @@ def run_calibrator(
     output_dir: str | Path | None = None,
     capture_mode: str = "null",
     on_saved: Callable[[Path], None] | None = None,
-) -> int:
-    """启动标定器；若已有 QApplication 则不阻塞。"""
+    parent: QWidget | None = None,
+) -> RegionCalibratorWindow | int:
+    """启动标定器；若已有 QApplication 则不阻塞并返回窗口引用（防 GC）。"""
     app = QApplication.instance()
     owns_app = app is None
     if owns_app:
@@ -422,6 +423,14 @@ def run_calibrator(
         capture=capture,
         on_saved=on_saved,
     )
+    if parent is not None:
+        window.setParent(parent)
+        window.setWindowFlags(
+            Qt.WindowType.Window
+            | Qt.WindowType.WindowTitleHint
+            | Qt.WindowType.WindowSystemMenuHint
+            | Qt.WindowType.WindowCloseButtonHint
+        )
     # 预选截屏方式
     raw_mode = (capture_mode or "null").strip()
     display_map = {
@@ -447,9 +456,12 @@ def run_calibrator(
     if idx >= 0:
         window._mode_combo.setCurrentIndex(idx)  # noqa: SLF001
     window.show()
+    window.raise_()
+    window.activateWindow()
     window._on_grab()  # noqa: SLF001
     if not owns_app:
-        return 0
+        # Caller must retain this reference or Qt may GC-close the window.
+        return window
     try:
         return int(app.exec())
     except (TypeError, ValueError):

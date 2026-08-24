@@ -33,6 +33,7 @@ class VisionPage(VoidPage):
     calibrator_requested = Signal()
     preview_requested = Signal()
     autofind_requested = Signal()
+    regions_dir_changed = Signal(str)
 
     def __init__(self, parent=None) -> None:
         super().__init__(parent)
@@ -144,6 +145,7 @@ class VisionPage(VoidPage):
         directory = QFileDialog.getExistingDirectory(self, "选择区域目录", start)
         if directory:
             self.regions_edit.setText(directory)
+            self.regions_dir_changed.emit(directory)
             self.refresh_tip_only()
 
     def _on_auto_preview_changed(self, _state: int = 0) -> None:
@@ -223,6 +225,9 @@ class VisionPage(VoidPage):
     ) -> None:
         regions = self.loaded_regions()
         if error is not None or frame is None:
+            self._last_frame = None
+            self.preview_label.clear()
+            self.preview_label.setText("  预览失败 — 请更换截屏方式后重试")
             self.preview_meta.setText(f"预览失败 · 截屏={capture_label}")
             self.set_tip(
                 tip_for_preview(

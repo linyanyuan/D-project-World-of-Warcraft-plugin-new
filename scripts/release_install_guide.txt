@@ -1,0 +1,32 @@
+﻿CleanClient 发版包 — 安装说明
+================================
+
+这个文件夹里有两样东西，都要用：
+
+1) CleanClient.exe
+   - 电脑上的控制软件
+   - 双击运行即可
+   - 请保持整个 CleanClient 文件夹完整，不要只拷贝单个 exe
+
+2) addon\AutoPlayer
+   - 魔兽世界插件（不会自动进游戏）
+   - 需要你手动复制到魔兽插件目录
+
+正式服 / 时光服插件目录：
+  ...\World of Warcraft\_retail_\Interface\AddOns
+正确结果示例：
+  ...\_retail_\Interface\AddOns\AutoPlayer\AutoPlayer.toc
+
+错误示例（多套一层）：
+  ...\AddOns\AutoPlayer\AutoPlayer\AutoPlayer.toc
+
+安装步骤：
+  1. 完全退出魔兽世界
+  2. 把本目录下的 addon\AutoPlayer 整个文件夹复制到上面的 AddOns 目录
+  3. 重新打开魔兽，在选人界面点“插件”，勾选 AutoPlayer
+  4. 再打开 CleanClient.exe（默认勾选“只记日志，不按键”）
+  5. 详细操作见 docs\使用手册-clean_client.md
+
+注意：
+  - AutoPlayer 不在 exe 内部，必须单独复制插件文件夹
+  - 朋友拿到本发版包后，同样需要先装插件，再运行软件

@@ -82,6 +82,30 @@ if (Test-Path $ReleaseApp) {
 }
 Copy-Item -Recurse -Force $OutApp $ReleaseApp
 
+# Ship WoW addon + docs with the release folder (for GitHub Releases / friends)
+$AddonSrc = Join-Path $Root 'addon\AutoPlayer'
+$AddonDst = Join-Path $ReleaseApp 'addon\AutoPlayer'
+if (-not (Test-Path $AddonSrc)) {
+  throw "Missing WoW addon folder: $AddonSrc"
+}
+if (Test-Path $AddonDst) {
+  Remove-Item -Recurse -Force $AddonDst
+}
+New-Item -ItemType Directory -Force -Path (Join-Path $ReleaseApp 'addon') | Out-Null
+Copy-Item -Recurse -Force $AddonSrc $AddonDst
+Write-Host "Bundled addon: $AddonDst" -ForegroundColor Cyan
+
+$DocsDir = Join-Path $ReleaseApp 'docs'
+New-Item -ItemType Directory -Force -Path $DocsDir | Out-Null
+$ManualSrc = Join-Path $Root 'docs\使用手册-clean_client.md'
+if (Test-Path $ManualSrc) {
+  Copy-Item -Force $ManualSrc (Join-Path $DocsDir '使用手册-clean_client.md')
+}
+$GuideSrc = Join-Path $PSScriptRoot 'release_install_guide.txt'
+if (Test-Path $GuideSrc) {
+  Copy-Item -Force $GuideSrc (Join-Path $ReleaseApp '请先读-安装说明.txt')
+}
+
 function Get-DirSizeMB([string]$Path) {
   if (-not (Test-Path $Path)) { return 0 }
   $bytes = (Get-ChildItem -LiteralPath $Path -Recurse -File -ErrorAction SilentlyContinue |

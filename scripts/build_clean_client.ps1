@@ -101,6 +101,10 @@ $ManualSrc = Join-Path $Root 'docs\使用手册-clean_client.md'
 if (Test-Path $ManualSrc) {
   Copy-Item -Force $ManualSrc (Join-Path $DocsDir '使用手册-clean_client.md')
 }
+$DocxManual = Join-Path $Root 'docs\CleanClient-小白完整使用手册.docx'
+if (Test-Path $DocxManual) {
+  Copy-Item -Force $DocxManual (Join-Path $DocsDir 'CleanClient-小白完整使用手册.docx')
+}
 $GuideSrc = Join-Path $PSScriptRoot 'release_install_guide.txt'
 if (Test-Path $GuideSrc) {
   Copy-Item -Force $GuideSrc (Join-Path $ReleaseApp '请先读-安装说明.txt')

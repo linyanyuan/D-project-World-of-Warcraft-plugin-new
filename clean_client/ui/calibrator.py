@@ -160,6 +160,7 @@ class RegionCalibratorWindow(QMainWindow):
         output_dir: Path | None = None,
         capture: CaptureBackend | None = None,
         grab_hwnd: bool = True,
+        on_saved: Callable[[Path], None] | None = None,
     ) -> None:
         super().__init__()
         self.setWindowTitle("区域标定器")
@@ -170,6 +171,7 @@ class RegionCalibratorWindow(QMainWindow):
             capture if capture is not None else NullCapture((720, 1280, 3))
         )
         self._grab_hwnd = grab_hwnd
+        self._on_saved = on_saved
         self._hwnd: int | None = None
         self._frame: np.ndarray | None = None
         self._regions: dict[str, Region] = {
@@ -392,12 +394,15 @@ class RegionCalibratorWindow(QMainWindow):
         self._output_dir = path
         self._dir_label.setText(f"目录: {self._output_dir}")
         self._status.setText(f"已保存 4 个区域文件到 {path}")
+        if self._on_saved is not None:
+            self._on_saved(path)
 
 
 def run_calibrator(
     *,
     output_dir: str | Path | None = None,
     capture_mode: str = "null",
+    on_saved: Callable[[Path], None] | None = None,
 ) -> int:
     """启动标定器；若已有 QApplication 则不阻塞。"""
     app = QApplication.instance()
@@ -415,6 +420,7 @@ def run_calibrator(
     window = RegionCalibratorWindow(
         output_dir=Path(output_dir) if output_dir else None,
         capture=capture,
+        on_saved=on_saved,
     )
     # 预选截屏方式
     raw_mode = (capture_mode or "null").strip()

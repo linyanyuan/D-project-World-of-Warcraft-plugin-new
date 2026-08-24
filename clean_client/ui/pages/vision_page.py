@@ -115,5 +115,11 @@ class VisionPage(VoidPage):
             return None
         return Path(text)
 
+    def set_regions_dir(self, path: str | Path | None) -> None:
+        if path is None:
+            self.regions_edit.setText("")
+            return
+        self.regions_edit.setText(str(path))
+
     def set_status(self, message: str) -> None:
         self.status_label.setText(message)

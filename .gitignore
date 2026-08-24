@@ -1,0 +1,55 @@
+# --- Build / package outputs ---
+build/
+dist/
+release/
+
+# --- Python caches ---
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+.mypy_cache/
+.pytype/
+
+# --- Virtual envs ---
+.venv/
+venv/
+env/
+
+# --- Windows junk ---
+nul
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# --- Logs & local smoke artifacts ---
+*.log
+*.tmp
+*.temp
+
+# --- Packed client binaries (keep locally; do not push) ---
+*.exe
+*.zip
+!scripts/**
+
+# --- Heavy reverse-engineering blobs ---
+_analysis/dump/
+_extract/*.exe
+_analysis/remote/**/*.exe
+_analysis/remote/**/*.zip
+
+# --- Editor / OS ---
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+
+# --- Local secrets (if any appear later) ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key

@@ -1,0 +1,85 @@
+# fluent_ui.data_loader.Path.is_mount
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('exists', 'is_dir', 'parent', 'stat', 'st_dev', 'OSError', 'st_ino')
+co_varnames=('self', 'parent_dev', 'dev', 'ino', 'parent_ino')
+co_consts=['\n        Check if this path is a POSIX mount point\n        ', False, True]
+1278           0 RESUME                   0
+
+1283           2 LOAD_FAST                0 (self)
+               4 LOAD_METHOD              0 (exists)
+              26 PRECALL                  0
+              30 CALL                     0
+              40 POP_JUMP_FORWARD_IF_FALSE    20 (to 82)
+              42 LOAD_FAST                0 (self)
+              44 LOAD_METHOD              1 (is_dir)
+              66 PRECALL                  0
+              70 CALL                     0
+              80 POP_JUMP_FORWARD_IF_TRUE     2 (to 86)
+
+1284     >>   82 LOAD_CONST               1 (False)
+              84 RETURN_VALUE
+
+1286     >>   86 NOP
+
+1287          88 LOAD_FAST                0 (self)
+              90 LOAD_ATTR                2 (parent)
+             100 LOAD_METHOD              3 (stat)
+             122 PRECALL                  0
+             126 CALL                     0
+             136 LOAD_ATTR                4 (st_dev)
+             146 STORE_FAST               1 (parent_dev)
+             148 JUMP_FORWARD            17 (to 184)
+         >>  150 PUSH_EXC_INFO
+
+1288         152 LOAD_GLOBAL             10 (OSError)
+             164 CHECK_EXC_MATCH
+             166 POP_JUMP_FORWARD_IF_FALSE     4 (to 176)
+             168 POP_TOP
+
+1289         170 POP_EXCEPT
+             172 LOAD_CONST               1 (False)
+             174 RETURN_VALUE
+
+1288     >>  176 RERAISE                  0
+         >>  178 COPY                     3
+             180 POP_EXCEPT
+             182 RERAISE                  1
+
+1291     >>  184 LOAD_FAST                0 (self)
+             186 LOAD_METHOD              3 (stat)
+             208 PRECALL                  0
+             212 CALL                     0
+             222 LOAD_ATTR                4 (st_dev)
+             232 STORE_FAST               2 (dev)
+
+1292         234 LOAD_FAST                2 (dev)
+             236 LOAD_FAST                1 (parent_dev)
+             238 COMPARE_OP               3 (!=)
+             244 POP_JUMP_FORWARD_IF_FALSE     2 (to 250)
+
+1293         246 LOAD_CONST               2 (True)
+             248 RETURN_VALUE
+
+1294     >>  250 LOAD_FAST                0 (self)
+             252 LOAD_METHOD              3 (stat)
+             274 PRECALL                  0
+             278 CALL                     0
+             288 LOAD_ATTR                6 (st_ino)
+             298 STORE_FAST               3 (ino)
+
+1295         300 LOAD_FAST                0 (self)
+             302 LOAD_ATTR                2 (parent)
+             312 LOAD_METHOD              3 (stat)
+             334 PRECALL                  0
+             338 CALL                     0
+             348 LOAD_ATTR                6 (st_ino)
+             358 STORE_FAST               4 (parent_ino)
+
+1296         360 LOAD_FAST                3 (ino)
+             362 LOAD_FAST                4 (parent_ino)
+             364 COMPARE_OP               2 (==)
+             370 RETURN_VALUE
+ExceptionTable:
+  88 to 146 -> 150 [0]
+  150 to 168 -> 178 [1] lasti
+  176 to 176 -> 178 [1] lasti

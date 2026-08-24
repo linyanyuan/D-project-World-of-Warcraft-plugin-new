@@ -1,0 +1,28 @@
+# skill_conditions.Any.__new__
+co_filename=D:\project\Nirvana30\Nirvana30\typing.py
+co_names=('Any', 'TypeError', 'super', '__new__')
+co_varnames=('cls', 'args', 'kwargs')
+co_consts=[None, 'Any cannot be instantiated']
+              0 COPY_FREE_VARS           1
+
+536           2 RESUME                   0
+
+537           4 LOAD_FAST                0 (cls)
+              6 LOAD_GLOBAL              0 (Any)
+             18 IS_OP                    0
+             20 POP_JUMP_FORWARD_IF_FALSE    15 (to 52)
+
+538          22 LOAD_GLOBAL              3 (NULL + TypeError)
+             34 LOAD_CONST               1 ('Any cannot be instantiated')
+             36 PRECALL                  1
+             40 CALL                     1
+             50 RAISE_VARARGS            1
+
+539     >>   52 LOAD_GLOBAL              5 (NULL + super)
+             64 PRECALL                  0
+             68 CALL                     0
+             78 LOAD_METHOD              3 (__new__)
+            100 LOAD_FAST                0 (cls)
+            102 PRECALL                  1
+            106 CALL                     1
+            116 RETURN_VALUE

@@ -1,0 +1,17 @@
+# fluent_ui.prototype_window.Path.lchmod
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('chmod',)
+co_varnames=('self', 'mode')
+co_consts=["\n        Like chmod(), except if the path points to a symlink, the symlink's\n        permissions are changed, rather than its target's.\n        ", False, ('follow_symlinks',), None]
+1134           0 RESUME                   0
+
+1139           2 LOAD_FAST                0 (self)
+               4 LOAD_METHOD              0 (chmod)
+              26 LOAD_FAST                1 (mode)
+              28 LOAD_CONST               1 (False)
+              30 KW_NAMES                 2
+              32 PRECALL                  2
+              36 CALL                     2
+              46 POP_TOP
+              48 LOAD_CONST               3 (None)
+              50 RETURN_VALUE

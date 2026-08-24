@@ -1,0 +1,11 @@
+# fluent_ui.prototype_window.FluentOnlineCycleDialog._build_query_obj
+co_filename=D:\project\Nirvana30\Nirvana30\fluent_ui\fluent_windows.py
+co_names=('RuntimeError',)
+co_varnames=('self', 'obj', 'mode', 'class_name', 'spec_data', 'keyword')
+co_consts=[None, 'Compiled function bytecode used']
+          0 RESUME                   0
+          2 LOAD_GLOBAL              1 (NULL + RuntimeError)
+         14 LOAD_CONST               1 ('Compiled function bytecode used')
+         16 PRECALL                  1
+         20 CALL                     1
+         30 RAISE_VARARGS            1

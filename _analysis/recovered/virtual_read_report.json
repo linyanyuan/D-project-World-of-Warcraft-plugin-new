@@ -1,0 +1,137 @@
+[
+  {
+    "path": "D:\\project\\Nirvana30\\Nirvana30\\fluent_ui\\__init__.py",
+    "exists": false,
+    "isfile": false,
+    "ok": false
+  },
+  {
+    "path": "D:\\project\\Nirvana30\\Nirvana30\\fluent_ui\\data_loader.py",
+    "exists": false,
+    "isfile": false,
+    "ok": false
+  },
+  {
+    "path": "D:\\project\\Nirvana30\\Nirvana30\\fluent_ui\\fluent_windows.py",
+    "exists": false,
+    "isfile": false,
+    "ok": false
+  },
+  {
+    "path": "D:\\project\\Nirvana30\\Nirvana30\\fluent_ui\\prototype_window.py",
+    "exists": false,
+    "isfile": false,
+    "ok": false
+  },
+  {
+    "path": "D:\\project\\Nirvana30\\Nirvana30\\fluent_ui\\void_protocol_theme.py",
+    "exists": false,
+    "isfile": false,
+    "ok": false
+  },
+  {
+    "path": "D:\\project\\Nirvana30\\Nirvana30\\fluent_ui\\general_settings.py",
+    "exists": false,
+    "isfile": false,
+    "ok": false
+  },
+  {
+    "path": "D:\\project\\Nirvana30\\Nirvana30\\AutoPlayer\\__init__.py",
+    "exists": false,
+    "isfile": false,
+    "ok": false
+  },
+  {
+    "path": "D:\\project\\Nirvana30\\Nirvana30\\AutoPlayer\\ui_settings.py",
+    "exists": false,
+    "isfile": false,
+    "ok": false
+  },
+  {
+    "path": "D:\\project\\Nirvana30\\Nirvana30\\addon_update.py",
+    "exists": false,
+    "isfile": false,
+    "ok": false
+  },
+  {
+    "path": "D:\\project\\Nirvana30\\Nirvana30\\skill_conditions.py",
+    "exists": false,
+    "isfile": false,
+    "ok": false
+  },
+  {
+    "path": "D:\\project\\Nirvana30\\Nirvana30\\skill_cycle_config.py",
+    "exists": false,
+    "isfile": false,
+    "ok": false
+  },
+  {
+    "path": "D:\\project\\Nirvana30\\Nirvana30\\skill_recognition.py",
+    "exists": false,
+    "isfile": false,
+    "ok": false
+  },
+  {
+    "path": "D:\\project\\Nirvana30\\Nirvana30\\update_checker.py",
+    "exists": false,
+    "isfile": false,
+    "ok": false
+  },
+  {
+    "path": "D:\\project\\Nirvana30\\Nirvana30\\window_capture.py",
+    "exists": false,
+    "isfile": false,
+    "ok": false
+  },
+  {
+    "path": "D:\\project\\Nirvana30\\Nirvana30\\capture.py",
+    "exists": false,
+    "isfile": false,
+    "ok": false
+  },
+  {
+    "path": "D:\\project\\Nirvana30\\Nirvana30\\capture_loop.py",
+    "exists": false,
+    "isfile": false,
+    "ok": false
+  },
+  {
+    "path": "D:\\project\\Nirvana30\\Nirvana30\\capture_runtime.py",
+    "exists": false,
+    "isfile": false,
+    "ok": false
+  },
+  {
+    "path": "D:\\project\\Nirvana30\\Nirvana30\\updates.py",
+    "exists": false,
+    "isfile": false,
+    "ok": false
+  },
+  {
+    "path": "D:\\project\\Nirvana30\\Nirvana30\\main.py",
+    "exists": false,
+    "isfile": false,
+    "ok": false
+  },
+  {
+    "path": "D:\\project\\Nirvana30\\Nirvana30\\app.py",
+    "exists": false,
+    "isfile": false,
+    "ok": false
+  },
+  {
+    "path": "D:\\project\\Nirvana30\\Nirvana30\\__main__.py",
+    "exists": false,
+    "isfile": false,
+    "ok": false
+  },
+  {
+    "path": "D:\\project\\Nirvana30\\Nirvana30\\AutoPlayer\\ui_settings.json",
+    "exists": true,
+    "isfile": true,
+    "size": 307,
+    "utf8": true,
+    "preview": "{\r\n  \"capture_mode\": \"方式一\",\r\n  \"tick_ms\": 30,\r\n  \"cd_ready_window_ms\": 30,\r\n  \"buff_match_threshold\": 0.7,\r\n  \"hotkey_enabled\": false,\r\n  \"hotkey_key\": \"F8\",\r\n  \"background_strength\": 60,\r\n  \"card_opa",
+    "ok": true
+  }
+]

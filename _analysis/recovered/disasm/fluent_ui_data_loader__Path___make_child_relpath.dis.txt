@@ -1,0 +1,24 @@
+# fluent_ui.data_loader.Path._make_child_relpath
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('_parts', '_from_parsed_parts', '_drv', '_root')
+co_varnames=('self', 'part', 'parts')
+co_consts=[None]
+877           0 RESUME                   0
+
+880           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                0 (_parts)
+             14 LOAD_FAST                1 (part)
+             16 BUILD_LIST               1
+             18 BINARY_OP                0 (+)
+             22 STORE_FAST               2 (parts)
+
+881          24 LOAD_FAST                0 (self)
+             26 LOAD_METHOD              1 (_from_parsed_parts)
+             48 LOAD_FAST                0 (self)
+             50 LOAD_ATTR                2 (_drv)
+             60 LOAD_FAST                0 (self)
+             62 LOAD_ATTR                3 (_root)
+             72 LOAD_FAST                2 (parts)
+             74 PRECALL                  3
+             78 CALL                     3
+             88 RETURN_VALUE

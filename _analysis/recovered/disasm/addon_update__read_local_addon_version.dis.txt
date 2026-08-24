@@ -1,0 +1,11 @@
+# addon_update.read_local_addon_version
+co_filename=D:\project\Nirvana30\Nirvana30\addon_update.py
+co_names=('RuntimeError',)
+co_varnames=('version_file', 'data')
+co_consts=[None, 'Compiled function bytecode used']
+          0 RESUME                   0
+          2 LOAD_GLOBAL              1 (NULL + RuntimeError)
+         14 LOAD_CONST               1 ('Compiled function bytecode used')
+         16 PRECALL                  1
+         20 CALL                     1
+         30 RAISE_VARARGS            1

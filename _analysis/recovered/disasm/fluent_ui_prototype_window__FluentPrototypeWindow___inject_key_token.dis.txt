@@ -1,0 +1,11 @@
+# fluent_ui.prototype_window.FluentPrototypeWindow._inject_key_token
+co_filename=D:\project\Nirvana30\Nirvana30\fluent_ui\prototype_window.py
+co_names=('RuntimeError',)
+co_varnames=('self', 'OnlineCycleApi')
+co_consts=[None, 'Compiled function bytecode used']
+          0 RESUME                   0
+          2 LOAD_GLOBAL              1 (NULL + RuntimeError)
+         14 LOAD_CONST               1 ('Compiled function bytecode used')
+         16 PRECALL                  1
+         20 CALL                     1
+         30 RAISE_VARARGS            1

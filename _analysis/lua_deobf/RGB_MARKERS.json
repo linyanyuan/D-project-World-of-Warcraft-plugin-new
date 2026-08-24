@@ -1,0 +1,35 @@
+{
+  "source": "Nirvana client binary dump mem_0x7ff631b62000_* FluentPrototypeWindow",
+  "spell_id_encoding": {
+    "formula": "spell_id = (R << 16) | (G << 8) | B",
+    "example_hex": "12ca33",
+    "example_id": 1231411,
+    "note": "Recovered docstring: RGB 12ca33 -> 0x12ca33 -> 1231411"
+  },
+  "markers": {
+    "_MARKER_START": "ff00ff",
+    "_MARKER_END": "ff8000",
+    "_MARKER_SEP": "808080",
+    "_MARKER_ITEM": "ffff00",
+    "_MARKER_SPELL": "ffffff",
+    "_MARKER_ETC": "2a5938",
+    "_MARKER_RED": "ff0000",
+    "_MARKER_RES": "ffff80"
+  },
+  "rows": [
+    {"index": 0, "name": "header", "parser": "_parse_header_rgb_protocol"},
+    {"index": 1, "name": "health_bars", "parser": "parse_dynamic_health_bars"},
+    {"index": 2, "name": "key_bindings", "parser": "parse_row_data2_key_bindings"},
+    {"index": 3, "name": "cooldowns", "parser": "parse_row_data3_cooldowns"},
+    {"index": 4, "name": "buffs", "parser": "recognize_all_buffs_dynamic", "mode": "opencv_template"}
+  ],
+  "regions": ["Skill", "Target", "Player", "Buff"],
+  "region_files": [
+    "skill_region.txt",
+    "target_region.txt",
+    "player_region.txt",
+    "buff_region.txt"
+  ],
+  "team_type": {"0": "solo", "1": "party", "2": "raid"},
+  "cd_kind_hint": "R channel selects kind (R=1/2/3...); G/B carry payload; ETC uses ff8000"
+}

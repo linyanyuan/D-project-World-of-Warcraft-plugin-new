@@ -1,0 +1,9 @@
+# skill_cycle_config.Path.__exit__
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=()
+co_varnames=('self', 't', 'v', 'tb')
+co_consts=[None]
+897           0 RESUME                   0
+
+898           2 LOAD_CONST               0 (None)
+              4 RETURN_VALUE

@@ -1,0 +1,31 @@
+# addon_update.Path.readlink
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('hasattr', 'os', 'NotImplementedError', '_from_parts', 'readlink')
+co_varnames=('self',)
+co_consts=['\n        Return the path to which the symbolic link points.\n        ', 'readlink', 'os.readlink() not available on this system']
+1081           0 RESUME                   0
+
+1085           2 LOAD_GLOBAL              1 (NULL + hasattr)
+              14 LOAD_GLOBAL              2 (os)
+              26 LOAD_CONST               1 ('readlink')
+              28 PRECALL                  2
+              32 CALL                     2
+              42 POP_JUMP_FORWARD_IF_TRUE    15 (to 74)
+
+1086          44 LOAD_GLOBAL              5 (NULL + NotImplementedError)
+              56 LOAD_CONST               2 ('os.readlink() not available on this system')
+              58 PRECALL                  1
+              62 CALL                     1
+              72 RAISE_VARARGS            1
+
+1087     >>   74 LOAD_FAST                0 (self)
+              76 LOAD_METHOD              3 (_from_parts)
+              98 LOAD_GLOBAL              3 (NULL + os)
+             110 LOAD_ATTR                4 (readlink)
+             120 LOAD_FAST                0 (self)
+             122 PRECALL                  1
+             126 CALL                     1
+             136 BUILD_TUPLE              1
+             138 PRECALL                  1
+             142 CALL                     1
+             152 RETURN_VALUE

@@ -1,0 +1,26 @@
+## Interface: 120000, 120001, 120005, 120007, 120100
+## Version: v12.0.0.62438
+## Title: |cffff3860A|r|cffff6080u|r|cffff8890t|r|cffffafb0o|r|cffffdfe0P|r|cffdfefffl|r|cffbfdfffa|r|cff9fcfffy|r|cff7fbfffe|r|cff5fafffr|r
+## Notes: 自动化玩家操作插件
+## Author: cengxi
+## IconTexture: Interface\Icons\Ability_Warrior_OffensiveStance
+## OptionalDeps: Hekili
+## SavedVariables: AutoPlayerDB, AceDBExampleDB, PixelPerfectUIScaleDB
+
+embeds.xml
+
+
+
+AutoPlayer.lua
+Search.lua
+Some.lua
+General.lua
+Laminar.lua
+Judgment.lua
+Small.lua
+Tools.lua
+Group.lua
+Simple.lua
+Macro.lua
+ConversionSetup.lua
+ConversionRuntime.lua

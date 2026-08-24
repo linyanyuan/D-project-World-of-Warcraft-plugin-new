@@ -1,0 +1,11 @@
+-- ok=false
+-- err=addon/AutoPlayer/Tools.lua:1: attempt to call local 'T' (a number value)
+-- calls=7
+
+CreateFrame a1="Frame" a2="UIParent" a3=nil a4=nil
+CreateFrame a1="Frame" a2="WorldFrame" a3=nil a4=nil
+CreateFrame a1="GameTooltip" a2="GameTooltip" a3=nil a4=nil
+CreateFrame a1="Frame" a2="PlayerFrame" a3=nil a4=nil
+CreateFrame a1="Frame" a2="PetFrame" a3=nil a4=nil
+CreateFrame a1="Frame" a2="TargetFrame" a3=nil a4=nil
+CreateFrame a1="Frame" a2="Minimap" a3=nil a4=nil

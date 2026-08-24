@@ -1,0 +1,30 @@
+# fluent_ui.prototype_window.Path.open
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('io', 'text_encoding', 'open')
+co_varnames=('self', 'mode', 'buffering', 'encoding', 'errors', 'newline')
+co_consts=['\n        Open the file pointed by this path and return a file object, as\n        the built-in open() function does.\n        ', 'b']
+1036           0 RESUME                   0
+
+1042           2 LOAD_CONST               1 ('b')
+               4 LOAD_FAST                1 (mode)
+               6 CONTAINS_OP              1
+               8 POP_JUMP_FORWARD_IF_FALSE    20 (to 50)
+
+1043          10 LOAD_GLOBAL              1 (NULL + io)
+              22 LOAD_ATTR                1 (text_encoding)
+              32 LOAD_FAST                3 (encoding)
+              34 PRECALL                  1
+              38 CALL                     1
+              48 STORE_FAST               3 (encoding)
+
+1044     >>   50 LOAD_GLOBAL              1 (NULL + io)
+              62 LOAD_ATTR                2 (open)
+              72 LOAD_FAST                0 (self)
+              74 LOAD_FAST                1 (mode)
+              76 LOAD_FAST                2 (buffering)
+              78 LOAD_FAST                3 (encoding)
+              80 LOAD_FAST                4 (errors)
+              82 LOAD_FAST                5 (newline)
+              84 PRECALL                  6
+              88 CALL                     6
+              98 RETURN_VALUE

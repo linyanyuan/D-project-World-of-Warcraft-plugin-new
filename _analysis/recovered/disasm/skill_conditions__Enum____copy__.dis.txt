@@ -1,0 +1,9 @@
+# skill_conditions.Enum.__copy__
+co_filename=D:\project\Nirvana30\Nirvana30\enum.py
+co_names=()
+co_varnames=('self',)
+co_consts=[None]
+1241           0 RESUME                   0
+
+1242           2 LOAD_FAST                0 (self)
+               4 RETURN_VALUE

@@ -1,0 +1,139 @@
+# fluent_ui.data_loader.Path.resolve
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('os', 'path', 'realpath', 'OSError', '_from_parts', 'stat')
+co_varnames=('self', 'strict', 'check_eloop', 's', 'e', 'p')
+co_consts=['\n        Make the path absolute, resolving all symlinks on the way and also\n        normalizing it.\n        ', ('strict',), None]
+ 981           0 RESUME                   0
+
+ 987           2 LOAD_CONST               1 (<code object check_eloop at 0x000001C069FA8D50, file "D:\project\Nirvana30\Nirvana30\pathlib.py", line 987>)
+               4 MAKE_FUNCTION            0
+               6 STORE_FAST               2 (check_eloop)
+
+ 992           8 NOP
+
+ 993          10 LOAD_GLOBAL              0 (os)
+              22 LOAD_ATTR                1 (path)
+              32 LOAD_METHOD              2 (realpath)
+              54 LOAD_FAST                0 (self)
+              56 LOAD_FAST                1 (strict)
+              58 KW_NAMES                 2
+              60 PRECALL                  2
+              64 CALL                     2
+              74 STORE_FAST               3 (s)
+              76 JUMP_FORWARD            30 (to 138)
+         >>   78 PUSH_EXC_INFO
+
+ 994          80 LOAD_GLOBAL              6 (OSError)
+              92 CHECK_EXC_MATCH
+              94 POP_JUMP_FORWARD_IF_FALSE    17 (to 130)
+              96 STORE_FAST               4 (e)
+
+ 995          98 PUSH_NULL
+             100 LOAD_FAST                2 (check_eloop)
+             102 LOAD_FAST                4 (e)
+             104 PRECALL                  1
+             108 CALL                     1
+             118 POP_TOP
+
+ 996         120 RAISE_VARARGS            0
+         >>  122 LOAD_CONST               3 (None)
+             124 STORE_FAST               4 (e)
+             126 DELETE_FAST              4 (e)
+             128 RERAISE                  1
+
+ 994     >>  130 RERAISE                  0
+         >>  132 COPY                     3
+             134 POP_EXCEPT
+             136 RERAISE                  1
+
+ 997     >>  138 LOAD_FAST                0 (self)
+             140 LOAD_METHOD              4 (_from_parts)
+             162 LOAD_FAST                3 (s)
+             164 BUILD_TUPLE              1
+             166 PRECALL                  1
+             170 CALL                     1
+             180 STORE_FAST               5 (p)
+
+1001         182 LOAD_FAST                1 (strict)
+             184 POP_JUMP_FORWARD_IF_TRUE    56 (to 298)
+
+1002         186 NOP
+
+1003         188 LOAD_FAST                5 (p)
+             190 LOAD_METHOD              5 (stat)
+             212 PRECALL                  0
+             216 CALL                     0
+             226 POP_TOP
+             228 JUMP_FORWARD            34 (to 298)
+         >>  230 PUSH_EXC_INFO
+
+1004         232 LOAD_GLOBAL              6 (OSError)
+             244 CHECK_EXC_MATCH
+             246 POP_JUMP_FORWARD_IF_FALSE    21 (to 290)
+             248 STORE_FAST               4 (e)
+
+1005         250 PUSH_NULL
+             252 LOAD_FAST                2 (check_eloop)
+             254 LOAD_FAST                4 (e)
+             256 PRECALL                  1
+             260 CALL                     1
+             270 POP_TOP
+             272 POP_EXCEPT
+             274 LOAD_CONST               3 (None)
+             276 STORE_FAST               4 (e)
+             278 DELETE_FAST              4 (e)
+             280 JUMP_FORWARD             8 (to 298)
+         >>  282 LOAD_CONST               3 (None)
+             284 STORE_FAST               4 (e)
+             286 DELETE_FAST              4 (e)
+             288 RERAISE                  1
+
+1004     >>  290 RERAISE                  0
+         >>  292 COPY                     3
+             294 POP_EXCEPT
+             296 RERAISE                  1
+
+1006     >>  298 LOAD_FAST                5 (p)
+             300 RETURN_VALUE
+ExceptionTable:
+  10 to 74 -> 78 [0]
+  78 to 96 -> 132 [1] lasti
+  98 to 120 -> 122 [1] lasti
+  122 to 130 -> 132 [1] lasti
+  188 to 226 -> 230 [0]
+  230 to 248 -> 292 [1] lasti
+  250 to 270 -> 282 [1] lasti
+  282 to 290 -> 292 [1] lasti
+
+Disassembly of <code object check_eloop at 0x000001C069FA8D50, file "D:\project\Nirvana30\Nirvana30\pathlib.py", line 987>:
+987           0 RESUME                   0
+
+988           2 LOAD_GLOBAL              1 (NULL + getattr)
+             14 LOAD_FAST                0 (e)
+             16 LOAD_CONST               1 ('winerror')
+             18 LOAD_CONST               2 (0)
+             20 PRECALL                  3
+             24 CALL                     3
+             34 STORE_FAST               1 (winerror)
+
+989          36 LOAD_FAST                0 (e)
+             38 LOAD_ATTR                1 (errno)
+             48 LOAD_GLOBAL              4 (ELOOP)
+             60 COMPARE_OP               2 (==)
+             66 POP_JUMP_FORWARD_IF_TRUE    11 (to 90)
+             68 LOAD_FAST                1 (winerror)
+             70 LOAD_GLOBAL              6 (_WINERROR_CANT_RESOLVE_FILENAME)
+             82 COMPARE_OP               2 (==)
+             88 POP_JUMP_FORWARD_IF_FALSE    23 (to 136)
+
+990     >>   90 LOAD_GLOBAL              9 (NULL + RuntimeError)
+            102 LOAD_CONST               3 ('Symlink loop from %r')
+            104 LOAD_FAST                0 (e)
+            106 LOAD_ATTR                5 (filename)
+            116 BINARY_OP                6 (%)
+            120 PRECALL                  1
+            124 CALL                     1
+            134 RAISE_VARARGS            1
+
+989     >>  136 LOAD_CONST               0 (None)
+            138 RETURN_VALUE

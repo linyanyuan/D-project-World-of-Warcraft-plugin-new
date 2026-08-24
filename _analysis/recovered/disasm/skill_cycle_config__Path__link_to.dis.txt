@@ -1,0 +1,31 @@
+# skill_cycle_config.Path.link_to
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('warnings', 'warn', 'DeprecationWarning', '__class__', 'hardlink_to')
+co_varnames=('self', 'target')
+co_consts=['\n        Make the target path a hard link pointing to this path.\n\n        Note this function does not make this path a hard link to *target*,\n        despite the implication of the function and argument names. The order\n        of arguments (target, link) is the reverse of Path.symlink_to, but\n        matches that of os.link.\n\n        Deprecated since Python 3.10 and scheduled for removal in Python 3.12.\n        Use `hardlink_to()` instead.\n        ', 'pathlib.Path.link_to() is deprecated and is scheduled for removal in Python 3.12. Use pathlib.Path.hardlink_to() instead.', 2, ('stacklevel',), None]
+1210           0 RESUME                   0
+
+1222           2 LOAD_GLOBAL              1 (NULL + warnings)
+              14 LOAD_ATTR                1 (warn)
+              24 LOAD_CONST               1 ('pathlib.Path.link_to() is deprecated and is scheduled for removal in Python 3.12. Use pathlib.Path.hardlink_to() instead.')
+
+1225          26 LOAD_GLOBAL              4 (DeprecationWarning)
+              38 LOAD_CONST               2 (2)
+
+1222          40 KW_NAMES                 3
+              42 PRECALL                  3
+              46 CALL                     3
+              56 POP_TOP
+
+1226          58 LOAD_FAST                0 (self)
+              60 LOAD_METHOD              3 (__class__)
+              82 LOAD_FAST                1 (target)
+              84 PRECALL                  1
+              88 CALL                     1
+              98 LOAD_METHOD              4 (hardlink_to)
+             120 LOAD_FAST                0 (self)
+             122 PRECALL                  1
+             126 CALL                     1
+             136 POP_TOP
+             138 LOAD_CONST               4 (None)
+             140 RETURN_VALUE

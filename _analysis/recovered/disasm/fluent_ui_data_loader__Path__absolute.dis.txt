@@ -1,0 +1,29 @@
+# fluent_ui.data_loader.Path.absolute
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('is_absolute', '_from_parts', 'cwd', '_parts')
+co_varnames=('self',)
+co_consts=['Return an absolute version of this path by prepending the current\n        working directory. No normalization or symlink resolution is performed.\n\n        Use resolve() to get the canonical path to a file.\n        ']
+971           0 RESUME                   0
+
+977           2 LOAD_FAST                0 (self)
+              4 LOAD_METHOD              0 (is_absolute)
+             26 PRECALL                  0
+             30 CALL                     0
+             40 POP_JUMP_FORWARD_IF_FALSE     2 (to 46)
+
+978          42 LOAD_FAST                0 (self)
+             44 RETURN_VALUE
+
+979     >>   46 LOAD_FAST                0 (self)
+             48 LOAD_METHOD              1 (_from_parts)
+             70 LOAD_FAST                0 (self)
+             72 LOAD_METHOD              2 (cwd)
+             94 PRECALL                  0
+             98 CALL                     0
+            108 BUILD_LIST               1
+            110 LOAD_FAST                0 (self)
+            112 LOAD_ATTR                3 (_parts)
+            122 BINARY_OP                0 (+)
+            126 PRECALL                  1
+            130 CALL                     1
+            140 RETURN_VALUE

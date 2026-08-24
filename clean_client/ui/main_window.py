@@ -1,0 +1,296 @@
+"""Fluent multi-page main window for clean_client."""
+
+from __future__ import annotations
+
+import json
+from pathlib import Path
+from typing import Any
+
+from PySide6.QtCore import QObject, Signal, Slot
+from PySide6.QtGui import QIcon
+from PySide6.QtWidgets import QWidget
+from qfluentwidgets import FluentIcon, FluentWindow, NavigationItemPosition
+
+from clean_client.capture.backends import create_backend
+from clean_client.capture.window import find_wow_hwnd
+from clean_client.config.loader import load_json
+from clean_client.engine.bootstrap import build_engine
+from clean_client.engine.loop import EngineLoop
+from clean_client.rotation.profile import load_profile
+from clean_client.ui.pages import ControlPage, RotationPage, SettingsPage, VisionPage
+
+
+class _LogBridge(QObject):
+    """Marshal engine worker-thread log lines onto the UI thread."""
+
+    message = Signal(str)
+
+
+class MainWindow(FluentWindow):
+    """Side-nav Fluent shell: Control / Rotation / Vision / Settings."""
+
+    def __init__(self, root: Path | None = None, parent: QWidget | None = None) -> None:
+        super().__init__(parent)
+        if root is not None:
+            self.root = root
+        else:
+            from clean_client.paths import package_root
+
+            self.root = package_root()
+
+        self.setWindowTitle("CleanClient — 自动循环客户端")
+        self.resize(1120, 740)
+        self.setMinimumSize(960, 640)
+        self.setObjectName("centralRoot")
+        self.setMicaEffectEnabled(False)
+        self._apply_window_icon()
+        # neon navigation frame
+        self.navigationInterface.setStyleSheet(
+            """
+            NavigationInterface {
+                background-color: rgba(4, 7, 15, 230);
+                border-right: 1px solid rgba(97, 216, 255, 0.18);
+            }
+            """
+        )
+
+        self._cfg: dict[str, Any] = load_json(self.root / "config" / "default.json")
+        profile_rel = str(self._cfg.get("profile") or "profiles/unholy_default.json")
+        self._profile = load_profile(self.root / profile_rel)
+        self._engine: EngineLoop | None = None
+        self._log_bridge = _LogBridge(self)
+        self._log_bridge.message.connect(self._append_log)
+
+        self.control_page = ControlPage(self)
+        self.rotation_page = RotationPage(self)
+        self.vision_page = VisionPage(self)
+        self.settings_page = SettingsPage(self)
+
+        # Back-compat aliases used by smoke tests / external callers.
+        self.start_btn = self.control_page.start_btn
+        self.stop_btn = self.control_page.stop_btn
+        self.dry_run_cb = self.control_page.dry_run_cb
+        self.prefer_highlighted_cb = self.control_page.prefer_highlighted_cb
+        self.capture_combo = self.control_page.capture_combo
+        self.tick_spin = self.control_page.tick_spin
+        self.hwnd_label = self.control_page.hwnd_label
+        self.log_view = self.control_page.log_view
+
+        self.addSubInterface(self.control_page, FluentIcon.PLAY, "控制台")
+        self.addSubInterface(self.rotation_page, FluentIcon.LIBRARY, "循环")
+        self.addSubInterface(self.vision_page, FluentIcon.VIEW, "识别")
+        self.addSubInterface(
+            self.settings_page,
+            FluentIcon.SETTING,
+            "系统设置",
+            NavigationItemPosition.BOTTOM,
+        )
+
+        self.control_page.start_requested.connect(self._on_start)
+        self.control_page.stop_requested.connect(self._on_stop)
+        self.vision_page.calibrator_requested.connect(self._on_open_calibrator)
+        self.settings_page.save_btn.clicked.connect(self._on_save_settings)
+
+        self._apply_config_defaults()
+        self.rotation_page.set_profile(self._profile)
+        self.settings_page.load_from_config(self._cfg)
+        self.control_page.set_running(False)
+        self._append_log(
+            f"已加载配置={self._profile.get('name', profile_rel)!r} "
+            f"动作数={len(self._profile.get('actions') or [])}"
+        )
+
+    def _apply_window_icon(self) -> None:
+        """Load app icon from package assets (works for source and frozen)."""
+        candidates = [
+            self.root / "assets" / "cleanclient.ico",
+            self.root / "assets" / "cleanclient_icon.png",
+            Path(__file__).resolve().parent.parent / "assets" / "cleanclient.ico",
+            Path(__file__).resolve().parent.parent / "assets" / "cleanclient_icon.png",
+        ]
+        for path in candidates:
+            if path.is_file():
+                self.setWindowIcon(QIcon(str(path)))
+                return
+
+    def _apply_config_defaults(self) -> None:
+        self.dry_run_cb.setChecked(bool(self._cfg.get("dry_run", True)))
+        self.prefer_highlighted_cb.setChecked(
+            bool(self._cfg.get("prefer_highlighted", True))
+        )
+        mode = str(self._cfg.get("capture_mode") or "null")
+        self.control_page.set_capture_mode(mode)
+        try:
+            tick = int(self._cfg.get("tick_ms", 30))
+        except (TypeError, ValueError):
+            tick = 30
+        self.tick_spin.setValue(max(1, tick))
+
+        vision_mode = str(self._cfg.get("vision_mode") or "mock").lower()
+        self.vision_page.set_vision_mode(vision_mode)
+
+        regions_dir = str(self._cfg.get("regions_dir") or "").strip()
+        if regions_dir:
+            path = Path(regions_dir)
+            if not path.is_absolute():
+                path = self.root / path
+            self.vision_page.regions_edit.setText(str(path))
+        else:
+            regions_default = self.root / "regions"
+            if regions_default.is_dir():
+                self.vision_page.regions_edit.setText(str(regions_default))
+
+    def _collect_settings(self) -> dict[str, Any]:
+        """Merge config + live UI controls into a settings dict for build_engine."""
+        settings = dict(self._cfg)
+        settings["root"] = str(self.root)
+        settings["dry_run"] = self.dry_run_cb.isChecked()
+        settings["prefer_highlighted"] = self.prefer_highlighted_cb.isChecked()
+        settings["capture_mode"] = self.control_page.capture_mode()
+        settings["tick_ms"] = self.tick_spin.value()
+        settings["vision_mode"] = self.vision_page.vision_mode()
+        regions = self.vision_page.regions_dir()
+        settings["regions_dir"] = str(regions) if regions is not None else ""
+        # Settings page values win for these keys.
+        settings.update(self.settings_page.values())
+        return settings
+
+    @Slot()
+    def _on_start(self) -> None:
+        if self._engine is not None:
+            return
+
+        settings = self._collect_settings()
+        mode = str(settings.get("capture_mode") or "null")
+        keywords = tuple(settings.get("window_keywords") or ())
+        hwnd: int | None = None
+        try:
+            hwnd = find_wow_hwnd(keywords)
+        except (RuntimeError, OSError, TypeError, ValueError) as exc:
+            self._append_log(f"查找游戏窗口已跳过: {exc}")
+        self.hwnd_label.setText(f"窗口句柄: {hwnd if hwnd is not None else '—'}")
+
+        dry_run = bool(settings.get("dry_run", True))
+        press = None
+        if not dry_run:
+            from clean_client.input.sendinput import tap_key
+
+            press = tap_key
+
+        backend = create_backend(mode)
+
+        def grab() -> Any:
+            return backend.grab(hwnd)
+
+        def on_log(message: str) -> None:
+            self._log_bridge.message.emit(message)
+
+        vision_mode = str(settings.get("vision_mode") or "mock").lower()
+        if (
+            vision_mode in {"pixel", "protocol"}
+            and not str(settings.get("regions_dir") or "").strip()
+        ):
+            self._append_log(
+                "警告：已选像素协议，但区域目录为空 — 缺少技能区域，引擎将保持空闲"
+            )
+
+        self._engine = build_engine(settings, on_log=on_log, press=press, grab=grab)
+        self.control_page.set_running(True)
+        self._append_log(
+            f"已启动 截屏={mode} 只记日志={dry_run} "
+            f"周期ms={settings.get('tick_ms')} "
+            f"识别={vision_mode} 窗口句柄={hwnd}"
+        )
+        self._engine.start()
+
+    @Slot()
+    def _on_stop(self) -> None:
+        engine = self._engine
+        self._engine = None
+        if engine is not None:
+            engine.stop()
+            self._append_log("已停止")
+        self.control_page.set_running(False)
+
+    @staticmethod
+    def _map_capture_for_calibrator(capture: str) -> str:
+        """Map UI capture labels to calibrator/create_backend keys."""
+        key = (capture or "null").strip().lower()
+        mapping = {
+            "null": "null",
+            "mock": "null",
+            "test": "null",
+            "空": "null",
+            "空（测试）": "null",
+            "方式一": "printwindow",
+            "1": "printwindow",
+            "printwindow": "printwindow",
+            "方式二": "mss",
+            "2": "mss",
+            "mss": "mss",
+            "方式三": "dxcam",
+            "3": "dxcam",
+            "dxcam": "dxcam",
+        }
+        return mapping.get(key, mapping.get((capture or "").strip(), "null"))
+
+    @Slot()
+    def _on_open_calibrator(self) -> None:
+        """Open region calibrator.
+
+        Frozen exe cannot ``python -m clean_client...`` via sys.executable, so we
+        open an in-process window when already inside a QApplication.
+        """
+        regions_dir = self.vision_page.regions_dir()
+        capture = self.control_page.capture_mode()
+        output = regions_dir if regions_dir is not None else Path.cwd()
+        capture_arg = self._map_capture_for_calibrator(capture)
+
+        try:
+            from clean_client.ui.calibrator import run_calibrator
+
+            run_calibrator(output_dir=output, capture_mode=capture_arg)
+            self.vision_page.set_status(f"标定器已打开 → {output}")
+            self._append_log(f"已打开标定器 截屏={capture_arg} 目录={output}")
+        except Exception as exc:  # noqa: BLE001
+            self.vision_page.set_status(f"标定器打开失败: {exc}")
+            self._append_log(f"标定器错误: {exc}")
+
+    @Slot()
+    def _on_save_settings(self) -> None:
+        values = self.settings_page.values()
+        self._cfg.update(values)
+        self._cfg["dry_run"] = self.dry_run_cb.isChecked()
+        self._cfg["prefer_highlighted"] = self.prefer_highlighted_cb.isChecked()
+        self._cfg["capture_mode"] = self.control_page.capture_mode()
+        self._cfg["tick_ms"] = self.tick_spin.value()
+        self._cfg["vision_mode"] = self.vision_page.vision_mode()
+        regions = self.vision_page.regions_dir()
+        self._cfg["regions_dir"] = str(regions) if regions is not None else ""
+
+        # Persist without the runtime-only root key.
+        to_write = {k: v for k, v in self._cfg.items() if k != "root"}
+        path = self.root / "config" / "default.json"
+        try:
+            path.write_text(
+                json.dumps(to_write, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8",
+            )
+            note = (
+                f"已保存到 {path.name}: 关键字={values['window_keywords']}, "
+                f"CD就绪窗口ms={values['cd_ready_window_ms']}, "
+                f"增益匹配阈值={values['buff_match_threshold']}"
+            )
+            self.settings_page.set_note(note)
+            self._append_log(f"设置已保存 → {path}")
+        except OSError as exc:
+            self.settings_page.set_note(f"已应用到内存，但写入失败: {exc}")
+            self._append_log(f"设置保存失败: {exc}")
+
+    @Slot(str)
+    def _append_log(self, message: str) -> None:
+        self.control_page.append_log(message)
+
+    def closeEvent(self, event) -> None:
+        self._on_stop()
+        super().closeEvent(event)

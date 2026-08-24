@@ -1,0 +1,17 @@
+# skill_conditions.Enum.__format__
+co_filename=D:\project\Nirvana30\Nirvana30\enum.py
+co_names=('str', '__format__')
+co_varnames=('self', 'format_spec')
+co_consts=[None]
+1229           0 RESUME                   0
+
+1230           2 LOAD_GLOBAL              0 (str)
+              14 LOAD_METHOD              1 (__format__)
+              36 LOAD_GLOBAL              1 (NULL + str)
+              48 LOAD_FAST                0 (self)
+              50 PRECALL                  1
+              54 CALL                     1
+              64 LOAD_FAST                1 (format_spec)
+              66 PRECALL                  2
+              70 CALL                     2
+              80 RETURN_VALUE

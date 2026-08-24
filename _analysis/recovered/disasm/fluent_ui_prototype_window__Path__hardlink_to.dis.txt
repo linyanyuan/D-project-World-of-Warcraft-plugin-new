@@ -1,0 +1,29 @@
+# fluent_ui.prototype_window.Path.hardlink_to
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('hasattr', 'os', 'NotImplementedError', 'link')
+co_varnames=('self', 'target')
+co_consts=["\n        Make this path a hard link pointing to the same file as *target*.\n\n        Note the order of arguments (self, target) is the reverse of os.link's.\n        ", 'link', 'os.link() not available on this system', None]
+1200           0 RESUME                   0
+
+1206           2 LOAD_GLOBAL              1 (NULL + hasattr)
+              14 LOAD_GLOBAL              2 (os)
+              26 LOAD_CONST               1 ('link')
+              28 PRECALL                  2
+              32 CALL                     2
+              42 POP_JUMP_FORWARD_IF_TRUE    15 (to 74)
+
+1207          44 LOAD_GLOBAL              5 (NULL + NotImplementedError)
+              56 LOAD_CONST               2 ('os.link() not available on this system')
+              58 PRECALL                  1
+              62 CALL                     1
+              72 RAISE_VARARGS            1
+
+1208     >>   74 LOAD_GLOBAL              3 (NULL + os)
+              86 LOAD_ATTR                3 (link)
+              96 LOAD_FAST                1 (target)
+              98 LOAD_FAST                0 (self)
+             100 PRECALL                  2
+             104 CALL                     2
+             114 POP_TOP
+             116 LOAD_CONST               3 (None)
+             118 RETURN_VALUE

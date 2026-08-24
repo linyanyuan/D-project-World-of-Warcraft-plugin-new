@@ -1,0 +1,49 @@
+# skill_cycle_config.Path.__new__
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('Path', 'os', 'name', 'WindowsPath', 'PosixPath', '_from_parts', '_flavour', 'is_supported', 'NotImplementedError', '__name__')
+co_varnames=('cls', 'args', 'kwargs', 'self')
+co_consts=[None, 'nt', 'cannot instantiate ', ' on your system']
+868           0 RESUME                   0
+
+869           2 LOAD_FAST                0 (cls)
+              4 LOAD_GLOBAL              0 (Path)
+             16 IS_OP                    0
+             18 POP_JUMP_FORWARD_IF_FALSE    30 (to 80)
+
+870          20 LOAD_GLOBAL              2 (os)
+             32 LOAD_ATTR                2 (name)
+             42 LOAD_CONST               1 ('nt')
+             44 COMPARE_OP               2 (==)
+             50 POP_JUMP_FORWARD_IF_FALSE     7 (to 66)
+             52 LOAD_GLOBAL              6 (WindowsPath)
+             64 JUMP_FORWARD             6 (to 78)
+        >>   66 LOAD_GLOBAL              8 (PosixPath)
+        >>   78 STORE_FAST               0 (cls)
+
+871     >>   80 LOAD_FAST                0 (cls)
+             82 LOAD_METHOD              5 (_from_parts)
+            104 LOAD_FAST                1 (args)
+            106 PRECALL                  1
+            110 CALL                     1
+            120 STORE_FAST               3 (self)
+
+872         122 LOAD_FAST                3 (self)
+            124 LOAD_ATTR                6 (_flavour)
+            134 LOAD_ATTR                7 (is_supported)
+            144 POP_JUMP_FORWARD_IF_TRUE    24 (to 194)
+
+873         146 LOAD_GLOBAL             17 (NULL + NotImplementedError)
+            158 LOAD_CONST               2 ('cannot instantiate ')
+
+874         160 LOAD_FAST                0 (cls)
+            162 LOAD_ATTR                9 (__name__)
+            172 FORMAT_VALUE             2 (repr)
+            174 LOAD_CONST               3 (' on your system')
+
+873         176 BUILD_STRING             3
+            178 PRECALL                  1
+            182 CALL                     1
+            192 RAISE_VARARGS            1
+
+875     >>  194 LOAD_FAST                3 (self)
+            196 RETURN_VALUE

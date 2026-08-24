@@ -1,0 +1,74 @@
+# skill_cycle_config.Path.touch
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('os', 'utime', 'OSError', 'O_CREAT', 'O_WRONLY', 'O_EXCL', 'open', 'close')
+co_varnames=('self', 'mode', 'exist_ok', 'flags', 'fd')
+co_consts=["\n        Create this file with the given access mode, if it doesn't exist.\n        ", None]
+1089           0 RESUME                   0
+
+1094           2 LOAD_FAST                2 (exist_ok)
+               4 POP_JUMP_FORWARD_IF_FALSE    40 (to 86)
+
+1098           6 NOP
+
+1099           8 LOAD_GLOBAL              1 (NULL + os)
+              20 LOAD_ATTR                1 (utime)
+              30 LOAD_FAST                0 (self)
+              32 LOAD_CONST               1 (None)
+              34 PRECALL                  2
+              38 CALL                     2
+              48 POP_TOP
+
+1104          50 LOAD_CONST               1 (None)
+              52 RETURN_VALUE
+         >>   54 PUSH_EXC_INFO
+
+1100          56 LOAD_GLOBAL              4 (OSError)
+              68 CHECK_EXC_MATCH
+              70 POP_JUMP_FORWARD_IF_FALSE     3 (to 78)
+              72 POP_TOP
+
+1102          74 POP_EXCEPT
+              76 JUMP_FORWARD             4 (to 86)
+
+1100     >>   78 RERAISE                  0
+         >>   80 COPY                     3
+              82 POP_EXCEPT
+              84 RERAISE                  1
+
+1105     >>   86 LOAD_GLOBAL              0 (os)
+              98 LOAD_ATTR                3 (O_CREAT)
+             108 LOAD_GLOBAL              0 (os)
+             120 LOAD_ATTR                4 (O_WRONLY)
+             130 BINARY_OP                7 (|)
+             134 STORE_FAST               3 (flags)
+
+1106         136 LOAD_FAST                2 (exist_ok)
+             138 POP_JUMP_FORWARD_IF_TRUE    15 (to 170)
+
+1107         140 LOAD_FAST                3 (flags)
+             142 LOAD_GLOBAL              0 (os)
+             154 LOAD_ATTR                5 (O_EXCL)
+             164 BINARY_OP               20 (|=)
+             168 STORE_FAST               3 (flags)
+
+1108     >>  170 LOAD_GLOBAL              1 (NULL + os)
+             182 LOAD_ATTR                6 (open)
+             192 LOAD_FAST                0 (self)
+             194 LOAD_FAST                3 (flags)
+             196 LOAD_FAST                1 (mode)
+             198 PRECALL                  3
+             202 CALL                     3
+             212 STORE_FAST               4 (fd)
+
+1109         214 LOAD_GLOBAL              1 (NULL + os)
+             226 LOAD_ATTR                7 (close)
+             236 LOAD_FAST                4 (fd)
+             238 PRECALL                  1
+             242 CALL                     1
+             252 POP_TOP
+             254 LOAD_CONST               1 (None)
+             256 RETURN_VALUE
+ExceptionTable:
+  8 to 48 -> 54 [0]
+  54 to 72 -> 80 [1] lasti
+  78 to 78 -> 80 [1] lasti

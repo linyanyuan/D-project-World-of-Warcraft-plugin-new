@@ -1,0 +1,249 @@
+# skill_conditions.TargetInfoField.__new__
+co_filename=D:\project\Nirvana30\Nirvana30\enum.py
+co_names=('type', '_value2member_map_', 'KeyError', 'TypeError', '_member_map_', 'values', '_value_', '_missing_', 'Exception', 'isinstance', 'Flag', 'issubclass', '_boundary_', 'EJECT', 'int', 'ValueError', '__qualname__', '__name__', '__context__')
+co_varnames=('cls', 'value', 'member', 'exc', 'result', 'e', 've_exc')
+co_consts=[None, '%r has no members defined', ' is not a valid ', 'error in ', '._missing_: returned ', ' instead of None or a valid member']
+1095           0 RESUME                   0
+
+1099           2 LOAD_GLOBAL              1 (NULL + type)
+              14 LOAD_FAST                1 (value)
+              16 PRECALL                  1
+              20 CALL                     1
+              30 LOAD_FAST                0 (cls)
+              32 IS_OP                    0
+              34 POP_JUMP_FORWARD_IF_FALSE     2 (to 40)
+
+1101          36 LOAD_FAST                1 (value)
+              38 RETURN_VALUE
+
+1104     >>   40 NOP
+
+1105          42 LOAD_FAST                0 (cls)
+              44 LOAD_ATTR                1 (_value2member_map_)
+              54 LOAD_FAST                1 (value)
+              56 BINARY_SUBSCR
+              66 RETURN_VALUE
+         >>   68 PUSH_EXC_INFO
+
+1106          70 LOAD_GLOBAL              4 (KeyError)
+              82 CHECK_EXC_MATCH
+              84 POP_JUMP_FORWARD_IF_FALSE     3 (to 92)
+              86 POP_TOP
+
+1108          88 POP_EXCEPT
+              90 JUMP_FORWARD            60 (to 212)
+
+1109     >>   92 LOAD_GLOBAL              6 (TypeError)
+             104 CHECK_EXC_MATCH
+             106 POP_JUMP_FORWARD_IF_FALSE    48 (to 204)
+             108 POP_TOP
+
+1111         110 LOAD_FAST                0 (cls)
+             112 LOAD_ATTR                4 (_member_map_)
+             122 LOAD_METHOD              5 (values)
+             144 PRECALL                  0
+             148 CALL                     0
+             158 GET_ITER
+         >>  160 FOR_ITER                19 (to 200)
+             162 STORE_FAST               2 (member)
+
+1112         164 LOAD_FAST                2 (member)
+             166 LOAD_ATTR                6 (_value_)
+             176 LOAD_FAST                1 (value)
+             178 COMPARE_OP               2 (==)
+             184 POP_JUMP_FORWARD_IF_FALSE     6 (to 198)
+
+1113         186 LOAD_FAST                2 (member)
+             188 SWAP                     2
+             190 POP_TOP
+             192 SWAP                     2
+             194 POP_EXCEPT
+             196 RETURN_VALUE
+
+1112     >>  198 JUMP_BACKWARD           20 (to 160)
+
+1111     >>  200 POP_EXCEPT
+             202 JUMP_FORWARD             4 (to 212)
+
+1109     >>  204 RERAISE                  0
+         >>  206 COPY                     3
+             208 POP_EXCEPT
+             210 RERAISE                  1
+
+1116     >>  212 LOAD_FAST                0 (cls)
+             214 LOAD_ATTR                4 (_member_map_)
+             224 POP_JUMP_FORWARD_IF_TRUE    18 (to 262)
+
+1117         226 LOAD_GLOBAL              7 (NULL + TypeError)
+             238 LOAD_CONST               1 ('%r has no members defined')
+             240 LOAD_FAST                0 (cls)
+             242 BINARY_OP                6 (%)
+             246 PRECALL                  1
+             250 CALL                     1
+             260 RAISE_VARARGS            1
+
+1120     >>  262 NOP
+
+1121         264 LOAD_CONST               0 (None)
+             266 STORE_FAST               3 (exc)
+
+1122         268 LOAD_FAST                0 (cls)
+             270 LOAD_METHOD              7 (_missing_)
+             292 LOAD_FAST                1 (value)
+             294 PRECALL                  1
+             298 CALL                     1
+             308 STORE_FAST               4 (result)
+             310 JUMP_FORWARD            27 (to 366)
+         >>  312 PUSH_EXC_INFO
+
+1123         314 LOAD_GLOBAL             16 (Exception)
+             326 CHECK_EXC_MATCH
+             328 POP_JUMP_FORWARD_IF_FALSE    14 (to 358)
+             330 STORE_FAST               5 (e)
+
+1124         332 LOAD_FAST                5 (e)
+             334 STORE_FAST               3 (exc)
+
+1125         336 LOAD_CONST               0 (None)
+             338 STORE_FAST               4 (result)
+             340 POP_EXCEPT
+             342 LOAD_CONST               0 (None)
+             344 STORE_FAST               5 (e)
+             346 DELETE_FAST              5 (e)
+             348 JUMP_FORWARD             8 (to 366)
+         >>  350 LOAD_CONST               0 (None)
+             352 STORE_FAST               5 (e)
+             354 DELETE_FAST              5 (e)
+             356 RERAISE                  1
+
+1123     >>  358 RERAISE                  0
+         >>  360 COPY                     3
+             362 POP_EXCEPT
+             364 RERAISE                  1
+
+1126     >>  366 NOP
+
+1127         368 LOAD_GLOBAL             19 (NULL + isinstance)
+             380 LOAD_FAST                4 (result)
+             382 LOAD_FAST                0 (cls)
+             384 PRECALL                  2
+             388 CALL                     2
+             398 POP_JUMP_FORWARD_IF_FALSE     6 (to 412)
+
+1128         400 LOAD_FAST                4 (result)
+
+1148         402 LOAD_CONST               0 (None)
+             404 STORE_FAST               3 (exc)
+
+1149         406 LOAD_CONST               0 (None)
+             408 STORE_FAST               6 (ve_exc)
+             410 RETURN_VALUE
+
+1130     >>  412 LOAD_GLOBAL             20 (Flag)
+             424 POP_JUMP_FORWARD_IF_NONE    62 (to 550)
+             426 LOAD_GLOBAL             23 (NULL + issubclass)
+             438 LOAD_FAST                0 (cls)
+             440 LOAD_GLOBAL             20 (Flag)
+             452 PRECALL                  2
+             456 CALL                     2
+             466 POP_JUMP_FORWARD_IF_FALSE    41 (to 550)
+
+1131         468 LOAD_FAST                0 (cls)
+             470 LOAD_ATTR               12 (_boundary_)
+             480 LOAD_GLOBAL             26 (EJECT)
+             492 IS_OP                    0
+             494 POP_JUMP_FORWARD_IF_FALSE    27 (to 550)
+             496 LOAD_GLOBAL             19 (NULL + isinstance)
+             508 LOAD_FAST                4 (result)
+             510 LOAD_GLOBAL             28 (int)
+             522 PRECALL                  2
+             526 CALL                     2
+             536 POP_JUMP_FORWARD_IF_FALSE     6 (to 550)
+
+1133         538 LOAD_FAST                4 (result)
+
+1148         540 LOAD_CONST               0 (None)
+             542 STORE_FAST               3 (exc)
+
+1149         544 LOAD_CONST               0 (None)
+             546 STORE_FAST               6 (ve_exc)
+             548 RETURN_VALUE
+
+1135     >>  550 LOAD_GLOBAL             31 (NULL + ValueError)
+             562 LOAD_FAST                1 (value)
+             564 FORMAT_VALUE             2 (repr)
+             566 LOAD_CONST               2 (' is not a valid ')
+             568 LOAD_FAST                0 (cls)
+             570 LOAD_ATTR               16 (__qualname__)
+             580 FORMAT_VALUE             1 (str)
+             582 BUILD_STRING             3
+             584 PRECALL                  1
+             588 CALL                     1
+             598 STORE_FAST               6 (ve_exc)
+
+1136         600 LOAD_FAST                4 (result)
+             602 POP_JUMP_FORWARD_IF_NOT_NONE     4 (to 612)
+             604 LOAD_FAST                3 (exc)
+             606 POP_JUMP_FORWARD_IF_NOT_NONE     2 (to 612)
+
+1137         608 LOAD_FAST                6 (ve_exc)
+             610 RAISE_VARARGS            1
+
+1138     >>  612 LOAD_FAST                3 (exc)
+             614 POP_JUMP_FORWARD_IF_NOT_NONE    27 (to 670)
+
+1139         616 LOAD_GLOBAL              7 (NULL + TypeError)
+             628 LOAD_CONST               3 ('error in ')
+
+1141         630 LOAD_FAST                0 (cls)
+             632 LOAD_ATTR               17 (__name__)
+             642 FORMAT_VALUE             1 (str)
+             644 LOAD_CONST               4 ('._missing_: returned ')
+             646 LOAD_FAST                4 (result)
+             648 FORMAT_VALUE             2 (repr)
+             650 LOAD_CONST               5 (' instead of None or a valid member')
+
+1140         652 BUILD_STRING             5
+
+1139         654 PRECALL                  1
+             658 CALL                     1
+             668 STORE_FAST               3 (exc)
+
+1143     >>  670 LOAD_GLOBAL             19 (NULL + isinstance)
+             682 LOAD_FAST                3 (exc)
+             684 LOAD_GLOBAL             30 (ValueError)
+             696 PRECALL                  2
+             700 CALL                     2
+             710 POP_JUMP_FORWARD_IF_TRUE     7 (to 726)
+
+1144         712 LOAD_FAST                6 (ve_exc)
+             714 LOAD_FAST                3 (exc)
+             716 STORE_ATTR              18 (__context__)
+
+1145     >>  726 LOAD_FAST                3 (exc)
+             728 RAISE_VARARGS            1
+         >>  730 PUSH_EXC_INFO
+
+1148         732 LOAD_CONST               0 (None)
+             734 STORE_FAST               3 (exc)
+
+1149         736 LOAD_CONST               0 (None)
+             738 STORE_FAST               6 (ve_exc)
+             740 RERAISE                  0
+         >>  742 COPY                     3
+             744 POP_EXCEPT
+             746 RERAISE                  1
+ExceptionTable:
+  42 to 64 -> 68 [0]
+  68 to 86 -> 206 [1] lasti
+  92 to 192 -> 206 [1] lasti
+  198 to 198 -> 206 [1] lasti
+  204 to 204 -> 206 [1] lasti
+  264 to 308 -> 312 [0]
+  312 to 330 -> 360 [1] lasti
+  332 to 338 -> 350 [1] lasti
+  350 to 358 -> 360 [1] lasti
+  368 to 400 -> 730 [0]
+  412 to 538 -> 730 [0]
+  550 to 728 -> 730 [0]
+  730 to 740 -> 742 [1] lasti

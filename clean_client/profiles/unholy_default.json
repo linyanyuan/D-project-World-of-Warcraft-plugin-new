@@ -1,0 +1,18 @@
+{
+  "name": "unholy_default",
+  "prefer_highlighted": true,
+  "actions": [
+    {"spell_id": 42650, "name": "ArmyOfTheDead", "kind": "spell", "fallback_key": "f1"},
+    {"spell_id": 63560, "name": "DarkTransformation", "kind": "spell", "fallback_key": "f2"},
+    {"spell_id": 77575, "name": "Outbreak", "kind": "spell", "fallback_key": "1"},
+    {"spell_id": 1247378, "name": "Putrefy", "kind": "spell", "fallback_key": "2"},
+    {"spell_id": 455397, "name": "FesteringScythe", "kind": "spell", "fallback_key": "3"},
+    {"spell_id": 343294, "name": "SoulReaper", "kind": "spell", "fallback_key": "4"},
+    {"spell_id": 85948, "name": "FesteringStrike", "kind": "spell", "fallback_key": "5"},
+    {"spell_id": 55090, "name": "ScourgeStrike", "kind": "spell", "fallback_key": "6"},
+    {"spell_id": 47541, "name": "DeathCoil", "kind": "spell", "fallback_key": "7"},
+    {"spell_id": 207317, "name": "Epidemic", "kind": "spell", "fallback_key": "8"},
+    {"spell_id": 43265, "name": "DeathAndDecay", "kind": "spell", "fallback_key": "9"},
+    {"spell_id": 47528, "name": "MindFreeze", "kind": "spell", "fallback_key": "e"}
+  ]
+}

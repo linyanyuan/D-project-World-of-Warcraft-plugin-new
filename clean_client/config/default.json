@@ -1,0 +1,16 @@
+{
+  "capture_mode": "null",
+  "tick_ms": 30,
+  "cd_ready_window_ms": 30,
+  "buff_match_threshold": 0.7,
+  "hotkey": "F8",
+  "dry_run": true,
+  "prefer_highlighted": true,
+  "foreground_guard": true,
+  "vision_mode": "mock",
+  "regions_dir": "",
+  "row_height": 1,
+  "bindings_row_index": 2,
+  "profile": "profiles/unholy_default.json",
+  "window_keywords": ["World of Warcraft", "魔兽世界"]
+}

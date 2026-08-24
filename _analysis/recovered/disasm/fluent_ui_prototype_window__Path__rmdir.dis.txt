@@ -1,0 +1,15 @@
+# fluent_ui.prototype_window.Path.rmdir
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('os', 'rmdir')
+co_varnames=('self',)
+co_consts=['\n        Remove this directory.  The directory must be empty.\n        ', None]
+1152           0 RESUME                   0
+
+1156           2 LOAD_GLOBAL              1 (NULL + os)
+              14 LOAD_ATTR                1 (rmdir)
+              24 LOAD_FAST                0 (self)
+              26 PRECALL                  1
+              30 CALL                     1
+              40 POP_TOP
+              42 LOAD_CONST               1 (None)
+              44 RETURN_VALUE

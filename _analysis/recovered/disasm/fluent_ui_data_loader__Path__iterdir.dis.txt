@@ -1,0 +1,30 @@
+# fluent_ui.data_loader.Path.iterdir
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('os', 'listdir', '_make_child_relpath')
+co_varnames=('self', 'name')
+co_consts=["Iterate over the files in this directory.  Does not yield any\n        result for the special paths '.' and '..'.\n        ", None]
+927           0 RETURN_GENERATOR
+              2 POP_TOP
+              4 RESUME                   0
+
+931           6 LOAD_GLOBAL              1 (NULL + os)
+             18 LOAD_ATTR                1 (listdir)
+             28 LOAD_FAST                0 (self)
+             30 PRECALL                  1
+             34 CALL                     1
+             44 GET_ITER
+        >>   46 FOR_ITER                25 (to 98)
+             48 STORE_FAST               1 (name)
+
+932          50 LOAD_FAST                0 (self)
+             52 LOAD_METHOD              2 (_make_child_relpath)
+             74 LOAD_FAST                1 (name)
+             76 PRECALL                  1
+             80 CALL                     1
+             90 YIELD_VALUE
+             92 RESUME                   1
+             94 POP_TOP
+             96 JUMP_BACKWARD           26 (to 46)
+
+931     >>   98 LOAD_CONST               1 (None)
+            100 RETURN_VALUE

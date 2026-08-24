@@ -1,0 +1,86 @@
+# skill_cycle_config.Path.mkdir
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('os', 'mkdir', 'FileNotFoundError', 'parent', 'OSError', 'is_dir')
+co_varnames=('self', 'mode', 'parents', 'exist_ok')
+co_consts=['\n        Create a new directory at this given path.\n        ', True, ('parents', 'exist_ok'), False, None]
+1111           0 RESUME                   0
+
+1115           2 NOP
+
+1116           4 LOAD_GLOBAL              1 (NULL + os)
+              16 LOAD_ATTR                1 (mkdir)
+              26 LOAD_FAST                0 (self)
+              28 LOAD_FAST                1 (mode)
+              30 PRECALL                  2
+              34 CALL                     2
+              44 POP_TOP
+              46 LOAD_CONST               4 (None)
+              48 RETURN_VALUE
+         >>   50 PUSH_EXC_INFO
+
+1117          52 LOAD_GLOBAL              4 (FileNotFoundError)
+              64 CHECK_EXC_MATCH
+              66 POP_JUMP_FORWARD_IF_FALSE    70 (to 208)
+              68 POP_TOP
+
+1118          70 LOAD_FAST                2 (parents)
+              72 POP_JUMP_FORWARD_IF_FALSE    11 (to 96)
+              74 LOAD_FAST                0 (self)
+              76 LOAD_ATTR                3 (parent)
+              86 LOAD_FAST                0 (self)
+              88 COMPARE_OP               2 (==)
+              94 POP_JUMP_FORWARD_IF_FALSE     1 (to 98)
+
+1119     >>   96 RAISE_VARARGS            0
+
+1120     >>   98 LOAD_FAST                0 (self)
+             100 LOAD_ATTR                3 (parent)
+             110 LOAD_METHOD              1 (mkdir)
+             132 LOAD_CONST               1 (True)
+             134 LOAD_CONST               1 (True)
+             136 KW_NAMES                 2
+             138 PRECALL                  2
+             142 CALL                     2
+             152 POP_TOP
+
+1121         154 LOAD_FAST                0 (self)
+             156 LOAD_METHOD              1 (mkdir)
+             178 LOAD_FAST                1 (mode)
+             180 LOAD_CONST               3 (False)
+             182 LOAD_FAST                3 (exist_ok)
+             184 KW_NAMES                 2
+             186 PRECALL                  3
+             190 CALL                     3
+             200 POP_TOP
+             202 POP_EXCEPT
+             204 LOAD_CONST               4 (None)
+             206 RETURN_VALUE
+
+1122     >>  208 LOAD_GLOBAL              8 (OSError)
+             220 CHECK_EXC_MATCH
+             222 POP_JUMP_FORWARD_IF_FALSE    27 (to 278)
+             224 POP_TOP
+
+1125         226 LOAD_FAST                3 (exist_ok)
+             228 POP_JUMP_FORWARD_IF_FALSE    20 (to 270)
+             230 LOAD_FAST                0 (self)
+             232 LOAD_METHOD              5 (is_dir)
+             254 PRECALL                  0
+             258 CALL                     0
+             268 POP_JUMP_FORWARD_IF_TRUE     1 (to 272)
+
+1126     >>  270 RAISE_VARARGS            0
+
+1125     >>  272 POP_EXCEPT
+             274 LOAD_CONST               4 (None)
+             276 RETURN_VALUE
+
+1122     >>  278 RERAISE                  0
+         >>  280 COPY                     3
+             282 POP_EXCEPT
+             284 RERAISE                  1
+ExceptionTable:
+  4 to 44 -> 50 [0]
+  50 to 200 -> 280 [1] lasti
+  208 to 270 -> 280 [1] lasti
+  278 to 278 -> 280 [1] lasti

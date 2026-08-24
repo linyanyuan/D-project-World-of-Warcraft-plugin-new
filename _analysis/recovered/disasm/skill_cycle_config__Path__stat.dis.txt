@@ -1,0 +1,15 @@
+# skill_cycle_config.Path.stat
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('os', 'stat')
+co_varnames=('self', 'follow_symlinks')
+co_consts=['\n        Return the result of the stat() system call on this path, like\n        os.stat() does.\n        ', ('follow_symlinks',)]
+1008           0 RESUME                   0
+
+1013           2 LOAD_GLOBAL              1 (NULL + os)
+              14 LOAD_ATTR                1 (stat)
+              24 LOAD_FAST                0 (self)
+              26 LOAD_FAST                1 (follow_symlinks)
+              28 KW_NAMES                 1
+              30 PRECALL                  2
+              34 CALL                     2
+              44 RETURN_VALUE

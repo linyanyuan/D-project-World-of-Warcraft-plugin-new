@@ -1,0 +1,63 @@
+# fluent_ui.data_loader.Path.exists
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('stat', 'OSError', '_ignore_error', 'ValueError')
+co_varnames=('self', 'e')
+co_consts=['\n        Whether this path exists.\n        ', None, False, True]
+1230           0 RESUME                   0
+
+1234           2 NOP
+
+1235           4 LOAD_FAST                0 (self)
+               6 LOAD_METHOD              0 (stat)
+              28 PRECALL                  0
+              32 CALL                     0
+              42 POP_TOP
+              44 JUMP_FORWARD            52 (to 150)
+         >>   46 PUSH_EXC_INFO
+
+1236          48 LOAD_GLOBAL              2 (OSError)
+              60 CHECK_EXC_MATCH
+              62 POP_JUMP_FORWARD_IF_FALSE    27 (to 118)
+              64 STORE_FAST               1 (e)
+
+1237          66 LOAD_GLOBAL              5 (NULL + _ignore_error)
+              78 LOAD_FAST                1 (e)
+              80 PRECALL                  1
+              84 CALL                     1
+              94 POP_JUMP_FORWARD_IF_TRUE     1 (to 98)
+
+1238          96 RAISE_VARARGS            0
+
+1239     >>   98 POP_EXCEPT
+             100 LOAD_CONST               1 (None)
+             102 STORE_FAST               1 (e)
+             104 DELETE_FAST              1 (e)
+             106 LOAD_CONST               2 (False)
+             108 RETURN_VALUE
+         >>  110 LOAD_CONST               1 (None)
+             112 STORE_FAST               1 (e)
+             114 DELETE_FAST              1 (e)
+             116 RERAISE                  1
+
+1240     >>  118 LOAD_GLOBAL              6 (ValueError)
+             130 CHECK_EXC_MATCH
+             132 POP_JUMP_FORWARD_IF_FALSE     4 (to 142)
+             134 POP_TOP
+
+1242         136 POP_EXCEPT
+             138 LOAD_CONST               2 (False)
+             140 RETURN_VALUE
+
+1240     >>  142 RERAISE                  0
+         >>  144 COPY                     3
+             146 POP_EXCEPT
+             148 RERAISE                  1
+
+1243     >>  150 LOAD_CONST               3 (True)
+             152 RETURN_VALUE
+ExceptionTable:
+  4 to 42 -> 46 [0]
+  46 to 64 -> 144 [1] lasti
+  66 to 96 -> 110 [1] lasti
+  110 to 134 -> 144 [1] lasti
+  142 to 142 -> 144 [1] lasti

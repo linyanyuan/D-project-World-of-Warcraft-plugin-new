@@ -1,0 +1,10 @@
++https://enigmaprotector.com/taggant/spv.crl0
+,https://enigmaprotector.com/taggant/user.crl0
+Enigma Protector CA
+Enigma Protector CA0
+Enigma Protector1
+I.PYD=9;
+TAGGANT Root CA
+TAGGANT Root CA0
+Taggant Community1
+python311.dll

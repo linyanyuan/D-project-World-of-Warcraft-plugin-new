@@ -1,0 +1,55 @@
+# fluent_ui.prototype_window.Path.read_text
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('io', 'text_encoding', 'open', 'read')
+co_varnames=('self', 'encoding', 'errors', 'f')
+co_consts=['\n        Open the file in text mode, read it, and close the file.\n        ', 'r', ('mode', 'encoding', 'errors'), None]
+1053           0 RESUME                   0
+
+1057           2 LOAD_GLOBAL              1 (NULL + io)
+              14 LOAD_ATTR                1 (text_encoding)
+              24 LOAD_FAST                1 (encoding)
+              26 PRECALL                  1
+              30 CALL                     1
+              40 STORE_FAST               1 (encoding)
+
+1058          42 LOAD_FAST                0 (self)
+              44 LOAD_METHOD              2 (open)
+              66 LOAD_CONST               1 ('r')
+              68 LOAD_FAST                1 (encoding)
+              70 LOAD_FAST                2 (errors)
+              72 KW_NAMES                 2
+              74 PRECALL                  3
+              78 CALL                     3
+              88 BEFORE_WITH
+              90 STORE_FAST               3 (f)
+
+1059          92 LOAD_FAST                3 (f)
+              94 LOAD_METHOD              3 (read)
+             116 PRECALL                  0
+             120 CALL                     0
+
+1058         130 SWAP                     2
+             132 LOAD_CONST               3 (None)
+             134 LOAD_CONST               3 (None)
+             136 LOAD_CONST               3 (None)
+             138 PRECALL                  2
+             142 CALL                     2
+             152 POP_TOP
+             154 RETURN_VALUE
+         >>  156 PUSH_EXC_INFO
+             158 WITH_EXCEPT_START
+             160 POP_JUMP_FORWARD_IF_TRUE     4 (to 170)
+             162 RERAISE                  2
+         >>  164 COPY                     3
+             166 POP_EXCEPT
+             168 RERAISE                  1
+         >>  170 POP_TOP
+             172 POP_EXCEPT
+             174 POP_TOP
+             176 POP_TOP
+             178 LOAD_CONST               3 (None)
+             180 RETURN_VALUE
+ExceptionTable:
+  90 to 128 -> 156 [1] lasti
+  156 to 162 -> 164 [3] lasti
+  170 to 170 -> 164 [3] lasti

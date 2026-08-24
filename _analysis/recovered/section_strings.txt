@@ -1,0 +1,2374 @@
+    AIX ABI compatibility is described  as guaranteed at: https://www.ibm.com/    support/knowledgecenter/en/ssw_aix_72/install/binary_compatability.html
+ D.update([E, ]**F) -> None.  Update D from mapping/iterable E and F.
+MutableMapping.update
+httplibz
+http.client
+http.cookies
+http.cookiejar
+http.serverz
+BaseHTTPServerz
+HTTPError)
+BufferError
+BufferTooShort
+SimpleHTTPServer
+CGIHTTPServerrT
+SimpleHTTPRequestHandler)
+CGIHTTPRequestHandlerr
+BUFFER_SIZEr'
+DEFAULT_BUFFER_SIZEr
+BufferedIOBaser
+updateposz
+ParserBase.updatepos,
+capture_stderrr.
+    the mapping updated as needed to reflect the environment
+    http://speleotrove.com/decimal/decarith.html
+    http://en.wikipedia.org/wiki/IEEE_854-1987
+        Captures all of the information in the underlying representation.
+        rotation is taken from the absolute value of the second operand,
+        with the rotation being to the left if the second operand is
+    buffering is an optional integer used to set the buffering policy.
+    Pass 0 to switch buffering off (only allowed in binary mode), 1 to select
+    line buffering (only usable in text mode), and an integer > 1 to indicate
+    the size of a fixed-size chunk buffer.  When no buffering argument is
+    given, the default buffering policy works as follows:
+    * Binary files are buffered in fixed-size chunks; the size of the buffer
+      "block size" and falling back on `io.DEFAULT_BUFFER_SIZE`.
+      On many systems, the buffer will typically be 4096 or 8192 bytes long.
+      use line buffering.  Other text files use the policy described above
+    mode, it returns a BufferedReader; in write binary and append binary
+    modes, it returns a BufferedWriter, and in read/write mode, it returns
+    a BufferedRandom.
+invalid buffering: %rN
+zaline buffering (buffering=1) isn't supported in binary mode, the default buffer size will be usedr
+invalid buffering sizez
+can't have unbuffered text I/Oz
+DEFAULT_BUFFER_SIZE
+BufferedRandom
+BufferedWriter
+BufferedReaderr
+bufferingr
+line_buffering
+zuFlush write buffers, if applicable.
+Write the given buffer to the IO stream.
+BufferedIOBasea
+Base class for buffered IO objects.
+BufferedIOBase.read
+BufferedIOBase.read1
+BufferedIOBase.readinto
+Read bytes into buffer *b*, using at most one system call
+BufferedIOBase.readinto1
+BufferedIOBase._readinto
+Write the given bytes buffer to the IO stream.
+        Raises BlockingIOError if the buffer is full and the
+BufferedIOBase.write
+        Separate the underlying raw stream from the buffer and return it.
+        After the raw stream has been detached, the buffer is in an unusable
+BufferedIOBase.detach
+_BufferedIOMixinz
+A mixin implementation of BufferedIOBase with an underlying raw stream.
+_BufferedIOMixin.__init__$
+_BufferedIOMixin.seek)
+_BufferedIOMixin.tell/
+_BufferedIOMixin.truncate5
+_BufferedIOMixin.flushF
+_BufferedIOMixin.closeK
+_BufferedIOMixin.detachS
+_BufferedIOMixin.seekable]
+_BufferedIOMixin.raw`
+_BufferedIOMixin.closedd
+_BufferedIOMixin.nameh
+_BufferedIOMixin.model
+_BufferedIOMixin.__getstate__p
+_BufferedIOMixin.__repr__s
+_BufferedIOMixin.fileno
+_BufferedIOMixin.isatty
+BytesIOz<Buffered I/O implementation using an in-memory bytes buffer.Nc
+z8Return the bytes value (contents) of the buffer
+z;Return a readable and writable view of the buffer.
+getbuffer on closed file)
+getbufferz
+BytesIO.getbuffer
+BufferedReader(raw[, buffer_size])
+    A buffer for a readable, sequential BaseRawIO object.
+    The constructor creates a BufferedReader for the given readable raw
+    stream and buffer_size. If buffer_size is omitted, DEFAULT_BUFFER_SIZE
+zMCreate a new buffered reader using the given readable raw IO object.
+invalid buffer sizeN)
+buffer_size
+BufferedReader.__init__ 
+BufferedReader.readable-
+BufferedReader._reset_read_buf0
+BufferedReader.read4
+BufferedReader._read_unlockedA
+Returns buffered bytes without advancing the position.
+        than self.buffer_size.
+BufferedReader.peeku
+BufferedReader._peek_unlocked
+BufferedReader.read1
+BufferedReader._readinto
+BufferedReader.tell
+BufferedReader.seek
+A buffer for a writeable sequential RawIO object.
+    The constructor creates a BufferedWriter for the given writeable raw
+    stream. If the buffer_size is not given, it defaults to
+    DEFAULT_BUFFER_SIZE.
+BufferedWriter.__init__
+BufferedWriter.writable
+BufferedWriter.write
+BufferedWriter.truncate
+BufferedWriter.flush
+BufferedWriter._flush_unlocked
+BufferedWriter.tell'
+BufferedWriter.seek*
+BufferedWriter.close1
+BufferedRWPaira
+A buffered reader and writer object together.
+    A buffered reader object and buffered writer object put together to
+    writeable respectively. If the buffer_size is omitted it defaults to
+BufferedRWPair.__init__Q
+BufferedRWPair.read_
+BufferedRWPair.readintod
+BufferedRWPair.writeg
+BufferedRWPair.peekj
+BufferedRWPair.read1m
+BufferedRWPair.readinto1p
+BufferedRWPair.readables
+BufferedRWPair.writablev
+BufferedRWPair.flushy
+BufferedRWPair.close|
+BufferedRWPair.isatty
+BufferedRWPair.closed
+A buffered interface to random access streams.
+    raw, given in the first argument. If the buffer_size is omitted it
+    defaults to DEFAULT_BUFFER_SIZE.
+BufferedRandom.__init__
+BufferedRandom.seek
+BufferedRandom.tell
+BufferedRandom.truncate
+BufferedRandom.read
+BufferedRandom.readinto
+BufferedRandom.peek
+BufferedRandom.read1
+BufferedRandom.readinto1
+BufferedRandom.write
+        Read from underlying buffer until we have size characters or we hit EOF.
+        Separate the underlying buffer from the TextIOBase and return it.
+        After the underlying buffer has been detached, the TextIO is in an
+Character and line based layer over a BufferedIOBase object, buffer.
+    If line_buffering is True, a call to flush is implied when a call to
+_line_buffering
+TextIOWrapper.line_bufferingH
+TextIOWrapper.bufferP
+Set the _decoded_chars buffer.r
+z'Advance into the _decoded_chars buffer.N)
+z!Rewind the _decoded_chars buffer.z"rewind decoded_chars out of boundsN)
+        Read and decode the next chunk of data from the BufferedReader.
+dec_buffer
+buffer is already detached)
+Text I/O implementation using an in-memory buffer.
+_Printerzninteractive prompt objects for printing the license text, a list of
+  ...         self.__dict__.update(kw)
+WeakSet.updatex
+difference_update
+WeakSet.difference_update
+intersection_updatez
+WeakSet.intersection_update
+symmetric_difference_updaterT
+z#WeakSet.symmetric_difference_update
+update_abstractmethodsr\
+        - bufsize -- The file's desired buffer size. Accepts the same values as
+    :license: Python License.
+        the buffer. If *items* is a single item sequence, a trailing comma
+bufferedz
+_Unparser.buffered
+        *start* to the buffer and enters, after exit it adds *end*.NrS
+    https://docs.python.org/3.11/library/binascii.html#binascii.a2b_base64
+BufferedReader
+Return buffered data without advancing the file position.
+        buffer's worth of data if size is negative.
+DEFAULT_BUFFER_SIZEr2
+        always the length of data in bytes. Note that due to buffering,
+zn<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+zC<meta http-equiv="Content-Type" content="text/html; charset=%s" />
+        fp              : file pointer; default: sys.stdin.buffer
+            for the page sending the form (content-type : meta http-equiv or
+    Write minimal HTTP headers and dump all information provided to
+In addition, HTTP headers sent by the server may be passed in the
+<LI>HTTP_ACCEPT
+<LI>HTTP_CONNECTION
+<LI>HTTP_HOST
+<LI>HTTP_PRAGMA
+<LI>HTTP_REFERER
+<LI>HTTP_USER_AGENT
+    prototypes that will later be wrapped in a more sophisticated interface.
+get_line_buffer
+    namespace); it doesn't deal with input buffering or prompting or
+    using the familiar sys.ps1 and sys.ps2, and input buffering.
+resetbuffer)
+Reset the input buffer.N)
+InteractiveConsole.resetbuffer
+... zFType "help", "copyright", "credits" or "license" for more information.Nz
+        internal newlines.  The line is appended to a buffer and the
+        concatenated contents of the buffer as source.  If this
+        indicates that the command was executed or invalid, the buffer
+        is reset; otherwise, the command is incomplete, and the buffer
+            buffer slot. Python strings, buffer objects and memory
+BufferedIncrementalEncoderz
+    buffer between calls to encode().
+z#BufferedIncrementalEncoder.__init__
+_buffer_encodez)BufferedIncrementalEncoder._buffer_encode
+z!BufferedIncrementalEncoder.encode
+z BufferedIncrementalEncoder.reset
+z#BufferedIncrementalEncoder.getstate
+z#BufferedIncrementalEncoder.setstate
+        This must be a (buffered_input, additional_state_info) tuple.
+        buffered_input must be a bytes object containing bytes that
+        processed the contents of buffered_input.  In the initial state
+BufferedIncrementalDecoderz
+z#BufferedIncrementalDecoder.__init__5
+_buffer_decodez)BufferedIncrementalDecoder._buffer_decode:
+z!BufferedIncrementalDecoder.decode?
+z BufferedIncrementalDecoder.resetG
+z#BufferedIncrementalDecoder.getstateK
+z#BufferedIncrementalDecoder.setstateO
+ Resets the codec buffers used for keeping internal state.
+bytebuffer
+charbuffertype
+_empty_charbuffer
+charbuffer
+linebufferr
+            Resets the codec buffers used for keeping state.
+        buffering has the same meaning as for the builtin open() API.
+        It defaults to -1 which means that the default buffer size will
+buffering
+_OrderedDict__update)
+    >>> for elem in 'shazam':           # update counts from an iterable
+    >>> c.update(d)                     # add in the second counter
+Like dict.update() but add counts instead of replacing them.
+        >>> c.update('witch')           # add elements from another iterable
+        >>> c.update(d)                 # add elements from another counter
+Counter.update
+Like dict.update() but subtracts counts instead of replacing them.
+    to create a single, updateable view.
+    be accessed or updated using the *maps* attribute.  There is no other
+    In contrast, writes, updates, and deletions only operate on the first
+        Keyword arguments update the map or new empty dict.
+updaterA
+thresholdr
+create_string_buffer(aBytes) -> character array
+    create_string_buffer(anInteger) -> character array
+    create_string_buffer(aBytes, anInteger) -> character array
+ctypes.create_string_buffer)
+create_string_bufferr)
+                 use_errno=False, use_last_error=False) -> function prototype.
+    The function prototype can be called in different ways to create a
+    prototype(integer address) -> foreign function
+    prototype(callable) -> create and return a C callable function from callable
+    prototype(integer index, method name[, paramflags]) -> foreign function calling a COM method
+    prototype((ordinal number, dll object)[, paramflags]) -> foreign function exported by ordinal
+    prototype((function name, dll object)[, paramflags]) -> foreign function exported by name
+from_bufferr 
+create_unicode_buffer(aString) -> character array
+    create_unicode_buffer(anInteger) -> character array
+    create_unicode_buffer(aString, anInteger) -> character array
+<genexpr>z(create_unicode_buffer.<locals>.<genexpr>
+ctypes.create_unicode_buffer)
+create_unicode_bufferr
+c_bufferrC
+update_abstractmethods)'rO
+See http://www.iana.org/time-zones/repository/tz-link.html for
+        - http://www.w3.org/TR/NOTE-datetime
+        - http://www.cl.cam.ac.uk/~mgk25/iso-time.html
+        http://www.phys.uu.nl/~vgent/calendar/isocalendar.htm
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <meta http-equiv="Content-Type"
+BufferedSubFileak
+BufferedSubFile.__init__4
+push_eof_matcherz BufferedSubFile.push_eof_matcher?
+BufferedSubFile.pop_eof_matcherB
+BufferedSubFile.closeE
+BufferedSubFile.readlineM
+BufferedSubFile.unreadline_
+BufferedSubFile.pushd
+BufferedSubFile.pushlinesy
+BufferedSubFile.__iter__|
+BufferedSubFile.__next__
+_new_bufferz
+Generator._new_buffer
+BytesGenerator._new_buffer
+    is needed for HTTP, and is only used when localtime==False.
+    RFC2822.  This is to support HTTP headers involving date stamps.
+charbuffertyper!
+charbuffertyper 
+_buffer_encodez!IncrementalEncoder._buffer_encode
+_buffer_decodez!IncrementalDecoder._buffer_decode
+BufferedIncrementalEncoderr[
+BufferedIncrementalDecoderrc
+_buffer_decoder
+BufferedIncrementalDecoderr
+charbuffertyper"
+updaterr
+_buffer_decodez!IncrementalDecoder._buffer_decode:
+_buffer_decodez!IncrementalDecoder._buffer_decode5
+_buffer_decodez!IncrementalDecoder._buffer_decode6
+charbuffertyper;
+_EnumDict.update
+update_strs
+bufferTz
+update_wrapper
+WRAPPER_UPDATES
+Update a wrapper function to look like the wrapped function
+       wrapper is the function to be updated
+       updated is a tuple naming the attributes of the wrapper that
+       are updated with the corresponding attribute from the wrapped
+       function (defaults to functools.WRAPPER_UPDATES)
+Decorator factory to apply update_wrapper() to a wrapper function
+       Returns a decorator that invokes update_wrapper() with the decorated
+       remaining arguments. Default arguments are as for update_wrapper().
+       update_wrapper().
+    See:  https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)
+    Adapted from https://www.python.org/download/releases/2.3/mro/.
+z5Test whether two stat buffers reference the same file)
+BufferedReaderr6
+zdImplements BufferedIOBase.read1()
+        Reads up to a buffer's worth of data if size is negative.r
+DEFAULT_BUFFER_SIZEr6
+    This method is required because fp may be unbuffered,
+ - update(data): Update the hash object with the bytes in data. Repeated calls
+ - digest():     Return the digest of the bytes passed to the update() method
+    >>> m.update(b"Nobody inspects")
+    >>> m.update(b" the spammish repetition")
+getbuffer
+        key: bytes or buffer, key for the keyed hash object.
+        msg: bytes or buffer, Initial input for the hash or None.
+HMAC.updateu
+        An update to this copy won't affect the original object.
+    key: bytes or buffer, The starting key for the hash.
+    msg: bytes or buffer, Initial input for the hash, or None.
+    You can now feed arbitrary bytes into the object using its update()
+    key: bytes or buffer, The key for the keyed hash object.
+    msg: bytes or buffer, Input message.
+Handle any buffered data.
+updatepos
+HTTPStatus
+HTTPMethodc
+HTTP status codes and reason phrases
+        * RFC 7231: Hypertext Transfer Protocol (HTTP/1.1), obsoletes 2616
+        * RFC 6585: Additional HTTP Status Codes
+        * RFC 3229: Delta encoding in HTTP
+        * RFC 4918: HTTP Extensions for WebDAV, obsoletes 2518
+        * RFC 2295: Transparent Content Negotiation in HTTP
+        * RFC 2774: An HTTP Extension Framework
+        * RFC 7725: An HTTP Status Code to Report Legal Obstacles
+        * RFC 7540: Hypertext Transfer Protocol Version 2 (HTTP/2)
+        * RFC 8297: An HTTP Status Code for Indicating Hints
+        * RFC 8470: Using Early Data in HTTP
+http.pyr
+HTTPStatus.__new__
+HTTP Version Not Supportedz
+HTTP_VERSION_NOT_SUPPORTED
+HTTP methods and descriptions
+        * RFC 5789: PATCH Method for HTTP
+HTTPMethod.__new__
+HTTPMethod.__repr__
+HTTP/1.1 client library
+HTTPConnection goes through a number of "states", which define when a client
+      | HTTPConnection()
+Note: this enforcement is applied by the HTTPConnection class. The
+      HTTPResponse class does not enforce this state machine, which
+HTTPResponse
+HTTPConnection
+HTTPException
+http\client.py
+HTTPMessagec
+getallmatchingheadersz!HTTPMessage.getallmatchingheaders
+    But a TextIOWrapper around self.rfile would buffer too many bytes
+HTTPResponse.__init__
+HTTPResponse._read_status
+HTTP/1.0z
+HTTP/0.9
+HTTPResponse.begin>
+HTTPResponse._check_close
+HTTPResponse._close_conn
+HTTPResponse.close
+HTTPResponse.flush
+HTTPResponse.readable
+HTTPResponse.isclosed
+HTTPResponse.read
+HTTPResponse.readinto
+_read_next_chunk_sizez"HTTPResponse._read_next_chunk_size
+_read_and_discard_trailerz&HTTPResponse._read_and_discard_trailer#
+HTTPResponse._get_chunk_left1
+HTTPResponse._read_chunkedI
+HTTPResponse._readinto_chunked_
+HTTPResponse._safe_readw
+z2Same as _safe_read, but for reading into a buffer.N)
+HTTPResponse._safe_readinto
+        byte is buffered, return that instead.
+HTTPResponse.read1
+HTTPResponse.peek
+HTTPResponse.readline
+HTTPResponse._read1_chunked
+HTTPResponse._peek_chunked
+HTTPResponse.fileno
+        If the headers are unknown, raises http.client.ResponseNotReady.
+HTTPResponse.getheader
+HTTPResponse.getheaders
+HTTPResponse.__iter__
+        When the method is HTTP, these headers are those returned by
+HTTPResponse.info
+        In some cases, the HTTP server redirects a client to another
+HTTPResponse.geturl
+zuReturn the HTTP status code that was sent with the response,
+        or None if the URL is not an HTTP URL.
+HTTPResponse.getcode
+HTTP/1.1rA
+HTTPConnection._is_textIO+
+_get_content_lengthz"HTTPConnection._get_content_length1
+_HTTPConnection__response
+_HTTPConnection__staterk
+HTTPConnection.__init__Q
+Set up host and port for HTTP CONNECT tunnelling.
+        In a connection that uses HTTP CONNECT tunneling, the host passed to the
+        the endpoint passed to `set_tunnel`. This done by sending an HTTP
+        This method must be called before the HTTP connection has been
+        The headers argument should be a mapping of extra HTTP headers to send
+HTTPConnection.set_tunnelg
+HTTPConnection._get_hostport
+HTTPConnection.set_debuglevel
+HTTPConnection._wrap_ipv6
+CONNECT %s:%d HTTP/1.0
+HTTPConnection._tunnel
+http.client.connectrA
+HTTPConnection.connect
+z(Close the connection to the HTTP server.N)
+HTTPConnection.close
+http.client.sendz9data should be a bytes-like object or an iterable, got %r)
+HTTPConnection.send
+zuAdd a line of output to the current request buffer.
+HTTPConnection._output
+HTTPConnection._read_readable
+Send the currently buffered request and clear the buffer.
+        Appends an extra \r\n to the buffer.
+_http_vsnrC
+HTTPConnection._send_output
+        `method' specifies an HTTP request method, e.g. 'GET'.
+_http_vsn_strrF
+HTTPConnection.putrequestO
+HTTPConnection._encode_request
+HTTPConnection._validate_method
+HTTPConnection._validate_path
+HTTPConnection._validate_host
+HTTPConnection.putheader
+HTTPConnection.endheaders
+HTTPConnection.request
+<genexpr>z/HTTPConnection._send_request.<locals>.<genexpr>
+HTTPConnection._send_request
+        If the HTTPConnection is in the correct state, returns an
+        instance of HTTPResponse or of whatever object is returned by
+        not be handled, ResponseNotReady is raised.  If the HTTP
+HTTPConnection.getresponseG
+HTTP_PORTr
+HTTPSConnectionz(This class allows communication via SSL.Nr
+http/1.1TzMcheck_hostname needs a SSL context with either CERT_OPTIONAL or CERT_REQUIRED)
+_create_default_https_contextrM
+HTTPSConnection.__init__
+HTTPSConnection.connect
+HTTPS_PORTr
+updater(
+HTTP cookie handling for web clients.
+HTTP::Cookies, from the libwww-perl library.
+attributes of the HTTP cookie system as cookie-attributes, to distinguish
+http://wwwsearch.sf.net/):
+http.cookiejar)
+http\cookiejar.py
+HTTPOnlyz
+#HttpOnly_z
+#( Netscape)? HTTP Cookie FilezQa filename was not supplied (nor was the CookieJar instance initialised with one)zr# Netscape HTTP Cookie File
+# http://curl.haxx.se/rfc/cookie_spec.html
+http.cookiejar bug!
+    Wed, 09 Feb 1994 22:23:32 GMT       -- HTTP format
+    Tuesday, 08-Feb-94 14:15:29 GMT     -- old rfc850 HTTP format
+    Tuesday, 08-Feb-1994 14:15:29 GMT   -- broken rfc850 HTTP format
+    09 Feb 1994 22:23:32 GMT            -- HTTP format (no weekday)
+LOOSE_HTTP_DATE_REr~
+http2timer
+    As for http2time, but parses the ISO 8601 formats:
+    follow this syntax (BNF as from the HTTP/1.1 specification, but we relax
+    that Netscape Cookie headers contain.  Ronald Tschalar's HTTPClient
+DEFAULT_HTTP_PORT)
+zEEscape any invalid characters in HTTP URL, and uppercase all escapes.)
+HTTP_PATH_SAFE
+HTTP Cookie.
+Collection of HTTP cookies.
+    urllib.request.build_opener(HTTPCookieProcessor).open(url).
+    domain as set in the HTTP header started with a dot (yes, I'm aware some
+HTTPONLY_PREFIX
+HTTPONLY_ATTRr
+   >>> from http import cookies
+HTTP_COOKIE environment variable.
+http\cookies.pyr
+HttpOnly
+httponly
+Morsel.updateQ
+        representation.  The VALUE is the value read from HTTP
+z"Return a string suitable for HTTP.)
+Load cookies from a string (presumably HTTP_COOKIE) or
+    received from HTTP are kept as strings.
+DEFAULT_BUFFER_SIZETF)
+        else prompt server for an update using the 'NOOP' command.
+    <https://packaging.python.org/specifications/entry-points/>`_
+    http://code.activestate.com/recipes/577452-a-memoize-decorator-for-instance-methods/
+ is deprecated. Use files() instead. Refer to https://importlib-resources.readthedocs.io/en/latest/using.html#migrating-from-legacy for migration advice.
+attrs_updated
+        functools.update_wrapper()) it is first unwrapped.
+updaterW
+BufferedIOBase deals with buffering on a raw byte stream (RawIOBase). Its
+subclasses, BufferedWriter, BufferedReader, and BufferedRWPair buffer
+BufferedRandom provides a buffered interface to random access
+of streams into text. TextIOWrapper, which extends it, is a buffered text
+interface to a buffered raw stream (`BufferedIOBase`). Finally, StringIO
+   An int containing the default buffer size used by the module's buffered
+BufferedIOBase
+BufferedRWPair
+_BufferedIOBaser-
+JSON (JavaScript Object Notation) <https://json.org> is a subset of
+Simple JSON <https://json.org> decoder
+Extensible JSON <https://json.org> encoder for Python data structures.
+To update the symbols in this file, 'cd' to the top directory of
+    Update the cache if it doesn't contain an entry for this file already.
+    Update the cache if it doesn't contain an entry for this file already.r
+updatecache
+Update a cache entry and return its list of lines.
+updatecache.<locals>.<listcomp>p
+BufferingFormatter
+captureWarnings
+BufferingFormatter.__init__
+BufferingFormatter.formatHeader
+BufferingFormatter.formatFooter
+BufferingFormatter.format
+    buffers).
+    If capture is true, redirect all warnings to the logging package.
+    If capture is False, ensure that warnings are not redirected to logging
+captures
+_buffer)
+DEFAULT_BUFFER_SIZErU
+/etc/httpd/mime.typesz
+/etc/httpd/conf/mime.typesz
+$/usr/local/etc/httpd/conf/mime.typesz"/usr/local/lib/netscape/mime.typesr
+updaterG
+of the NumPy License.
+terms of the NumPy License.
+terms of the NumPy (BSD style) LICENSE.
+    Update the Fortran-to-C type mapping dictionary with new mappings and
+        The existing Fortran-to-C type mapping dictionary that will be updated.
+        The updated Fortran-to-C type mapping dictionary and a list of
+`to` and `from` buffers must have sizes of at least N bytes.
+#error You need to install NumPy version 0.13 or higher. See https://scipy.org/install.html
+  Create a new string buffer `str` of at most length `len` from a
+  The string buffer has given size (len) or the size of inistr when len==-1.
+  The string buffer is padded with blanks: in Fortran, trailing blanks
+            // TODO: update when numpy will support 1-byte and
+        char mess[F2PY_MESSAGE_BUFFER_SIZE];
+terms of the NumPy License
+    Reads each line in the input file in sequence and updates global vars.
+updatevarsr
+updatevars.<locals>.<listcomp>
+z-updatevars: no name pattern found for entity=r
+z+updatevars: attempt to change the type of "r
+z0updatevars: attempt to change the kindselector "r
+updatevars:z*: attempt to change empty charselector to r
+z0updatevars: attempt to change the charselector "rv
+z/updatevars: attempt to change the typename of "rr
+updatevars: "z
+z6updatevars: attempt to change the init expression of "
+z?updatevars: could not crack entity declaration "%s". Ignoring.
+! https://web.archive.org/web/20140822061353/http://cens.ioc.ee/projects/f2py2e
+    See https://github.com/numpy/numpy/pull/19388 for more information.
+  array. Integer <int> sets the threshold for array sizes when
+License:     NumPy license (see LICENSE.txt in the NumPy source code)
+https://numpy.org/doc/stable/f2py/index.html
+See https://numpy.org/doc/stable/f2py/buildtools/meson.html
+- J3/21-007: Draft Fortran 202x. https://j3-fortran.org/doc/year/21/21-007.pdf
+SET_UPDATE
+DICT_UPDATE
+z+popen() does not support unbuffered streamsre
+bufferingrm
+_is_wildcard_patternr)
+PickleBufferr
+getbufferr{
+buffer_callbackc
+        If *buffer_callback* is None (the default), buffer views are
+        If *buffer_callback* is not None, then it can be called any number
+        of times with a buffer view.  If the callback returns a false value
+        (such as None), the given buffer is out-of-band; otherwise the
+        buffer is serialized in-band, i.e. inside the pickle stream.
+        It is an error if *buffer_callback* is not None and *protocol*
+z#buffer_callback needs protocol >= 5z"file must have a 'write' attributer
+_buffer_callbackr
+z0PickleBuffer can only pickled with protocol >= 5zHPickleBuffer can not be pickled when pointing to a non-contiguous bufferT)
+NEXT_BUFFER
+READONLY_BUFFER)
+save_picklebufferz
+_Pickler.save_picklebuffer9
+_HAVE_PICKLE_BUFFERrx
+buffersc
+        If *buffers* is not None, it should be an iterable of buffer-enabled
+        an out-of-band buffer view.  Such buffers have been given in order
+        to the *buffer_callback* of a Pickler object.
+        If *buffers* is None (the default), then the buffers are taken
+        It is an error for *buffers* to be None if the pickle stream
+        was produced with a non-None *buffer_callback*.
+_buffersr
+NzLpickle stream refers to out-of-band data but no *buffers* argument was givenz
+not enough out-of-band buffers)
+load_next_bufferz
+_Unpickler.load_next_buffert
+load_readonly_bufferz
+_Unpickler.load_readonly_buffer
+A Python buffer-like object.
+z"Push an out-of-band buffer object.
+READONLY_BUFFER
+z,Make an out-of-band buffer object read-only.
+Finish building an object, via __setstate__ or dict update.
+      the object is updated via
+          anyobject.__dict__.update(argument)
+pybuffer
+        http://en.wikipedia.org/wiki/Triangular_distribution
+https://peps.python.org/pep-0506/
+No buffer space available.iG'
+Invalid QoS provider buffer.i
+z!unbuffered streams must be binary)
+        File position is updated on return or also in case of error in
+ send_fds(sock, buffers, fds[, flags[, address]]) -> integer
+Read up to len(b) bytes into the writable buffer *b* and return
+    None. port is a string service name such as 'http', a numeric port number or
+This module tries to capture the various aspects of defining a server:
+On the other hand, if you are building e.g. an HTTP server, where all
+BufferedIOBase)
+Simple writable BufferedIOBase implementation for a socket
+    Does not hold data in a buffer, avoiding any need to call flush().c
+http://www.iana.org/assignments/tls-parameters/tls-parameters.xml#tls-parameters-6
+KEY_UPDATE
+    implemented by OpenSSL. This object captures the state of an SSL connection
+    that want to implement asynchronous IO for SSL through memory buffers.
+        If 'buffer' is provided, read into this buffer and return the number of
+        The 'data' argument must support the buffer interface.
+z5Closed before TLS handshake with data in recv buffer.
+_create_default_https_contextr
+    To capture standard error in the result, use stderr=STDOUT.
+      stdout: The standard output (None if not captured).
+      stderr: The standard error (None if not captured).
+capture_outputrN
+    stderr. By default, stdout and stderr are not captured, and those attributes
+    will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+    or pass capture_output=True to capture both.
+    were captured.
+z@stdout and stderr arguments may not be used with capture_output.r
+      bufsize: supplied as the buffering argument to the open() function when
+line_bufferingr
+_stdout_buff)
+_stderr_buffr
+       which will be different if there are chars in the buffer with
+       A stream-like object could be for example: sys.stdin.buffer,
+       sys.stdout.buffer, a socket, a tape device etc.
+zsReturn size bytes from stream. If internal buffer is empty,
+           a link, an io.BufferedReader object is returned. For all other
+BufferedReaderr/
+    'buffering' -- the buffer size argument to io.open (default -1).
+        'buffering' -- the buffer size argument to io.open (default -1).
+difference_update)
+line_bufferingr3
+bufferr^
+CoverageResults.update
+      active when the frame was captured.
+      when the frame was captured.
+      of code that was running when the frame was captured.
+        :param locals: If supplied the frame locals, which will be captured as
+capture_localsc
+        :param capture_locals: If True, the local variables from each frame will
+            be captured as object representations into the FrameSummary.
+    The traceback module captures enough attributes from the original exception
+    *kwds* is an updated copy of the passed in kwds argument with any
+    argument types, see https://github.com/python/cpython/issues/86361.
+    append-only, unbuffered).  The TextIO and BinaryIO subclasses
+    below capture the distinctions between text vs. binary, which is
+TextIO.buffer*
+line_bufferingz
+TextIO.line_buffering9
+HTTPError is an exception class that is also a valid HTTP response
+instance.  It behaves this way because HTTP protocol errors are valid
+HTTPError
+zBRaised when HTTP error occurs, but also acts like non-error returnc
+_HTTPError__super_init)
+HTTPError.__init__'
+HTTP Error 
+HTTPError.__str__1
+<HTTPError r"
+HTTPError.__repr__4
+HTTPError.reason9
+HTTPError.headers=
+HTTPError.headersA
+    Python 3.7 updates from using RFC 2396 to RFC 3986 to quote URL strings.
+HTTPHandler performs HTTP GET and POST requests and deals with
+non-error returns.  The HTTPRedirectHandler automatically deals with
+HTTP 301, 302, 303, 307, and 308 redirect errors, and the
+HTTPDigestAuthHandler deals with digest authentication.
+urllib.  pass the url and optionally data to post to an HTTP URL, and
+OSError); for HTTP errors, raises an HTTPError, which can also be
+state can be as simple as the URL.  It can also include extra HTTP
+authinfo = urllib.request.HTTPBasicAuthHandler()
+                      uri='https://mahler:8092/site-updates.py',
+proxy_support = urllib.request.ProxyHandler({"http" : "http://ahad-haam:3128"})
+f = urllib.request.urlopen('https://www.python.org/')
+HTTPDefaultErrorHandler
+HTTPRedirectHandler
+HTTPCookieProcessor
+HTTPPasswordMgr
+HTTPPasswordMgrWithDefaultRealm
+HTTPPasswordMgrWithPriorAuth
+HTTPBasicAuthHandler
+HTTPDigestAuthHandler
+HTTPHandler
+HTTPErrorProcessor
+    urllib.request module uses HTTP/1.1 and includes a "Connection:close"
+    header in its HTTP requests.
+    global default timeout setting will be used). This only works for HTTP,
+    HTTPS and FTP connections.
+    the various SSL options. See HTTPSConnection for more details.
+    certificates for HTTPS requests. cafile should point to a single file
+    For HTTP and HTTPS URLs, this function returns a http.client.HTTPResponse
+    headers as it is specified in the documentation for HTTPResponse.
+    environment variable like http_proxy is set), ProxyHandler is default
+http/1.1)
+HTTPSHandlerr3
+https_handler
+    data file as well as the resulting HTTPMessage object.
+z3Return a string indicating the HTTP request method.N
+http_error_%sr_
+http_error_default)
+http_err
+    for HTTP, FTP and when applicable HTTPS.
+HTTPSConnection)
+Process HTTP error responses.i
+http_responsez HTTPErrorProcessor.http_responset
+https_responser
+z*HTTPDefaultErrorHandler.http_error_default
+        This is called by the http_error_30x methods when a
+        take place, return a new Request to allow http_error_30x to
+        perform the redirect.  Otherwise, raise HTTPError if no-one
+<dictcomp>z8HTTPRedirectHandler.redirect_request.<locals>.<dictcomp>
+z$HTTPRedirectHandler.redirect_request
+http_error_302z"HTTPRedirectHandler.http_error_302
+zoThe HTTP server returned a redirect error that would lead to an infinite loop.
+http_error_301
+http_error_303
+http_error_307
+http_error_308r\
+HTTPPasswordMgr.__init__D
+<genexpr>z/HTTPPasswordMgr.add_password.<locals>.<genexpr>N
+HTTPPasswordMgr.add_passwordG
+find_user_passwordz"HTTPPasswordMgr.find_user_passwordR
+HTTPPasswordMgr.reduce_uri\
+HTTPPasswordMgr.is_suburis
+z2HTTPPasswordMgrWithDefaultRealm.find_user_password
+z%HTTPPasswordMgrWithPriorAuth.__init__
+update_authenticatedr
+z)HTTPPasswordMgrWithPriorAuth.add_password
+z1HTTPPasswordMgrWithPriorAuth.update_authenticated
+z-HTTPPasswordMgrWithPriorAuth.is_authenticated
+retry_http_basic_authrD
+http_error_auth_reqedz.AbstractBasicAuthHandler.http_error_auth_reqed
+z.AbstractBasicAuthHandler.retry_http_basic_auth
+http_requestz%AbstractBasicAuthHandler.http_request
+z&AbstractBasicAuthHandler.http_response
+https_requestr6
+http_error_401z#HTTPBasicAuthHandler.http_error_401
+http_error_407z$ProxyBasicAuthHandler.http_error_407)
+retry_http_digest_authrD
+z/AbstractDigestAuthHandler.http_error_auth_reqedO
+parse_http_list
+z0AbstractDigestAuthHandler.retry_http_digest_authc
+z$HTTPDigestAuthHandler.http_error_401
+z%ProxyDigestAuthHandler.http_error_407
+AbstractHTTPHandlerr
+AbstractHTTPHandler.__init__
+set_http_debuglevelz'AbstractHTTPHandler.set_http_debuglevel
+z'AbstractHTTPHandler._get_content_length
+AbstractHTTPHandler.do_request_
+Return an HTTPResponse object for the request, using http_class.
+        http_class must implement the HTTPConnection API from http.client.
+z/AbstractHTTPHandler.do_open.<locals>.<dictcomp>)
+z/AbstractHTTPHandler.do_open.<locals>.<dictcomp>6
+updatert
+http_classr
+http_conn_argsr
+AbstractHTTPHandler.do_open
+http_openz
+HTTPHandler.http_open`
+HTTPSHandler.__init__i
+https_openz
+HTTPSHandler.https_openn
+HTTPCookieProcessor.__init__w
+z HTTPCookieProcessor.http_request}
+z!HTTPCookieProcessor.http_response
+<listcomp>z#parse_http_list.<locals>.<listcomp>
+zdAdd a header to be used by the HTTP interface only
+Make an HTTP connection using connection_class.
+        open_http() or open_https().
+          HTTPConnection instance.
+http errorrA
+z$http protocol error: bad status liner0
+http_errorrs
+http_connrt
+_open_generic_httpz
+URLopener._open_generic_httpO
+Use HTTP protocol.)
+open_httpz
+URLopener.open_http
+Handle http errors.
+        named http_error_DDD where DDD is the 3-digit error code.z
+http_error_%d)
+URLopener.http_error
+URLopener.http_error_default
+_https_connectionz
+URLopener._https_connection
+Use HTTPS protocol.)
+open_httpsz
+URLopener.open_https
+z!FancyURLopener.http_error_defaultd
+http_error_500r&
+FancyURLopener.http_error_302h
+FancyURLopener.http_error_301
+FancyURLopener.http_error_303
+FancyURLopener.http_error_307
+FancyURLopener.http_error_308
+FancyURLopener.http_error_401
+FancyURLopener.http_error_407
+http://r
+retry_proxy_http_basic_authz*FancyURLopener.retry_proxy_http_basic_auth
+https://r
+retry_proxy_https_basic_authz+FancyURLopener.retry_proxy_https_basic_auth
+z$FancyURLopener.retry_http_basic_auth
+retry_https_basic_authz%FancyURLopener.retry_https_basic_auth
+http={0};https={0};ftp={0}r_
+http.clientr
+    The 'record' argument specifies whether warnings should be captured by a
+https://peps.python.org/pep-0205/
+WeakValueDictionary.update!
+WeakKeyDictionary.update
+z0Pack various data representations into a buffer.c
+get_bufferz
+Packer.get_buffer;
+z;Unpacks various data representations from the given buffer.c
+Unpacker.get_buffer
+    Read the ZIP64 end-of-archive records and use that to update endrec
+update_keysz"_ZipDecrypter.<locals>.update_keys`
+_readbuffer
+z6Returns buffered bytes without advancing the position.Nr
+_update_crcz
+ZipExtFile._update_crc
+buff_offset
+aline_buffering
+.AutoPlayer
+aAutoPlayer
+aNUITKA_PACKAGE_AutoPlayer
+.AutoPlayer.ui_settings
+uAutoPlayer\ui_settings.py
+u<module AutoPlayer.ui_settings>
+uImage.core.PixelAccess | None
+    input: one "row" of data (i.e. will produce 4*width pixels)
+    input: one "row" of data (i.e. will produce 4 * width pixels)
+ppppppppppppppagetpixel
+Full text of the CC0 license:
+  https://creativecommons.org/publicdomain/zero/1.0/
+  array of 8-bit values, one per pixel, left to right, top to bottom.
+apixels_per_meter
+uUnsupported BMP pixel depth (
+anum_pixels
+afirst_pixel
+asecond_pixel
+aALPHAPIXELS
+apixel_format
+uUnimplemented pixel format 
+uUnknown pixel format flags 
+aPIXELFORMAT
+ucannot write pixel format 
+https://web.archive.org/web/20170802060935/http://oss.sgi.com/projects/ogl-sample/registry/EXT/texture_compression_s3tc.txt
+https://creativecommons.org/publicdomain/zero/1.0/
+aBINARYBUFFER
+apixel_flags
+aThresholding
+aSamplesPerPixel
+aCompressedBitsPerPixel
+aSceneCaptureType
+uTile must be 64 pixels by 64 pixels
+    :param offset: Tuple of (x, y) pixels. Defaults to (0, 0)
+aupdate_image
+afrombuffer
+wLapixel_size
+apixel_size
+    https://code.google.com/archive/p/casadebender/wikis/Win32IconImagePlugin.wiki
+                             To see how this packs pixel data into the returned
+        Loads this image with pixel data from a bytes object.
+apixel_access
+        Allocates storage for the image and loads the pixel data.  In
+        :rtype: :py:class:`.PixelAccess`
+aputpixel
+agetpixel
+        method translates pixels through the palette.  If mode is
+        all other values to 0 (black). To use other thresholds, use the
+        4-tuple defining the left, upper, right, and lower pixel
+           If ``True`` and the image has an alpha channel, trim transparent pixels.
+           Otherwise, trim pixels when all channels are zero.
+           left, upper, right, and lower pixel coordinate. See
+        :returns: An unsorted list of (count, pixel) values.
+        containing pixel values.  The sequence object is flattened, so
+        Returns the contents of this image as a tuple containing pixel values.
+        :returns: A tuple containing pixel values.
+        Gets the minimum and maximum pixel values for each band in
+           minimum and maximum pixel value.  For a multi-band image,
+        Returns the pixel value at a given position.
+        :returns: The pixel value.  If the image is a multi-layer image,
+            pixels along the X-axis and the Y-axis, respectively.
+        list of pixel counts, one for each pixel value in the source
+        :returns: A list containing pixel counts.
+        left, upper, right, and lower pixel coordinate, or None (same as
+        containing pixel values. The method then fills the region
+        If a mask is given, this method updates only the regions
+        :param im: Source image or pixel value (integer, float or tuple).
+           possible pixel value, and the resulting table is applied to
+        Copies pixel data from a flattened sequence object into the image. The
+        sequence values: **pixel = value*scale + offset**.
+        values, made up of red, green and blue values for the corresponding pixel
+        Modifies the pixel at the given position. The color is given as
+        :param xy: The pixel coordinate, given as (x, y). See
+        :param value: The pixel value.
+uExpands the box so it includes adjacent pixels
+        :param size: The requested size in pixels, as a tuple or array:
+           input image.  Note that the expand flag assumes rotation around
+        :param center: Optional center of rotation (a 2-tuple).  Origin is
+        :param size: The requested size in pixels, as a 2-tuple:
+        :param size: The output size in pixels, as a 2-tuple:
+        Randomly spread pixels in an image.
+        :param distance: Distance to spread pixels.
+    :param size: A 2-tuple, containing (width, height) in pixels.
+    Creates a copy of an image memory from pixel data in a buffer.
+    (mode, size, and unpacked pixel data).
+    You can also use any pixel decoder supported by PIL. For more
+    Note that this function decodes pixel data only, not entire images.
+    :param data: A byte buffer containing raw data for the given mode.
+amap_buffer
+    Creates an image memory referencing pixel data in a byte buffer.
+    in the byte buffer, where possible.  This means that changes to the
+    original buffer object are reflected in this image).  Not all modes can
+    :param data: A bytes or other buffer object containing raw
+            frombuffer(mode, size, data, "raw", mode, 0, 1)
+    (using the buffer protocol)::
+    and :py:func:`~PIL.Image.frombuffer` is used.
+    to NumPy dtypes. Pillow modes only offer 1-bit pixels, 8-bit pixels,
+    32-bit signed integer pixels, and 32-bit floating point pixels.
+    When converting Pillow images to arrays however, only pixel values are
+    :param mode: Optional mode to use when reading ``obj``. Since pixel values do not
+    only pixel values are transferred. This means that P and PA mode
+    unsynchronized updates will potentially cause inconsistent data.
+aMAX_IMAGE_PIXELS
+u pixels) exceeds limit of 
+u pixels, could be decompression bomb DOS attack.
+    Applies the function (which should take one argument) to each pixel
+    evaluated once for each possible pixel value, so you cannot use
+    :param size: The requested size in pixels, as a 2-tuple:
+ucore.PixelAccess | None
+uImage.getpixel
+uImage.putpixel
+    Compares the two images, pixel by pixel, and returns a new image containing
+    Returns the absolute value of the pixel-by-pixel difference between the two
+    can't change the mode in-place (the buffer sizes for some modes are
+    https://www.cazabon.com
+    pyCMS home page:  https://www.cazabon.com/pyCMS
+    littleCMS home page:  https://www.littlecms.com
+    March 2009, for distribution under the standard PIL license
+ubuffer is not large enough
+        :param data: A string buffer.
+    :param bufsize: Optional buffer size
+        :param buffer: A bytes object with the data to be decoded.
+        :param bufsize: Buffer size.
+uimage buffer overrun error
+athreshold
+    :param scale: Scale factor. If given, the result for each pixel is divided by this
+    Create a rank filter.  The rank filter sorts all pixels in
+    :param size: The kernel size, in pixels.
+    :param rank: What pixel value to pick.  Use 0 for a min filter,
+    Create a median filter. Picks the median pixel value in a window with the
+    Create a min filter.  Picks the lowest pixel value in a window with the
+    Create a max filter.  Picks the largest pixel value in a window with the
+    Create a mode filter. Picks the most frequent pixel value in a box with the
+    given size.  Pixel values that occur only once or twice are ignored; if no
+    pixel value occurs more than twice, the original pixel value is preserved.
+    <https://www.mia.uni-saarland.de/Publications/gwosdek-ssvm11.pdf>
+uBlurs the image by setting each pixel to the average value of the pixels
+    in a square box extending radius pixels in each direction.
+                   Radius 1 takes 1 pixel in each direction, i.e. 9 pixels in total.
+    :param threshold: Threshold controls the minimum brightness change that
+    .. _digital unsharp masking: https://en.wikipedia.org/wiki/Unsharp_masking#Digital_unsharp_masking
+    Transforms 3-channel pixels using the values of the channels as coordinates
+             also be an integer, a floating point value, or a pixel tuple,
+    lightest and darkest pixels from the histogram, and remaps the image
+    so that the darkest pixel becomes black (0), and the lightest
+    :param ignore: The background pixel value (use None for no background).
+    :param mask: Histogram used in contrast operation is computed using pixels
+    This function calculates a color wedge which maps all black pixels in
+    the source image to the first color and all white pixels to the
+    :param black: The color to use for black input pixels.
+    :param white: The color to use for white input pixels.
+    :param mid: The color to use for midtone input pixels.
+    :param size: The requested output size in pixels, given as a
+    Remove border from image.  The same amount of pixels are removed
+    :param border: The number of pixels to remove.
+    :param mask: An optional mask.  If given, only the pixels selected by
+    :param border: Border width, in pixels.
+    :param fill: Pixel fill value (a color value).  Default is 0 (black).
+    Invert all pixel values above a threshold.
+    :param threshold: All pixels above this grayscale level are inverted.
+ableed_pixels
+aQBuffer
+abits_per_pixel
+                    lower pixel coordinate.  See :ref:`coordinate-system`. If
+        :param buffer: A buffer containing display data (usually
+http://ns.adobe.com/xap/1.0/
+(ref.: https://en.wikipedia.org/wiki/Chroma_subsampling)
+(ref.: https://exiv2.org/tags.html)
+(ref.: https://en.wikipedia.org/wiki/Quantization_matrix#Quantization_matrices,
+https://en.wikipedia.org/wiki/JPEG#Quantization)
+https://web.archive.org/web/20120328125543/http://www.jpegcameras.com/libjpeg/libjpeg-3.html
+abitbuffer
+abuild_prototype_image
+agetbuffer
+    https://www.adobe.com/content/dam/acom/en/devnet/acrobat/pdfs/PDF32000_2008.pdf
+wewsaupdated
+a_previous_pixel
+l@a_previously_seen_pixels
+na_add_to_previous_pixels
+uQoiDecoder._add_to_previous_pixels
+wywxapixel
+uUnsupported number of bytes per pixel
+        https://www.adobe.com/devnet-apps/photoshop/fileformatashtml/#50577409_pgfId-1037727
+aSAMPLESPERPIXEL
+aMAX_SAMPLESPERPIXEL
+uMore samples per pixel than can be decoded: %s
+uInvalid value for samples per pixel
+uunknown pixel mode
+asamples_per_pixel
+uMD ScalePixel
+aModelPixelScaleTag
+aPixelXDimension
+aPixelYDimension
+c/* pixels */
+apixel_header
+uX11 Pixel Map
+u. Update PIL._deprecate?
+    https://github.com/python-pillow/Pillow/
+aQtHttpServer
+a_LOGIN_HTTP
+askill_cycle_config
+aSkillCycleConfig
+a_SPEC_CONFIRM_THRESHOLD
+uSkillBotRuntimeCore._trigger_recognition_once_async.<locals>._dump_once
+abuff_icon_set
+atick_ms_var
+ldacd_ready_window_ms_var
+acapture_mode_var
+uSkillBotRuntimeCore._update_motion_duration_states.<locals>._ensure_track
+pa_update_track
+uSkillBotRuntimeCore._update_motion_duration_states.<locals>._update_track
+ufluent_ui.prototype_window
+a_capture_window
+acapture_window_dxcam
+acapture_window_printwindow
+acapture_window_mss
+a_launch_fluent_dialog
+uskill-cycle-editor
+uSkillBotRuntimeCore.on_toggle_start_pause.<locals>._safe_debug_dump_from_cache
+a_worker_skills
+uSkillBotRuntimeCore.on_toggle_start_pause.<locals>._safe_debug_dump_from_cache.<locals>._do_dump
+a_capture_screen_once
+avisualize_pixel_row
+a_buff_icon_lock
+uSkillBotRuntimeCore._migrate_spec_mapping_refs_if_needed.<locals>._resolver
+aupdated
+askill_conditions
+aSkillCondition
+uSkillBotRuntimeCore.load_macro_cycle.<locals>._should_skip_icon_fetch
+w1awarmup_skill_refs
+ buff_id
+a_collect_buff_ids
+uSkillBotRuntimeCore.load_macro_cycle.<locals>._collect_buff_ids
+aall_buff_ids
+amissing_buff_ids
+a_bg_fetch_buff_icons
+uSkillBotRuntimeCore.load_macro_cycle.<locals>._bg_fetch_buff_icons
+askill_refs
+uSkillBotRuntimeCore.load_macro_cycle.<locals>._warmup_spell_icons
+aBUFF_CONDITION
+aALLY_BUFF_COUNT
+uBuff/Debuff
+abuff_id
+uSkillBotRuntimeCore.load_macro_cycle.<locals>._bg_fetch_buff_icons.<locals>.<genexpr>
+aqfluentwidgets
+ufluent_ui.fluent_windows
+aFluentOnlineCycleDialog
+aFluentSkillCycleDialog
+aFluentSpecMappingDialog
+ Fluent 
+u[Fluent Qt
+ Fluent Qt 
+a_fluent_dialog_processes
+a_run_skills_worker
+a_on_hotkey_settings_changed
+a_hotkey_thread
+uSkillBotRuntimeCore._start_hotkey_listener.<locals>.<lambda>
+ahotkey_key
+uSkillBotRuntimeCore._start_hotkey_listener.<locals>._listener
+a_hotkey_stop_event
+a_hotkey_request_event
+?ahotkey_enabled
+a_start_hotkey_listener
+a_stop_hotkey_listener
+a_clear_all_capture_ctx
+uSkillBotRuntimeCore.on_close.<locals>._exit_app
+uSkillBotRuntimeCore.on_close.<locals>._logout_and_exit
+a_run_skills_worker_inner
+u[SkillsWorker] 
+uSkillBotRuntimeCore._run_skills_worker_inner.<locals>._build_pre_cast_steps
+ums then recapture
+a_queue_skill_action
+ppa_row_cache_buffs
+uSkillBotRuntimeCore._run_skills_worker_inner.<locals>._fmt_hp
+uSkillBotRuntimeCore._run_skills_worker_inner.<locals>.<lambda>
+w0arecognize_all_buffs_dynamic
+abuff_match_threshold_var
+a_row_cache_buffs_ts
+nu[Buff] 
+uSkillBotRuntimeCore._run_skills_worker_inner.<locals>._fmt_b
+] buffs 
+u[Buff] 
+Fa_buff_map
+abuff_map
+uSkillBotRuntimeCore._run_skills_worker_inner.<locals>._do_dump
+a_buffs_cache
+ais_debuff
+a_last_skill_seen_data_seq
+a_get_data_to_skill_latency_ms
+a_last_data_to_skill_latency_ms
+Y@a_update_motion_duration_states
+] skip_cast : addon_paused
+wsufluent_ui.general_settings
+aget_enabled_defensive_skills
+] defensive_skip : buff_active ids=
+ahp_threshold
+Fashould_allow_skill_while_player_casting
+] default_cycle pixel_keys=
+uSkillBotRuntimeCore._run_skills_worker_inner.<locals>._has_ally_condition
+] buff_check owner=
+u buffs=
+] force_cooldown(per_skill) set for 
+uSkillBotRuntimeCore._run_skills_worker_inner.<locals>.<lambda>.<locals>.<genexpr>
+uSkillBotRuntimeCore._run_skills_worker_inner.<locals>.<genexpr>
+uSkillBotRuntimeCore._collect_heal_candidates.<locals>.<lambda>
+a_poll_fluent_dialog_processes
+abuff_region
+uAutoPlayer.ui_settings
+atick_ms
+acd_ready_window_ms
+acapture_mode
+ahotkey_enabled
+abuff_match_threshold
+uHeadlessSkillBotRuntime.on_close.<locals>._exit_app
+uHeadlessSkillBotRuntime.on_close.<locals>._force_exit_after
+aHeadlessSkillBotRuntime
+ Fluent UI 
+Fa_update_console_logging
+aFluentPrototypeWindow
+saAUTOPLAYER_FONT_FAMILY
+aAUTOPLAYER_FONT_FAMILY
+arecognize_all_buffs_dynamic
+awindow_capture
+ashould_allow_skill_while_player_casting
+aaddon_update
+ainstall_addon_zip
+uhttp://36.138.222.171:124/prod-api/third
+uMozilla/5.0 (Windows NT 10.0; Win64; x64) Nirvana/1.0
+aSkillBotRuntimeCore
+uSkillBotRuntimeCore.__init__
+uSkillBotRuntimeCore._confirm_spec_change
+uSkillBotRuntimeCore._append
+uSkillBotRuntimeCore._append_cycle
+uSkillBotRuntimeCore._append_recog
+uSkillBotRuntimeCore._update_console_logging
+uSkillBotRuntimeCore._trigger_recognition_once_async
+puSkillBotRuntimeCore._check_runtime_setting_changes
+uSkillBotRuntimeCore._update_motion_duration_states
+uSkillBotRuntimeCore.open_path_settings
+uSkillBotRuntimeCore._schedule_log_flush
+uSkillBotRuntimeCore._flush_logs
+uSkillBotRuntimeCore._get_shared_screen
+uSkillBotRuntimeCore._is_header_valid
+uSkillBotRuntimeCore._capture_window
+uSkillBotRuntimeCore._get_data_to_skill_latency_ms
+uSkillBotRuntimeCore._start_aux_workers
+uSkillBotRuntimeCore._do_logout_once
+uSkillBotRuntimeCore._run_window_monitor_worker
+uSkillBotRuntimeCore._run_heartbeat_worker
+uSkillBotRuntimeCore._run_heartbeat_worker_inner
+uSkillBotRuntimeCore._ensure_tesseract_available
+uSkillBotRuntimeCore._region_text
+uSkillBotRuntimeCore._target_region_text
+uSkillBotRuntimeCore._player_region_text
+a_buff_region_text
+uSkillBotRuntimeCore._buff_region_text
+?FuSkillBotRuntimeCore._queue_skill_action
+uSkillBotRuntimeCore._run_action_worker
+uSkillBotRuntimeCore._run_action_worker_inner
+aon_skill_cycle_editor
+uSkillBotRuntimeCore.on_skill_cycle_editor
+uSkillBotRuntimeCore._reload_cycle_if_loaded
+uSkillBotRuntimeCore.on_toggle_start_pause
+uSkillBotRuntimeCore.on_close
+uSkillBotRuntimeCore._on_macro_class_changed
+uSkillBotRuntimeCore.refresh_macro_cycles
+puSkillBotRuntimeCore._resolve_cycle_ref_to_key
+uSkillBotRuntimeCore._get_recognized_spec_id
+uSkillBotRuntimeCore._resolve_cycle_for_spec_or_default
+puSkillBotRuntimeCore._set_macro_cycle_selection_by_key
+uSkillBotRuntimeCore._ensure_cycle_reflected_in_dropdown
+uSkillBotRuntimeCore._activate_default_cycle
+uSkillBotRuntimeCore._is_loaded_cycle_match
+nuSkillBotRuntimeCore._migrate_spec_mapping_refs_if_needed
+uSkillBotRuntimeCore.load_macro_cycle
+uSkillBotRuntimeCore.save_as_spec_default
+uSkillBotRuntimeCore._capture_screen_once
+uSkillBotRuntimeCore.open_spec_mapping_manager
+uSkillBotRuntimeCore.open_online_cycle_window
+uSkillBotRuntimeCore._launch_fluent_dialog
+uSkillBotRuntimeCore._poll_fluent_dialog_processes
+uSkillBotRuntimeCore._on_online_cycle_downloaded
+uSkillBotRuntimeCore.on_start
+uSkillBotRuntimeCore._start_hotkey_listener
+uSkillBotRuntimeCore._stop_hotkey_listener
+uSkillBotRuntimeCore._on_hotkey_settings_changed
+uSkillBotRuntimeCore.on_resume
+uSkillBotRuntimeCore.on_pause
+uSkillBotRuntimeCore.on_stop
+uSkillBotRuntimeCore.join_workers
+uSkillBotRuntimeCore._enqueue_latest_results
+uSkillBotRuntimeCore._run_player_worker
+uSkillBotRuntimeCore._run_skills_worker
+uSkillBotRuntimeCore._run_skills_worker_inner
+uSkillBotRuntimeCore._run_target_worker
+uSkillBotRuntimeCore._collect_heal_candidates
+uSkillBotRuntimeCore._poll_queue
+uSkillBotRuntimeCore.run
+uHeadlessSkillBotRuntime.__init__
+uHeadlessSkillBotRuntime._schedule_log_flush
+uHeadlessSkillBotRuntime._flush_logs
+uHeadlessSkillBotRuntime._run_heartbeat_worker
+uHeadlessSkillBotRuntime.on_close
+acd_ready_default
+acapture_mode_default
+ahotkey_enabled_default
+ahotkey_key_default
+abuff_match_threshold_default
+atick_ms_now
+acd_ready_window_ms_now
+acapture_mode_now
+a_buff_map
+a_per_skill_wait_ms
+a_gcd_exit_threshold
+ascreen_pixels
+abuff_counts
+a_player_buffs
+a_player_buff_ids
+a_all_def_buff_ids
+a_skill_idx
+a_skill_conditions
+a_skill_ok
+askill_name
+aparty_buff_conds
+aowner_buffs
+aowner_buff_ids
+acd_ready
+athreshold_raw
+a_update_track
+awarmup_skill_refs
+apending_buff_count
+apending_skill_count
+askill_count
+abuff_count
+wh.addon_update
+w/aADDON_API_BASE
+a_addon_dir_for_retail
+uhttp://36.138.222.171:3000
+awrite_local_addon_version
+aread_local_addon_version
+uaddon_update.py
+u<module addon_update>
+aaddon_dir
+        method: HTTP 
+alanguage_threshold
+at <https://github.com/Ousret/charset_normalizer>.
+:license: MIT, see LICENSE for more details.
+        See http://msdn.microsoft.com/en-us/library/cc234586.aspx for the tagDEC
+acreate_unicode_buffer
+For more details, please check: https://learn.microsoft.com/en-us/windows/win32/com
+aDISP_E_BUFFERTOOSMALL
+abuffer_info
+aTYPEFLAG_FLICENSED
+alicensed
+    https://learn.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-getmodulefilenamew
+ {'Skill': (x1,y1,x2,y2), 'Target': ...}
+uskill_region.txt
+ubuff_region.txt
+ ('Skill', 'Target', 'Player', 'Buff')
+aSAVE_ALL_SKILLS_RESULT
+av_threshold
+arelative_v_avg_ratio_threshold
+acapture_output
+uskill_conditions.py
+uskill_recognition.py
+uwindow_capture.py
+ufluent_ui/prototype_window.py
+ufluent_ui/fluent_windows.py
+a_BUFF_TEMPLATE_CACHE
+a_BUFF_SLOT_STEP
+u_snap_buff_slot_start.<locals>.<lambda>
+aBUFF_ICON_OFFSET
+aBUFF_ICON_SIZE
+abuff_region_bgr
+a_BUFF_SCALE_STEP
+a_BUFF_TEMPLATE_SCALE_PRECISION
+u_match_buffs_for_unit.<locals>.<lambda>
+abuff_start_x
+abuff_start_y
+a_snap_buff_slot_start
+abuff_end_x
+a_read_buff_duration_metadata
+        icon_set: Buff
+        threshold: 
+u_match_buffs_for_unit.<locals>.<genexpr>
+u_match_buffs_batch_party.<locals>.<lambda>
+20px Buff
+u_match_buffs_batch_party.<locals>.<genexpr>
+a_count_black_pixels
+urecognize_all_buffs_dynamic.<locals>.<lambda>
+abuff_type
+urecognize_all_buffs_dynamic.<locals>.<genexpr>
+ _count_black_pixels 
+a_is_cd_bar_pixel
+ Buff/Debuff 
+ Buff (team_type=
+at_capture
+abuff_ms
+atotal_buffs
+ Buff/Debuff)  HP:
+ Buff/Debuff)  
+ Buff/Debuff):
+u   4. Buff 
+        icon_set: Buff 
+aROW_SKILLS
+aBUFF_ICON_SPACING
+a_BUFF_POSSIBLE_X_POSITIONS
+aBUFF_ROW_OFFSET
+aBUFF_DURATION_BAR_OFFSET
+aBUFF_STACK_BAR_OFFSET
+a_is_hp_bar_pixel
+a_is_health_header_pixel
+pa_buff_owner_by_y
+pathreshold
+a_match_buffs_for_unit
+a_match_buffs_batch_party
+a_count_appbar_pixels
+abuff_end_y
+astack_pixels
+abar_pixels
+.dxcam._libs
+aNUITKA_PACKAGE_dxcam
+aNUITKA_PACKAGE_dxcam__libs
+udxcam\_libs\__init__.py
+u<module dxcam._libs>
+.dxcam._libs.d3d11
+udxcam._libs.d3d11
+naVSSetConstantBuffers
+naPSSetConstantBuffers
+naIASetVertexBuffers
+naIASetIndexBuffer
+naGSSetConstantBuffers
+naUpdateSubresource
+naHSSetConstantBuffers
+naDSSetConstantBuffers
+naCSSetConstantBuffers
+naVSGetConstantBuffers
+naPSGetConstantBuffers
+naIAGetVertexBuffers
+naIAGetIndexBuffer
+naGSGetConstantBuffers
+naHSGetConstantBuffers
+naDSGetConstantBuffers
+naCSGetConstantBuffers
+aCreateBuffer
+aCreatePixelShader
+udxcam\_libs\d3d11.py
+u<module dxcam._libs.d3d11>
+.dxcam._libs.dxgi
+aDXGI_OUTDUPL_FLAG_COMPOSITED_UI_CAPTURE_ONLY
+udxcam._libs.dxgi
+aRotation
+aLastMouseUpdateTime
+aTotalMetadataBufferSize
+aPointerShapeBufferSize
+udxcam\_libs\dxgi.py
+u<module dxcam._libs.dxgi>
+.dxcam._libs.user32
+udxcam._libs.user32
+udxcam\_libs\user32.py
+u<module dxcam._libs.user32>
+uDropping released DXCamera instance for device=%s output=%s backend=%s.
+uDXCamera instance already exists for device=%s output=%s backend=%s; returning existing instance. Delete the old object with `del obj` to recreate it with new parameters.
+aupdate_desc
+aDXCamera
+amax_buffer_len
+arotation_angle
+uReceived SIGTERM; releasing active DXCamera instances.
+uFailed during DXCamera SIGTERM cleanup.
+        region: Optional capture region as ``(left, top, right, bottom)``.
+        output_color: Output pixel format.
+        max_buffer_len: Ring-buffer size used in threaded capture mode.
+        backend: Capture backend, ``"dxgi"`` or ``"winrt"``.
+        A :class:`dxcam.dxcam.DXCamera` instance.
+        >>> import dxcam
+        >>> cam = dxcam.create(
+        >>> print(dxcam.device_info())
+        >>> print(dxcam.output_info())
+uPublic DXcam API.
+    >>> import dxcam
+    >>> cam = dxcam.create()
+Threaded capture:
+    >>> cam = dxcam.create(backend="dxgi")
+udxcam.core.backend
+udxcam.dxcam
+udxcam.processor
+udxcam.types
+aCaptureBackend
+udxcam.util.io
+uweakref.WeakValueDictionary[tuple[int, int, CaptureBackend], DXCamera]
+udxcam\__init__.py
+u<module dxcam>
+.dxcam.core.backend
+udxcam.core.winrt_duplicator
+uNormalize and validate a capture backend name.
+        ValueError: If ``backend`` is not a supported capture backend.
+        backend: Selected capture backend.
+        output: Output descriptor to capture from.
+        A duplicator instance that implements the capture backend contract.
+udxcam.core.device
+udxcam.core.dxgi_duplicator
+udxcam.core.output
+utuple[CaptureBackend, ...]
+udict[CaptureBackend, Callable[..., Any]]
+udxcam\core\backend.py
+u<module dxcam.core.backend>
+.dxcam.core.capture_loop
+udxcam.core.capture_runtime
+aCaptureRuntime
+udxcam.core.capture_loop
+uRuns one capture-loop iteration and updates the ring buffer.
+aCaptureLoopRunner
+uCaptureLoopRunner.__init__
+uCaptureLoopRunner.run_once
+udxcam\core\capture_loop.py
+u<module dxcam.core.capture_loop>
+acaptured
+.dxcam.core.capture_runtime
+aframe_buffer
+uRing-buffer runtime state for threaded capture.
+    Callers must ensure frame-buffer clear/realloc never runs concurrently from
+uCaptureRuntime.allocate_for_shape
+uCaptureRuntime.clear
+uCaptureRuntime.current_frame_shape
+uCaptureRuntime.reserve_write_slot
+uCaptureRuntime.reserve_duplicate_copy
+uCaptureRuntime.commit_write
+uCaptureRuntime.peek_latest
+uCaptureRuntime.peek_latest_with_ticks
+udxcam\core\capture_runtime.py
+u<module dxcam.core.capture_runtime>
+.dxcam.core
+aNUITKA_PACKAGE_dxcam_core
+udxcam.core.stagesurf
+udxcam\core\__init__.py
+u<module dxcam.core>
+.dxcam.core.device
+udxcam.core.dxgi_errors
+udxcam\core\device.py
+u<module dxcam.core.device>
+.dxcam.core.display_recovery
+a_rebuild_frame_buffer
+udxcam.core.display_recovery
+udxcam.core.output_recovery
+uRecovers capture resources after output mode/geometry changes.
+arebuild_frame_buffer
+udxcam\core\display_recovery.py
+u<module dxcam.core.display_recovery>
+.dxcam.core.dxgi_duplicator
+uUsing legacy IDXGIOutput1.DuplicateOutput. Set DXCAM_USE_DUPLICATE_OUTPUT1=1 to enable DuplicateOutput1.
+uUsing IDXGIOutput5.DuplicateOutput1 for capture.
+        https://learn.microsoft.com/en-us/windows/win32/api/dxgi1_2/nf-dxgi1_2-idxgioutputduplication-releaseframe#remarks
+        So DXCam default to early release.
+aDXCAM_USE_DUPLICATE_OUTPUT1
+w1udxcam.core.dxgi_duplicator
+paupdate_frame
+uDXGIDuplicator.update_frame
+udxcam\core\dxgi_duplicator.py
+u<module dxcam.core.dxgi_duplicator>
+.dxcam.core.dxgi_errors
+udxcam\core\dxgi_errors.py
+u<module dxcam.core.dxgi_errors>
+.dxcam.core.output
+arotation_mapping
+u<{} Name:{} Resolution:{} Rotation:{}>
+uDXGI output wrapper with geometry and rotation helpers.
+uOutput.update_desc
+uOutput.rotation_angle
+udxcam\core\output.py
+u<module dxcam.core.output>
+.dxcam.core.output_recovery
+uResolves current output geometry/rotation during display transitions.
+udxcam\core\output_recovery.py
+u<module dxcam.core.output_recovery>
+.dxcam.core.stagesurf
+udxcam\core\stagesurf.py
+u<module dxcam.core.stagesurf>
+.dxcam.core.winrt_duplicator
+uwinrt.windows.graphics.capture
+uwinrt.windows.graphics.capture.interop
+uWinRT backend requires optional dependencies. Install with `pip install "dxcam[winrt]"`.
+aDirect3D11CaptureFramePool
+aGraphicsCaptureDirtyRegionMode
+aDirectXPixelFormat
+adirectx_pixel_format
+a_resolve_min_update_interval_seconds
+a_min_update_interval_seconds
+aDXCAM_WINRT_CURSOR_CAPTURE
+a_cursor_capture_enabled
+aDXCAM_WINRT_BORDER_REQUIRED
+a_create_capture_session
+aDXCAM_WINRT_FRAME_WAIT_MS
+uInvalid DXCAM_WINRT_FRAME_WAIT_MS=%r; using default %.3fms.
+aDXCAM_WINRT_FRAME_POOL_SIZE
+uInvalid DXCAM_WINRT_FRAME_POOL_SIZE=%r; using default 2.
+uDXCAM_WINRT_FRAME_POOL_SIZE=%d is too small; clamping to 2.
+aDXCAM_WINRT_MIN_UPDATE_INTERVAL_MS
+aDEFAULT_MIN_UPDATE_INTERVAL_SECONDS
+uInvalid DXCAM_WINRT_MIN_UPDATE_INTERVAL_MS=%r; ignoring.
+uDXCAM_WINRT_MIN_UPDATE_INTERVAL_MS=%r is negative; clamping to 0.
+aDXCAM_WINRT_DIRTY_REGION_MODE
+uInvalid DXCAM_WINRT_DIRTY_REGION_MODE=%r; using %s.
+amin_update_interval
+uFailed to set session min_update_interval.
+tais_cursor_capture_enabled
+uFailed to set session is_cursor_capture_enabled.
+a_WinRTCaptureBindings
+a_pixel_format
+a_capture_item
+acreate_capture_session
+astart_capture
+tuInvalid monitor handle for WinRT capture.
+ucapture session
+ucapture item
+u'_WinRTCaptureBindings'
+u_WinRTCaptureBindings.load
+uWindows.Graphics.Capture wrapper for acquiring frame textures.
+uWinRTDuplicator._resolve_min_update_interval_seconds
+uWinRTDuplicator._create_capture_session
+uWinRTDuplicator.update_frame
+udxcam\core\winrt_duplicator.py
+u<module dxcam.core.winrt_duplicator>
+acapture_module
+acapture_interop_module
+.dxcam.dxcam
+umax_buffer_len=%d is not supported for concurrent capture; clamping to 2.
+a_DXCamera__thread
+a_DXCamera__lock
+a_DXCamera__stop_capture
+a_DXCamera__frame_available
+a_DXCamera__capture_runtime
+a_DXCamera__timer_handle
+a_DXCamera__capture_start_time
+a_DXCamera__last_grab_entry
+            Prefer :func:`dxcam.create` over calling this constructor directly.
+            region: Initial capture region as ``(left, top, right, bottom)``.
+            max_buffer_len: Ring-buffer size for threaded capture mode.
+            backend: Capture backend, ``"dxgi"`` or ``"winrt"``.
+uFrame buffer mutation requires capture thread to be fully stopped and joined.
+uAllow runtime buffer mutation only on producer thread or when stopped.
+aupdate_frame
+uDXCamera._multithread_guard
+ugrab(region=...) is not supported while capture is running. Use start(region=...) to configure capture region.
+a_peek_latest_buffered_frame
+            region: Optional capture region. Defaults to current camera region.
+            Captured frame data or ``None`` when no new frame is available.
+        When capture is running (``start()``), this reads from the ring buffer
+        apply while capture is running.
+        Returns a view backed by internal buffers. Copy the array if you need
+        to keep frame data across future capture calls.
+uCapture into ``dst`` and return ``(captured, frame_ticks, width, height)``.
+        - ``captured`` is True only when ``dst`` has been fully written with a new frame.
+        - ``captured`` is False with ``width == height == 0`` when no new frame is available.
+        - ``captured`` is False with non-zero ``width``/``height`` when a new frame exists
+a_update_source_region
+uFrame buffer %s: %dx%d c=%d n=%d.
+uFrame size changed from %dx%d to %dx%d; rebuilding frame buffer.
+a_allocate_frame_buffer_for_shape
+uRebuild frame buffers after a source size change.
+uCapture is already running. Call stop() first.
+uCapture thread is still alive from previous run. Call stop() and wait for join before start().
+a_capture_loop
+uStart threaded capture into the internal ring buffer.
+            target_fps: Target capture FPS. ``0`` disables timer pacing.
+uCapture thread did not stop within timeout; refusing to clear frame buffer before join.
+uStop threaded capture and clear buffered frames.
+uTimestamp (seconds) of the latest buffered frame, if available.
+uRaw monotonic backend ticks for the latest buffered frame.
+uBlock until a buffered frame is available and return the latest one.
+            Frame data, optionally with timestamp, or ``None`` if capture is
+            stopped and the buffer is unavailable.
+uUnhandled exception in capture loop.
+acapture_error
+uScreen Capture FPS: %.4f
+uUnsupported rotation angle: 
+uDXCamera has been released and cannot be reused. Create a new camera instance with dxcam.create().
+uDXCamera public class API.
+    >>> with dxcam.create() as cam:
+Capture usage:
+    >>> with dxcam.create(output_color="BGR", processor_backend="cv2") as cam:
+udxcam.core
+udxcam.util.timer
+        >>> with dxcam.create() as cam:
+uDXCamera.__init__
+uDXCamera._assert_runtime_mutation_allowed
+uDXCamera._create_duplicator
+uDXCamera._uses_early_release
+uDXCamera._release_frame_if_early_release
+uDXCamera._release_frame_if_late_release
+puDXCamera._acquire_new_frame
+uDXCamera.grab
+uDXCamera.grab_view
+uDXCamera._peek_latest_buffered_frame
+uDXCamera._set_cached_grab_frame
+uDXCamera._get_cached_grab_frame
+uDXCamera._grab
+uDXCamera._grab_into
+uDXCamera._copy_region_to_stage
+uDXCamera._allocate_output_frame
+uDXCamera._process_staging_frame
+uDXCamera._process_staging_frame_into
+uDXCamera._recover_output
+uDXCamera._release_recovery_resources
+uDXCamera._rebuild_recovery_stage_surface
+uDXCamera._allocate_frame_buffer_for_shape
+uDXCamera._handle_frame_size_change
+uDXCamera.start
+uDXCamera.stop
+uDXCamera.latest_frame_time
+uDXCamera.latest_frame_ticks
+uDXCamera.get_latest_frame
+uDXCamera.get_latest_frame_view
+uDXCamera._capture_loop
+uDXCamera._rebuild_frame_buffer
+puDXCamera._region_to_memory_region
+uDXCamera._update_source_region
+uDXCamera._validate_region
+uDXCamera.release
+uDXCamera.is_released
+uDXCamera._ensure_not_released
+uDXCamera.__del__
+u'DXCamera'
+uDXCamera.__enter__
+uDXCamera.__exit__
+uDXCamera.__repr__
+udxcam\dxcam.py
+u<module dxcam.dxcam>
+aold_rotation
+.dxcam.processor.base
+            width: Active frame width in pixels.
+            height: Active frame height in pixels.
+            region: Capture region as ``(left, top, right, bottom)``.
+            rotation_angle: Output rotation in degrees.
+        The returned array may be backed by an internal reusable buffer.
+udxcam.processor.cv2_processor
+udxcam.processor.numpy_processor
+udxcam.processor.base
+udxcam\processor\base.py
+u<module dxcam.processor.base>
+.dxcam.processor
+aNUITKA_PACKAGE_dxcam_processor
+udxcam\processor\__init__.py
+u<module dxcam.processor>
+.dxcam.processor.cv2_processor
+uMapped image pitch is smaller than required active width: pitch_pixels=
+a_trim_pitch_for_rotation
+udxcam.processor._numpy_kernels
+    ``process()`` may return an internal reusable buffer for some modes.
+uCv2Processor._trim_pitch_for_rotation
+udxcam\processor\cv2_processor.py
+u<module dxcam.processor.cv2_processor>
+apitch_pixels
+.dxcam.processor.numpy_processor
+uNumPy processor backend requested but compiled extension 'dxcam.processor._numpy_kernels' is unavailable; falling back to cv2 processor. Build with DXCAM_BUILD_CYTHON=1 and install the 'cython' extra to enable the accelerated backend.
+udxcam\processor\numpy_processor.py
+u<module dxcam.processor.numpy_processor>
+.dxcam.types
+uPublic type aliases used by DXcam APIs.
+    >>> from dxcam.types import CaptureBackend, Region
+    >>> backend: CaptureBackend = "dxgi"
+udxcam\types.py
+u<module dxcam.types>
+.dxcam.util
+aNUITKA_PACKAGE_dxcam_util
+udxcam\util\__init__.py
+u<module dxcam.util>
+.dxcam.util.io
+udxcam\util\io.py
+u<module dxcam.util.io>
+wj.dxcam.util.timer
+udxcam\util\timer.py
+u<module dxcam.util.timer>
+.fluent_ui
+afluent_ui
+aNUITKA_PACKAGE_fluent_ui
+.fluent_ui.data_loader
+ SkillCycleConfig 
+uBuild a simple class->cycle_names map for the prototype comboboxes.
+uData helpers used by the Fluent UI prototype.
+uskill_cycles/cycles_nirvana.json
+ufluent_ui\data_loader.py
+wxu<module fluent_ui.data_loader>
+wf.fluent_ui.fluent_windows
+aprototype_window
+aScrollPerPixel
+a_update_mask
+u_install_dialog_mask.<locals>._update_mask
+uFluentSpecMappingDialog.refresh_list.<locals>.<lambda>
+abtn_update_all
+a_update_all_cycles
+a_update_all_done
+a_on_update_all_done
+uFluentOnlineCycleDialog._on_cycles_loaded.<locals>.<lambda>
+a_update_pagination_ui
+aupdateTime
+uFluentOnlineCycleDialog._fetch_cycle_note_async.<locals>._do
+ skills 
+uFluentOnlineCycleDialog._download_cycle.<locals>.<lambda>
+aupdated_at
+asave_or_update_cycle_by_id
+uFluentOnlineCycleDialog._update_all_cycles.<locals>._do
+aSKILL_CD
+askill_id
+askill_type
+uFluentConditionEditorDialog.__init__.<locals>.<lambda>
+abuff_condition_combo
+askill_metric_combo
+a_toggle_buff_extra_fields
+a_toggle_skill_metric_fields
+abuff_target_combo
+abuff_id_edit
+abuff_load_btn
+a_load_buff_info
+abuff_name_label
+abuff_duration_operator_combo
+?abuff_duration_spin
+abuff_elapsed_operator_combo
+@abuff_elapsed_spin
+abuff_stack_operator_combo
+abuff_stack_spin
+abuff_confidence_enabled_check
+abuff_confidence_operator_combo
+?abuff_confidence_value_spin
+uFluentConditionEditorDialog._build_pages.<locals>.<lambda>
+aally_buff_id_edit
+a_load_ally_buff_info
+aally_buff_count_operator_combo
+aally_buff_count_spin
+aally_buff_include_self_check
+aally_buff_name_label
+askill_cd_id_edit
+askill_load_btn
+a_load_skill_info
+askill_name_label
+askill_cd_operator_combo
+askill_cd_time_spin
+askill_charge_operator_combo
+askill_charge_count_spin
+askill_bool_value_combo
+askill_usable_value_combo
+?askill_usable_threshold_spin
+askill_require_highlight_check
+uFluentConditionEditorDialog._build_pages.<locals>._make_state_row
+uFluentConditionEditorDialog._build_pages.<locals>._make_target_state_row
+uFluentConditionEditorDialog._build_pages.<locals>._make_focus_state_row
+uFluentConditionEditorDialog._build_pages.<locals>._make_state_row.<locals>.<lambda>
+a_player_update_resource_hint
+uFluentConditionEditorDialog._build_pages.<locals>._make_target_state_row.<locals>.<lambda>
+uFluentConditionEditorDialog._build_pages.<locals>._make_focus_state_row.<locals>.<lambda>
+abuff_name
+askill_metric
+ausable_threshold
+ Buff ID
+uBuff ID 
+ TK _load_buff_info 
+ TK _load_skill_info 
+sabuff_id
+ buff_id_edit
+ally_buff_id_edit 
+ skill_cd_id_edit 
+uFluentConditionManagerDialog.__init__.<locals>._hex_to_rgba
+uFluentConditionManagerDialog.__init__.<locals>.<lambda>
+asetUpdatesEnabled
+uFluentConditionManagerDialog._refresh_table.<locals>._add_item
+uFluentConditionManagerDialog._select_path.<locals>._walk
+aFluentConditionEditorDialog
+uFluentPreconditionManagerDialog.__init__.<locals>.<lambda>
+aFluentConditionManagerDialog
+ FluentConditionManagerDialog 
+anirvana
+askill_list
+aadd_skill
+atoggle_selected_skill_enabled
+uFluentSkillCycleDialog.__init__.<locals>.<lambda>
+a_on_skill_selected
+a_capture_saved_signature
+arename_selected_skill
+ahot_update_only
+uFluentSkillCycleDialog.upload_current_cycle.<locals>._finalize_upload
+uFluentSkillCycleDialog._export_loaded_cycle.<locals>._copy_and_close
+uFluentSkillCycleDialog._open_import_dialog.<locals>._decode_payload
+uFluentSkillCycleDialog._open_import_dialog.<locals>._on_text_changed
+uFluentSkillCycleDialog._open_import_dialog.<locals>._do_import
+uFluentSkillCycleDialog.edit_conditions.<locals>._on_saved
+aFluentPreconditionManagerDialog
+uNative Fluent windows for gradual Tk -> Qt migration.
+uFluent native spec mapping window.
+uFluentSpecMappingDialog.__init__
+uFluentSpecMappingDialog.refresh_list
+uFluentSpecMappingDialog._selected_row
+uFluentSpecMappingDialog._add_mapping
+uFluentSpecMappingDialog._edit_mapping
+uFluentSpecMappingDialog._delete_mapping
+uFluent native online cycle window.
+uFluentOnlineCycleDialog.__init__
+uFluentOnlineCycleDialog.closeEvent
+uFluentOnlineCycleDialog._set_download_busy
+puFluentOnlineCycleDialog._as_int
+uFluentOnlineCycleDialog._format_timestamp
+uFluentOnlineCycleDialog._remote_version
+uFluentOnlineCycleDialog._build_query_obj
+uFluentOnlineCycleDialog._on_query_clicked
+uFluentOnlineCycleDialog.query_online_cycles
+uFluentOnlineCycleDialog._on_cycles_loaded
+uFluentOnlineCycleDialog._on_cycles_load_failed
+uFluentOnlineCycleDialog._on_loader_finished
+uFluentOnlineCycleDialog._filter_cycles
+uFluentOnlineCycleDialog._on_query_mode_changed
+uFluentOnlineCycleDialog._on_class_filter_changed
+uFluentOnlineCycleDialog._populate_spec_combo
+uFluentOnlineCycleDialog._update_pagination_ui
+uFluentOnlineCycleDialog._prev_page
+uFluentOnlineCycleDialog._next_page
+uFluentOnlineCycleDialog.keyPressEvent
+uFluentOnlineCycleDialog._refresh_table
+uFluentOnlineCycleDialog._selected_record
+uFluentOnlineCycleDialog._fetch_cycle_note_async
+uFluentOnlineCycleDialog._on_note_fetched
+uFluentOnlineCycleDialog._on_select
+uFluentOnlineCycleDialog._build_detail_text
+uFluentOnlineCycleDialog._download_selected
+uFluentOnlineCycleDialog._toggle_like
+uFluentOnlineCycleDialog._delete_selected
+puFluentOnlineCycleDialog._download_cycle
+uFluentOnlineCycleDialog._update_all_cycles
+uFluentOnlineCycleDialog._on_update_all_done
+uFluentOnlineCycleDialog._start_cache_warmup
+uFluentOnlineCycleDialog._on_cache_warmup_finished
+uFluentOnlineCycleDialog._on_cache_warmup_failed
+uFluentOnlineCycleDialog._on_cache_thread_finished
+uFluent single condition editor with structured form controls.
+uFluentConditionEditorDialog.__init__
+uFluentConditionEditorDialog._mk_double
+uFluentConditionEditorDialog._mk_int
+uFluentConditionEditorDialog._add_combo_items
+uFluentConditionEditorDialog._build_pages
+uFluentConditionEditorDialog._load
+uFluentConditionEditorDialog._on_type_changed
+uFluentConditionEditorDialog._toggle_buff_extra_fields
+uFluentConditionEditorDialog._toggle_skill_metric_fields
+uFluentConditionEditorDialog._player_update_resource_hint
+uFluentConditionEditorDialog._load_ally_buff_info
+uFluentConditionEditorDialog._load_buff_info
+uFluentConditionEditorDialog._load_skill_info
+uFluentConditionEditorDialog._on_confirm
+uFluentConditionEditorDialog.eventFilter
+uFluent condition list manager for one skill.
+uFluentConditionManagerDialog.__init__
+uFluentConditionManagerDialog._selected_index
+uFluentConditionManagerDialog._selected_path
+uFluentConditionManagerDialog._condition_container_for_path
+uFluentConditionManagerDialog._condition_at_path
+uFluentConditionManagerDialog._selected_group_children
+uFluentConditionManagerDialog._condition_stats
+uFluentConditionManagerDialog._on_tree_selection_changed
+uFluentConditionManagerDialog._refresh_table
+uFluentConditionManagerDialog._select_path
+uFluentConditionManagerDialog._add_condition_by_type
+uFluentConditionManagerDialog._edit_selected
+uFluentConditionManagerDialog._edit_condition_native
+uFluentConditionManagerDialog._delete_selected
+uFluentConditionManagerDialog._move
+uFluentConditionManagerDialog._on_done
+uFluentPreconditionManagerDialog.__init__
+uFluentPreconditionManagerDialog._refresh_table
+uFluentPreconditionManagerDialog._selected_index
+uFluentPreconditionManagerDialog._add_precondition
+uFluentPreconditionManagerDialog._edit_selected
+uFluentPreconditionManagerDialog._edit_precondition_native
+uFluentPreconditionManagerDialog._delete_selected
+uFluentPreconditionManagerDialog._rename_selected
+uFluent native skill cycle editor (core operations).
+uFluentSkillCycleDialog.__init__
+uFluentSkillCycleDialog._build_cycle_signature
+uFluentSkillCycleDialog._capture_saved_signature
+uFluentSkillCycleDialog._auto_persist
+uFluentSkillCycleDialog._has_unsaved_changes
+uFluentSkillCycleDialog._emit_saved
+uFluentSkillCycleDialog._autosave_before_close
+uFluentSkillCycleDialog._emit_saved_if_loaded
+uFluentSkillCycleDialog.accept
+uFluentSkillCycleDialog.reject
+uFluentSkillCycleDialog._refresh_cache_label
+uFluentSkillCycleDialog._on_class_changed
+uFluentSkillCycleDialog._get_selected_spec
+uFluentSkillCycleDialog.refresh_cycle_list
+uFluentSkillCycleDialog.select_cycle_label
+uFluentSkillCycleDialog.is_cycle_loaded
+uFluentSkillCycleDialog._on_cycle_search
+uFluentSkillCycleDialog.new_cycle
+uFluentSkillCycleDialog._set_protected_lock
+uFluentSkillCycleDialog._on_cycle_selected
+ppuFluentSkillCycleDialog.save_current_cycle
+uFluentSkillCycleDialog.delete_current_cycle
+uFluentSkillCycleDialog.copy_current_cycle
+uFluentSkillCycleDialog.upload_current_cycle
+uFluentSkillCycleDialog._export_loaded_cycle
+uFluentSkillCycleDialog._open_import_dialog
+uFluentSkillCycleDialog.add_skill
+uFluentSkillCycleDialog._selected_index
+uFluentSkillCycleDialog.remove_selected
+uFluentSkillCycleDialog.toggle_selected_skill_enabled
+uFluentSkillCycleDialog.rename_selected_skill
+uFluentSkillCycleDialog.move_item
+uFluentSkillCycleDialog.refresh_table
+uFluentSkillCycleDialog._on_skill_selected
+uFluentSkillCycleDialog.edit_conditions
+uFluentSkillCycleDialog.edit_preconditions
+uFluentSkillCycleDialog.eventFilter
+ufluent_ui\fluent_windows.py
+wxu<module fluent_ui.fluent_windows>
+wiaskill
+abuff_page
+abuff_form
+abuff_id_row
+abuff_id_h
+abuff_conf_row
+abuff_conf_h
+aally_buff_page
+aally_buff_form
+aally_buff_id_row
+aally_buff_load_btn
+askill_cd_page
+askill_cd_form
+askill_id_row
+askill_id_h
+aally_buff_name
+askill_id_str
+aupdate_time
+askill_data
+we.fluent_ui.general_settings
+aDEFENSIVE_SKILLS
+l2abuff_id
+l2abuff_map
+ [{id, hp_threshold, buff_id, name}, ...]
+aINTERRUPT_SKILLS
+askill_cycles
+ufluent_ui\general_settings.py
+u<module fluent_ui.general_settings>
+wfwe.fluent_ui.prototype_window
+uqfluentwidgets.components.widgets.menu
+ qfluentwidgets RoundMenu 
+https://qfluentwidgets.com/zh/pages/components/combobox/
+uMozilla/5.0 (Windows NT 10.0; Win64; x64) AutoPlayer/1.0
+uFluentLoginDialog._check_key.<locals>.<genexpr>
+uFluentLoginDialog._check_account_password.<locals>.<genexpr>
+uFluentLoginDialog._do_login.<locals>._login_worker
+aADDON_PACKAGES
+aaddon_status_label
+abtn_check_addon
+abtn_install_addon
+a_check_addon_version
+a_start_check_addon_version_background
+a_install_addon
+a_addon_check_token
+aaddon_check_finished
+a_on_addon_check_finished
+aaddon_install_finished
+a_on_addon_install_finished
+sa_refresh_local_addon_version
+aget_addon_version_by_name
+a_current_addon_package
+uPathSettingsDialog._start_check_addon_version_background.<locals>._on_timeout
+uPathSettingsDialog._start_check_addon_version_background.<locals>._worker
+uPathSettingsDialog._install_addon.<locals>._worker
+aset_addon_version_by_name
+aNirvana
+a_make_card_header
+abtn_skill_cycle
+acapture_mode_combo
+amatch_threshold_slider
+amatch_threshold_value_label
+ahotkey_check
+aHotkeyLineEdit
+ahotkey_edit
+ skill_cycles 
+a_on_match_threshold_changed
+a_update_clock
+askill_cycle
+Y@abuff_match_threshold
+uhttp://36.138.222.171:124/topicContent
+u<div style='font-family:inherit; font-size:13px; color:#D7DFEA;'><div style='font-weight:700; color:#EDAA5F; font-size:15px; margin-bottom:6px;'>AutoPlayer 
+ <span style='color:#7FC2FF;'>/autoplayer</span>
+ AddOns 
+uhttp://36.138.222.171:124/prod-api/store/notice/2045540808490270721
+uBuff / Debuff
+a_buff_layout
+a_buff_labels
+a_SKILL_CELL_W
+a_SKILL_COLS
+abuffList
+lcw~abuff_texts
+uDataRecogPage.update_state.<locals>.<genexpr>
+lXa_card_opacity
+acard_opacity_slider
+acard_opacity_value_label
+asoftware_update_status
+abtn_update_software
+a_on_card_opacity_changed
+a_on_check_software_update
+a_on_do_software_update
+a_sw_update_result
+a_on_software_update_result
+acard_opacity_changed
+aupdate_checker
+uBackgroundSettingsPage._on_check_software_update.<locals>._on_timeout
+]uBackgroundSettingsPage._on_check_software_update.<locals>._worker
+acheck_for_update
+uBackgroundSettingsPage._on_do_software_update.<locals>._worker
+aperform_full_update
+?a_do_quit_for_update
+acard_opacity
+afluentRoot
+uNirvana 
+aFluentIcon
+a_open_skill_cycle_editor
+a_startup_updates_ready
+a_on_startup_updates_ready
+a_auto_update_result_signal
+a_on_auto_update_result
+a_startup_update_check
+uFluentPrototypeWindow.__init__.<locals>.<lambda>
+] Fluent 
+uFluentPrototypeWindow._force_close_app.<locals>._force_exit
+@uFluentPrototypeWindow._startup_update_check.<locals>._worker
+ @aupdates
+uFluentPrototypeWindow._on_startup_updates_ready.<locals>._sw_worker
+a_addon_worker
+uFluentPrototypeWindow._on_startup_updates_ready.<locals>._addon_worker
+uFluentPrototypeWindow._fetch_and_show_key_info.<locals>._do_fetch
+a_update_key_info_widget
+a_update_remaining_label
+uFluentPrototypeWindow._show_key_info_dialog.<locals>._update_remaining_label
+uFluentPrototypeWindow._show_key_info_dialog.<locals>._on_tick
+aupdate_info
+uFluentPrototypeWindow._start_logout_then_close.<locals>._worker
+uFluentPrototypeWindow._start_logout_then_close.<locals>._poll
+        #fluentRoot, #fluentRoot QWidget {
+        FluentTitleBar,
+        FluentTitleBar > QLabel,
+        FluentTitleBar > CaptionLabel,
+        FluentTitleBar > CaptionLabel#titleLabel {
+FluentTitleBar>QLabel#titleLabel, SplitTitleBar>QLabel#titleLabel {
+acd_ready_window_ms_var
+ufluent_ui.general_settings
+adef_skills_saved
+l$uFluentPrototypeWindow._open_general_settings.<locals>.<lambda>
+wsaint_skills_saved
+uFluentPrototypeWindow._toggle_start_inner.<locals>._forward_queue
+aFluentLoginDialog
+uFluentPrototypeWindow._open_skill_cycle_editor.<locals>._on_cycle_saved
+afluent_windows
+uFluentPrototypeWindow._sync_local_cycles_to_cloud.<locals>._worker
+ skill_cycles/cycles.json 
+nuFluentPrototypeWindow._sync_local_cycles_to_cloud.<locals>._worker.<locals>.<genexpr>
+uFluentPrototypeWindow._open_online_cycle.<locals>._on_downloaded
+aupdate_state
+ufluent_ui.void_protocol_theme
+ FluentWindow 
+uFluent prototype window that mirrors current Tk UI sections.
+aFluentWindow
+uA LineEdit that captures a single key press (with modifiers) and writes a readable combo like "Ctrl+F8".
+uHotkeyLineEdit.__init__
+uHotkeyLineEdit.keyPressEvent
+uFluent 
+uFluentLoginDialog.__init__
+uFluentLoginDialog._is_account_mode
+uFluentLoginDialog._on_login_mode_changed
+uFluentLoginDialog._load_saved_key
+uFluentLoginDialog._save_key_pref
+uFluentLoginDialog._check_key
+uFluentLoginDialog._check_account_password
+uFluentLoginDialog._do_login
+uFluentLoginDialog._on_login_result
+uPathSettingsDialog._on_addon_check_finished
+uPathSettingsDialog._current_addon_package
+uPathSettingsDialog._refresh_local_addon_version
+uPathSettingsDialog._check_addon_version
+uPathSettingsDialog._start_check_addon_version_background
+uPathSettingsDialog._install_addon
+uPathSettingsDialog._on_addon_install_finished
+uControlPage._on_match_threshold_changed
+uControlPage._make_card_header
+uControlPage._update_clock
+uDataRecogPage.update_state
+uBackgroundSettingsPage._on_card_opacity_changed
+uBackgroundSettingsPage.card_opacity
+aset_card_opacity
+uBackgroundSettingsPage.set_card_opacity
+uBackgroundSettingsPage._on_check_software_update
+ahas_update
+uBackgroundSettingsPage._on_do_software_update
+uBackgroundSettingsPage._on_software_update_result
+uBackgroundSettingsPage._do_quit_for_update
+uKeyInfoNavWidget.update_info
+uPrototype app window for Fluent migration.
+uFluentPrototypeWindow.__init__
+uFluentPrototypeWindow._notify_login_success_once
+uFluentPrototypeWindow._start_heartbeat
+uFluentPrototypeWindow._stop_heartbeat
+uFluentPrototypeWindow._run_heartbeat
+uFluentPrototypeWindow._force_close_app
+uFluentPrototypeWindow._startup_update_check
+aupdates
+uFluentPrototypeWindow._on_startup_updates_ready
+aupdate_type
+uFluentPrototypeWindow._on_auto_update_result
+uFluentPrototypeWindow._center_dialog_over_main
+uFluentPrototypeWindow._fetch_and_show_key_info
+uFluentPrototypeWindow._on_key_info_ready
+uFluentPrototypeWindow._request_key_info
+uFluentPrototypeWindow._show_key_info_dialog
+uFluentPrototypeWindow._update_key_info_widget
+uFluentPrototypeWindow._logout_login_key
+uFluentPrototypeWindow._terminate_bridge_processes
+uFluentPrototypeWindow._start_logout_then_close
+uFluentPrototypeWindow._on_bg_strength_changed
+uFluentPrototypeWindow._on_card_opacity_changed
+uFluentPrototypeWindow._on_bg_image_changed
+uFluentPrototypeWindow._apply_runtime_font
+uFluentPrototypeWindow._on_font_changed
+uFluentPrototypeWindow._apply_styles
+uFluentPrototypeWindow._send_runtime_cmd
+uFluentPrototypeWindow._on_cycle_combo_changed
+uFluentPrototypeWindow._on_auto_switch_changed
+uFluentPrototypeWindow._on_retail_mode_changed
+uFluentPrototypeWindow._on_debug_flags_changed
+uFluentPrototypeWindow._on_runtime_settings_changed
+uFluentPrototypeWindow._open_general_settings
+uFluentPrototypeWindow._toggle_start
+uFluentPrototypeWindow._toggle_start_inner
+uFluentPrototypeWindow._ensure_login
+uFluentPrototypeWindow._inject_key_token
+uFluentPrototypeWindow._load_cycles_from_cloud_after_login
+uFluentPrototypeWindow._do_login_action
+uFluentPrototypeWindow._open_path_settings
+uFluentPrototypeWindow._open_skill_cycle_editor
+uFluentPrototypeWindow._open_spec_mapping
+uFluentPrototypeWindow._sync_local_cycles_to_cloud
+uFluentPrototypeWindow._on_sync_my_cycles_done
+uFluentPrototypeWindow._open_cycle_note
+uFluentPrototypeWindow._open_online_cycle
+uFluentPrototypeWindow._route_runtime_log_line
+uFluentPrototypeWindow._poll_bridge_processes
+uFluentPrototypeWindow.showEvent
+uFluentPrototypeWindow.paintEvent
+uFluentPrototypeWindow.closeEvent
+ufluent_ui\prototype_window.py
+wvwlu<module fluent_ui.prototype_window>
+acard_opacity_card
+acard_opacity_layout
+acard_opacity_label
+acard_slider_layout
+aupdate_card
+aupdate_layout
+aupdate_title
+aupdate_btn_row
+a_hotkey_row
+acard_title
+aaddon_card
+aaddon_layout
+aaddon_title
+aaddon_btn_row
+a_card_alpha
+a_card_alpha_alt
+amatch_threshold_raw
+amatch_threshold_int
+amatch_threshold
+aint_skills_saved
+abuff_texts
+.fluent_ui.void_protocol_theme
+#fluentRoot, #fluentRoot QWidget {
+#fluentRoot:disabled, #fluentRoot QWidget:disabled {
+ufluent_ui\void_protocol_theme.py
+u<module fluent_ui.void_protocol_theme>
+    <https://www.unicode.org/reports/tr46/>`_: each character is kept,
+        consumers (e.g. URL libraries, HTTP clients) that want to show
+aupdate_key
+uJsonConfigManager.update_key
+uRetrieve screen pixels for a given monitor.
+        :param monitor: The coordinates and size of the box to capture.
+        If the monitor has rotation, you have to deal with it
+uRetrieve all cursor data. Pixels have to be RGB.
+uRetrieve all pixels from a monitor. Pixels have to be RGB.
+        If the monitor size is not in pixel units, include a Size in
+        pixels (see issue #23).
+aCGDisplayRotation
+aCGImageGetBitsPerPixel
+abytes_per_pixel
+Uses the CoreGraphics APIs to capture windows and enumerates up to
+aSUPPORTED_BITS_PER_PIXEL
+uCapture the current cursor image.
+        Pixels are returned in BGRA ordering.
+uRetrieve pixels from a monitor using ``GetImage``.
+            ``width``, and ``height`` to capture.
+        :returns: A screenshot object containing the captured region.
+aRenderSubPixel
+arender_query_pict_formats_subpixels
+aCUT_BUFFER0
+aCUT_BUFFER1
+aCUT_BUFFER2
+aCUT_BUFFER3
+aCUT_BUFFER4
+aCUT_BUFFER5
+aCUT_BUFFER6
+aCUT_BUFFER7
+axcb_render_query_pict_formats_subpixels
+axcb_render_query_pict_formats_subpixels_length
+awhite_pixel
+ablack_pixel
+awidth_in_pixels
+aheight_in_pixels
+amotion_buffer_size
+arotation
+arotations
+asubpixel_order
+anum_subpixel
+axcb_discard_reply
+uRetrieve all pixels from a monitor. Pixels have to be RGBX.
+XFixes extensions when available for monitor enumeration and cursor capture.
+acreate_string_buffer
+aSUPPORTED_BITS_PER_PIXELS
+u[XImage] bits per pixel value not (yet?) implemented: 
+as a fallback when XCB backends are unavailable. Cursor capture uses XFixes
+l aBITS_PER_PIXELS_32
+    https://tronche.com/gui/x/xlib/introduction/generic.html
+    https://gitlab.freedesktop.org/xorg/proto/xorgproto/-/blob/master/include/X11/X.h#L66
+    https://tronche.com/gui/x/xlib/introduction/errors.html
+    https://gitlab.freedesktop.org/xorg/lib/libx11/-/blob/master/include/X11/Xlib.h#L79
+    https://gitlab.freedesktop.org/xorg/lib/libx11/-/blob/master/include/X11/Xlib.h#L78
+    https://tronche.com/gui/x/xlib/display/display-macros.html
+    https://gitlab.freedesktop.org/xorg/lib/libx11/-/blob/master/include/X11/Xlib.h#L477
+    https://github.com/garrybodsworth/pyxlib-ctypes/blob/master/pyxlib/xlib.py#L831.
+    https://tronche.com/gui/x/xlib/window/visual-types.html
+    https://gitlab.freedesktop.org/xorg/lib/libx11/-/blob/master/include/X11/Xlib.hheads#L220
+    https://github.com/garrybodsworth/pyxlib-ctypes/blob/master/pyxlib/xlib.py#302.
+    https://tronche.com/gui/x/xlib/display/screen-information.html
+    https://gitlab.freedesktop.org/xorg/lib/libx11/-/blob/master/include/X11/Xlib.h#L253
+    https://tronche.com/gui/x/xlib/event-handling/protocol-errors/default-handlers.html.
+    https://gitlab.freedesktop.org/xorg/lib/libx11/-/blob/master/include/X11/Xlib.h#L920
+    https://github.com/freedesktop/xorg-libXfixes/blob/libXfixes-6.0.0/include/X11/extensions/Xfixes.h#L96.
+    https://tronche.com/gui/x/xlib/graphics/images.html
+    https://gitlab.freedesktop.org/xorg/lib/libx11/-/blob/master/include/X11/Xlib.h#L353
+    https://gitlab.freedesktop.org/xorg/lib/libxrandr/-/blob/master/include/X11/extensions/Xrandr.h#L360.
+uhttps://gitlab.freedesktop.org/xorg/lib/libxrandr/-/blob/master/include/X11/extensions/Xrandr.h#L248.
+    https://gitlab.freedesktop.org/xorg/lib/libxrandr/-/blob/master/include/X11/extensions/Xrandr.h#L265.
+    https://tronche.com/gui/x/xlib/window-information/XGetWindowAttributes.html
+    https://gitlab.freedesktop.org/xorg/lib/libx11/-/blob/master/include/X11/Xlib.h#L304
+abacking_pixel
+uRequested capture size exceeds the allocated buffer. If you have resized the screen, please recreate your MSS object.
+This implementation prefers shared-memory captures for performance and will
+ppaPixel
+a_ScreenShot__pixels
+            https://numpy.org/doc/stable/reference/arrays.interface.html
+uBGRx values from the BGRx raw pixels.
+        pixel can be accessed as
+        The format is a list of rows.  Each row is a list of pixels.
+        Each pixel is a tuple of (R, G, B).
+uPixel location (
+uReturn the pixel value at a given position.
+uCompute RGB values from the BGRA raw pixels.
+a__pixels
+uScreenShot.pixels
+uScreenShot.pixel
+      update their EDID block each year; the manufacture_year field is
+          ``BitBlt`` and ``CreateDIBSection`` for direct memory access to pixel
+uSet DPI awareness to capture full screen on Hi-DPI monitors.
+aCAPTUREBLT
+uRetrieve all pixels from a monitor using CreateDIBSection.
+        https://learn.microsoft.com/en-us/windows/win32/api/wingdi/ns-wingdi-bitmapinfoheader
+        https://learn.microsoft.com/en-us/windows/win32/api/wingdi/nf-wingdi-createdibsection
+Uses user32/gdi32 APIs to capture the desktop and enumerate monitors.
+This implementation uses CreateDIBSection for direct memory access to pixel data.
+    https://learn.microsoft.com/en-us/windows/win32/api/winuser/ns-winuser-monitorinfoexw
+    https://learn.microsoft.com/en-us/windows/win32/api/wingdi/ns-wingdi-display_devicew
+    This implementation uses CreateDIBSection for direct memory access to pixel data,
+    which eliminates the need for GetDIBits. The DIB pixel data is written directly
+        https://data-apis.org/array-api/latest/API_specification/generated/array_api.info.capabilities.html
+https://data-apis.org/array-api/latest/API_specification/inspection.html for
+    https://data-apis.org/array-api/latest/API_specification/inspection.html
+      If you update these docstrings, please keep also the ones in
+        buffersize=0,
+        casting='safe', op_axes=None, itershape=None, buffersize=0)
+        * ``buffered`` enables buffering when required.
+          a common data type, with copying or buffering as necessary.
+        * ``delay_bufalloc`` delays allocation of the buffers until
+          be initialized before their values are copied into the buffers.
+          larger than the buffer size when both ``buffered`` and
+        * ``updateifcopy`` allows a temporary read-write copy if required.
+          but when writing from a buffer back to the array, it only
+        The required data type(s) of the operands. If copying or buffering
+        or buffering.  Setting this to 'unsafe' is not recommended,
+    buffersize : int, optional
+        When buffering is enabled, controls the size of the temporary
+        buffers. Set to 0 for the default value.
+        different from the operand data types if buffering is enabled.
+    ...    '''luf(lambdaexpr, op1, ..., opn, out=None, order='K', casting='safe', buffersize=0)'''
+    ...    it = np.nditer(op, ['buffered','external_loop'],
+    ...            buffersize=kwargs.get('buffersize',0))
+    ...        [['writeonly', 'updateifcopy']],
+    order='K', casting='safe', buffersize=0)
+    flags, op_flags, op_dtypes, order, casting, buffersize (optional)

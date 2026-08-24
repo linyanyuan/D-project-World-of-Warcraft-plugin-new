@@ -1,0 +1,93 @@
+# skill_cycle_config.Path.rglob
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('sys', 'audit', '_flavour', 'parse_parts', 'NotImplementedError', 'sep', 'altsep', 'append', '_make_selector', 'tuple', 'select_from')
+co_varnames=('self', 'pattern', 'drv', 'root', 'pattern_parts', 'selector', 'p')
+co_consts=['Recursively yield all existing files (of any kind, including\n        directories) matching the given relative pattern, anywhere in\n        this subtree.\n        ', 'pathlib.Path.rglob', 'Non-relative patterns are unsupported', -1, '', ('**',), None]
+956           0 RETURN_GENERATOR
+              2 POP_TOP
+              4 RESUME                   0
+
+961           6 LOAD_GLOBAL              1 (NULL + sys)
+             18 LOAD_ATTR                1 (audit)
+             28 LOAD_CONST               1 ('pathlib.Path.rglob')
+             30 LOAD_FAST                0 (self)
+             32 LOAD_FAST                1 (pattern)
+             34 PRECALL                  3
+             38 CALL                     3
+             48 POP_TOP
+
+962          50 LOAD_FAST                0 (self)
+             52 LOAD_ATTR                2 (_flavour)
+             62 LOAD_METHOD              3 (parse_parts)
+             84 LOAD_FAST                1 (pattern)
+             86 BUILD_TUPLE              1
+             88 PRECALL                  1
+             92 CALL                     1
+            102 UNPACK_SEQUENCE          3
+            106 STORE_FAST               2 (drv)
+            108 STORE_FAST               3 (root)
+            110 STORE_FAST               4 (pattern_parts)
+
+963         112 LOAD_FAST                2 (drv)
+            114 POP_JUMP_FORWARD_IF_TRUE     2 (to 120)
+            116 LOAD_FAST                3 (root)
+            118 POP_JUMP_FORWARD_IF_FALSE    15 (to 150)
+
+964     >>  120 LOAD_GLOBAL              9 (NULL + NotImplementedError)
+            132 LOAD_CONST               2 ('Non-relative patterns are unsupported')
+            134 PRECALL                  1
+            138 CALL                     1
+            148 RAISE_VARARGS            1
+
+965     >>  150 LOAD_FAST                1 (pattern)
+            152 POP_JUMP_FORWARD_IF_FALSE    53 (to 260)
+            154 LOAD_FAST                1 (pattern)
+            156 LOAD_CONST               3 (-1)
+            158 BINARY_SUBSCR
+            168 LOAD_FAST                0 (self)
+            170 LOAD_ATTR                2 (_flavour)
+            180 LOAD_ATTR                5 (sep)
+            190 LOAD_FAST                0 (self)
+            192 LOAD_ATTR                2 (_flavour)
+            202 LOAD_ATTR                6 (altsep)
+            212 BUILD_TUPLE              2
+            214 CONTAINS_OP              0
+            216 POP_JUMP_FORWARD_IF_FALSE    21 (to 260)
+
+966         218 LOAD_FAST                4 (pattern_parts)
+            220 LOAD_METHOD              7 (append)
+            242 LOAD_CONST               4 ('')
+            244 PRECALL                  1
+            248 CALL                     1
+            258 POP_TOP
+
+967     >>  260 LOAD_GLOBAL             17 (NULL + _make_selector)
+            272 LOAD_CONST               5 (('**',))
+            274 LOAD_GLOBAL             19 (NULL + tuple)
+            286 LOAD_FAST                4 (pattern_parts)
+            288 PRECALL                  1
+            292 CALL                     1
+            302 BINARY_OP                0 (+)
+            306 LOAD_FAST                0 (self)
+            308 LOAD_ATTR                2 (_flavour)
+            318 PRECALL                  2
+            322 CALL                     2
+            332 STORE_FAST               5 (selector)
+
+968         334 LOAD_FAST                5 (selector)
+            336 LOAD_METHOD             10 (select_from)
+            358 LOAD_FAST                0 (self)
+            360 PRECALL                  1
+            364 CALL                     1
+            374 GET_ITER
+        >>  376 FOR_ITER                 6 (to 390)
+            378 STORE_FAST               6 (p)
+
+969         380 LOAD_FAST                6 (p)
+            382 YIELD_VALUE
+            384 RESUME                   1
+            386 POP_TOP
+            388 JUMP_BACKWARD            7 (to 376)
+
+968     >>  390 LOAD_CONST               6 (None)
+            392 RETURN_VALUE

@@ -1,0 +1,13 @@
+{
+  "include": ["clean_client"],
+  "extraPaths": [".", "./clean_client"],
+  "executionEnvironments": [
+    {
+      "root": ".",
+      "extraPaths": ["."]
+    }
+  ],
+  "pythonVersion": "3.11",
+  "typeCheckingMode": "basic",
+  "reportMissingImports": "none"
+}

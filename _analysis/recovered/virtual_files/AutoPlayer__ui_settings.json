@@ -1,0 +1,13 @@
+{
+  "capture_mode": "方式一",
+  "tick_ms": 30,
+  "cd_ready_window_ms": 30,
+  "buff_match_threshold": 0.7,
+  "hotkey_enabled": false,
+  "hotkey_key": "F8",
+  "background_strength": 60,
+  "card_opacity": 88,
+  "background_image": "",
+  "custom_font": "",
+  "font_family": "Microsoft YaHei UI"
+}

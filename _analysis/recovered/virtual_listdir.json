@@ -1,0 +1,332 @@
+[
+  {
+    "name": "AutoPlayer",
+    "isdir": true,
+    "isfile": false,
+    "size": null
+  },
+  {
+    "name": "Nirvana.exe",
+    "isdir": false,
+    "isfile": true,
+    "size": 21950976
+  },
+  {
+    "name": "PIL",
+    "isdir": true,
+    "isfile": false,
+    "size": null
+  },
+  {
+    "name": "PySide6",
+    "isdir": true,
+    "isfile": false,
+    "size": null
+  },
+  {
+    "name": "_bz2.pyd",
+    "isdir": false,
+    "isfile": true,
+    "size": 84760
+  },
+  {
+    "name": "_ctypes.pyd",
+    "isdir": false,
+    "isfile": true,
+    "size": 124696
+  },
+  {
+    "name": "_decimal.pyd",
+    "isdir": false,
+    "isfile": true,
+    "size": 255768
+  },
+  {
+    "name": "_hashlib.pyd",
+    "isdir": false,
+    "isfile": true,
+    "size": 65304
+  },
+  {
+    "name": "_lzma.pyd",
+    "isdir": false,
+    "isfile": true,
+    "size": 159512
+  },
+  {
+    "name": "_queue.pyd",
+    "isdir": false,
+    "isfile": true,
+    "size": 32024
+  },
+  {
+    "name": "_socket.pyd",
+    "isdir": false,
+    "isfile": true,
+    "size": 79640
+  },
+  {
+    "name": "_ssl.pyd",
+    "isdir": false,
+    "isfile": true,
+    "size": 178456
+  },
+  {
+    "name": "_uuid.pyd",
+    "isdir": false,
+    "isfile": true,
+    "size": 25368
+  },
+  {
+    "name": "ada92cb5d92a588d1b93__mypyc.pyd",
+    "isdir": false,
+    "isfile": true,
+    "size": 221696
+  },
+  {
+    "name": "certifi",
+    "isdir": true,
+    "isfile": false,
+    "size": null
+  },
+  {
+    "name": "charset_normalizer",
+    "isdir": true,
+    "isfile": false,
+    "size": null
+  },
+  {
+    "name": "crash_logs",
+    "isdir": true,
+    "isfile": false,
+    "size": null
+  },
+  {
+    "name": "cv2",
+    "isdir": true,
+    "isfile": false,
+    "size": null
+  },
+  {
+    "name": "dxcam",
+    "isdir": true,
+    "isfile": false,
+    "size": null
+  },
+  {
+    "name": "icon",
+    "isdir": true,
+    "isfile": false,
+    "size": null
+  },
+  {
+    "name": "jpg",
+    "isdir": true,
+    "isfile": false,
+    "size": null
+  },
+  {
+    "name": "libcrypto-3.dll",
+    "isdir": false,
+    "isfile": true,
+    "size": 5191960
+  },
+  {
+    "name": "libffi-8.dll",
+    "isdir": false,
+    "isfile": true,
+    "size": 39696
+  },
+  {
+    "name": "libssl-3.dll",
+    "isdir": false,
+    "isfile": true,
+    "size": 787224
+  },
+  {
+    "name": "msvcp140.dll",
+    "isdir": false,
+    "isfile": true,
+    "size": 549176
+  },
+  {
+    "name": "msvcp140_1.dll",
+    "isdir": false,
+    "isfile": true,
+    "size": 27448
+  },
+  {
+    "name": "msvcp140_2.dll",
+    "isdir": false,
+    "isfile": true,
+    "size": 271672
+  },
+  {
+    "name": "numpy",
+    "isdir": true,
+    "isfile": false,
+    "size": null
+  },
+  {
+    "name": "numpy.libs",
+    "isdir": true,
+    "isfile": false,
+    "size": null
+  },
+  {
+    "name": "pyside6.abi3.dll",
+    "isdir": false,
+    "isfile": true,
+    "size": 259384
+  },
+  {
+    "name": "python3.dll",
+    "isdir": false,
+    "isfile": true,
+    "size": 67352
+  },
+  {
+    "name": "python311.dll",
+    "isdir": false,
+    "isfile": true,
+    "size": 5800216
+  },
+  {
+    "name": "pythoncom311.dll",
+    "isdir": false,
+    "isfile": true,
+    "size": 680960
+  },
+  {
+    "name": "pywintypes311.dll",
+    "isdir": false,
+    "isfile": true,
+    "size": 135168
+  },
+  {
+    "name": "qt6core.dll",
+    "isdir": false,
+    "isfile": true,
+    "size": 10242360
+  },
+  {
+    "name": "qt6gui.dll",
+    "isdir": false,
+    "isfile": true,
+    "size": 9494840
+  },
+  {
+    "name": "qt6network.dll",
+    "isdir": false,
+    "isfile": true,
+    "size": 1766712
+  },
+  {
+    "name": "qt6pdf.dll",
+    "isdir": false,
+    "isfile": true,
+    "size": 5519672
+  },
+  {
+    "name": "qt6svg.dll",
+    "isdir": false,
+    "isfile": true,
+    "size": 632120
+  },
+  {
+    "name": "qt6svgwidgets.dll",
+    "isdir": false,
+    "isfile": true,
+    "size": 58680
+  },
+  {
+    "name": "qt6widgets.dll",
+    "isdir": false,
+    "isfile": true,
+    "size": 6576952
+  },
+  {
+    "name": "qt6xml.dll",
+    "isdir": false,
+    "isfile": true,
+    "size": 160056
+  },
+  {
+    "name": "select.pyd",
+    "isdir": false,
+    "isfile": true,
+    "size": 30488
+  },
+  {
+    "name": "shiboken6",
+    "isdir": true,
+    "isfile": false,
+    "size": null
+  },
+  {
+    "name": "shiboken6.abi3.dll",
+    "isdir": false,
+    "isfile": true,
+    "size": 382776
+  },
+  {
+    "name": "skill_cycles",
+    "isdir": true,
+    "isfile": false,
+    "size": null
+  },
+  {
+    "name": "unicodedata.pyd",
+    "isdir": false,
+    "isfile": true,
+    "size": 1140504
+  },
+  {
+    "name": "user_config.json",
+    "isdir": false,
+    "isfile": true,
+    "size": 55
+  },
+  {
+    "name": "vcruntime140.dll",
+    "isdir": false,
+    "isfile": true,
+    "size": 119192
+  },
+  {
+    "name": "vcruntime140_1.dll",
+    "isdir": false,
+    "isfile": true,
+    "size": 49528
+  },
+  {
+    "name": "win32api.pyd",
+    "isdir": false,
+    "isfile": true,
+    "size": 138240
+  },
+  {
+    "name": "win32gui.pyd",
+    "isdir": false,
+    "isfile": true,
+    "size": 219648
+  },
+  {
+    "name": "win32print.pyd",
+    "isdir": false,
+    "isfile": true,
+    "size": 74752
+  },
+  {
+    "name": "win32ui.pyd",
+    "isdir": false,
+    "isfile": true,
+    "size": 1122816
+  },
+  {
+    "name": "xingyelangmanyuzhouwenrou.ttf",
+    "isdir": false,
+    "isfile": true,
+    "size": 3071688
+  }
+]

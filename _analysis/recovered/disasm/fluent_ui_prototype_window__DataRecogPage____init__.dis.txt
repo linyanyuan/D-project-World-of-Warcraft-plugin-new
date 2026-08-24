@@ -1,0 +1,11 @@
+# fluent_ui.prototype_window.DataRecogPage.__init__
+co_filename=D:\project\Nirvana30\Nirvana30\fluent_ui\prototype_window.py
+co_names=('RuntimeError',)
+co_varnames=('self', 'root', 'title', 'scroll', 'content_w', 'inner', 's1', 's1_body', 'i', 'key', 'name', 'row', 'col', 'n_lbl', 'v_lbl', 's2', 's2_body', 'j', 'display', 'bar_lbl', 'pct_lbl', 'w', 's3', 's3_body', 's3_inner', 's4', 's4_body', 's5', 's5_body', 's5_inner', '__class__')
+co_consts=[None, 'Compiled function bytecode used']
+          0 RESUME                   0
+          2 LOAD_GLOBAL              1 (NULL + RuntimeError)
+         14 LOAD_CONST               1 ('Compiled function bytecode used')
+         16 PRECALL                  1
+         20 CALL                     1
+         30 RAISE_VARARGS            1

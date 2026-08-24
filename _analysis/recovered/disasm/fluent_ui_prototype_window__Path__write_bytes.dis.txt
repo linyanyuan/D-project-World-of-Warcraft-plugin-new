@@ -1,0 +1,53 @@
+# fluent_ui.prototype_window.Path.write_bytes
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('memoryview', 'open', 'write')
+co_varnames=('self', 'data', 'view', 'f')
+co_consts=['\n        Open the file in bytes mode, write to it, and close the file.\n        ', 'wb', ('mode',), None]
+1061           0 RESUME                   0
+
+1066           2 LOAD_GLOBAL              1 (NULL + memoryview)
+              14 LOAD_FAST                1 (data)
+              16 PRECALL                  1
+              20 CALL                     1
+              30 STORE_FAST               2 (view)
+
+1067          32 LOAD_FAST                0 (self)
+              34 LOAD_METHOD              1 (open)
+              56 LOAD_CONST               1 ('wb')
+              58 KW_NAMES                 2
+              60 PRECALL                  1
+              64 CALL                     1
+              74 BEFORE_WITH
+              76 STORE_FAST               3 (f)
+
+1068          78 LOAD_FAST                3 (f)
+              80 LOAD_METHOD              2 (write)
+             102 LOAD_FAST                2 (view)
+             104 PRECALL                  1
+             108 CALL                     1
+
+1067         118 SWAP                     2
+             120 LOAD_CONST               3 (None)
+             122 LOAD_CONST               3 (None)
+             124 LOAD_CONST               3 (None)
+             126 PRECALL                  2
+             130 CALL                     2
+             140 POP_TOP
+             142 RETURN_VALUE
+         >>  144 PUSH_EXC_INFO
+             146 WITH_EXCEPT_START
+             148 POP_JUMP_FORWARD_IF_TRUE     4 (to 158)
+             150 RERAISE                  2
+         >>  152 COPY                     3
+             154 POP_EXCEPT
+             156 RERAISE                  1
+         >>  158 POP_TOP
+             160 POP_EXCEPT
+             162 POP_TOP
+             164 POP_TOP
+             166 LOAD_CONST               3 (None)
+             168 RETURN_VALUE
+ExceptionTable:
+  76 to 116 -> 144 [1] lasti
+  144 to 150 -> 152 [3] lasti
+  158 to 158 -> 152 [3] lasti

@@ -1,0 +1,76 @@
+# fluent_ui.data_loader.Path.write_text
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('isinstance', 'str', 'TypeError', '__class__', '__name__', 'io', 'text_encoding', 'open', 'write')
+co_varnames=('self', 'data', 'encoding', 'errors', 'newline', 'f')
+co_consts=['\n        Open the file in text mode, write to it, and close the file.\n        ', 'data must be str, not %s', 'w', ('mode', 'encoding', 'errors', 'newline'), None]
+1070           0 RESUME                   0
+
+1074           2 LOAD_GLOBAL              1 (NULL + isinstance)
+              14 LOAD_FAST                1 (data)
+              16 LOAD_GLOBAL              2 (str)
+              28 PRECALL                  2
+              32 CALL                     2
+              42 POP_JUMP_FORWARD_IF_TRUE    28 (to 100)
+
+1075          44 LOAD_GLOBAL              5 (NULL + TypeError)
+              56 LOAD_CONST               1 ('data must be str, not %s')
+
+1076          58 LOAD_FAST                1 (data)
+              60 LOAD_ATTR                3 (__class__)
+              70 LOAD_ATTR                4 (__name__)
+
+1075          80 BINARY_OP                6 (%)
+              84 PRECALL                  1
+              88 CALL                     1
+              98 RAISE_VARARGS            1
+
+1077     >>  100 LOAD_GLOBAL             11 (NULL + io)
+             112 LOAD_ATTR                6 (text_encoding)
+             122 LOAD_FAST                2 (encoding)
+             124 PRECALL                  1
+             128 CALL                     1
+             138 STORE_FAST               2 (encoding)
+
+1078         140 LOAD_FAST                0 (self)
+             142 LOAD_METHOD              7 (open)
+             164 LOAD_CONST               2 ('w')
+             166 LOAD_FAST                2 (encoding)
+             168 LOAD_FAST                3 (errors)
+             170 LOAD_FAST                4 (newline)
+             172 KW_NAMES                 3
+             174 PRECALL                  4
+             178 CALL                     4
+             188 BEFORE_WITH
+             190 STORE_FAST               5 (f)
+
+1079         192 LOAD_FAST                5 (f)
+             194 LOAD_METHOD              8 (write)
+             216 LOAD_FAST                1 (data)
+             218 PRECALL                  1
+             222 CALL                     1
+
+1078         232 SWAP                     2
+             234 LOAD_CONST               4 (None)
+             236 LOAD_CONST               4 (None)
+             238 LOAD_CONST               4 (None)
+             240 PRECALL                  2
+             244 CALL                     2
+             254 POP_TOP
+             256 RETURN_VALUE
+         >>  258 PUSH_EXC_INFO
+             260 WITH_EXCEPT_START
+             262 POP_JUMP_FORWARD_IF_TRUE     4 (to 272)
+             264 RERAISE                  2
+         >>  266 COPY                     3
+             268 POP_EXCEPT
+             270 RERAISE                  1
+         >>  272 POP_TOP
+             274 POP_EXCEPT
+             276 POP_TOP
+             278 POP_TOP
+             280 LOAD_CONST               4 (None)
+             282 RETURN_VALUE
+ExceptionTable:
+  190 to 230 -> 258 [1] lasti
+  258 to 264 -> 266 [3] lasti
+  272 to 272 -> 266 [3] lasti

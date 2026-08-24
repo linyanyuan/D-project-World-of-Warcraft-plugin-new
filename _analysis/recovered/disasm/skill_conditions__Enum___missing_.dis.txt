@@ -1,0 +1,9 @@
+# skill_conditions.Enum._missing_
+co_filename=D:\project\Nirvana30\Nirvana30\enum.py
+co_names=()
+co_varnames=('cls', 'value')
+co_consts=[None]
+1189           0 RESUME                   0
+
+1191           2 LOAD_CONST               0 (None)
+               4 RETURN_VALUE

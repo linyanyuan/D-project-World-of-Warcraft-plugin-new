@@ -1,0 +1,11 @@
+# fluent_ui.fluent_windows.FluentOnlineCycleDialog._download_cycle
+co_filename=D:\project\Nirvana30\Nirvana30\fluent_ui\fluent_windows.py
+co_names=('RuntimeError',)
+co_varnames=('self', 'rec', 'force', 'cycle_json', 'OnlineCycleApi', 'detail_resp', 'detail_data', 'decode_cycle_json_from_transport', 'cycle_json_text', 'cycle_obj', 'e', '_raw_id', 'cycle_id', 'cycle_name', 'skills', 'config', 'existing', 'old_name', 'old_version', 'new_version', 'msg', 'remote_creator', 'is_public', 'bought', 'is_other_creator', 'copy_id', '_k', '_c', 'payload', 'raw_preconditions', '_upload_cycle_to_cloud', 'ok_cloud', 'cloud_id', 'key_after', 'saved_name', 'n', 'c')
+co_consts=[None, 'Compiled function bytecode used']
+          0 RESUME                   0
+          2 LOAD_GLOBAL              1 (NULL + RuntimeError)
+         14 LOAD_CONST               1 ('Compiled function bytecode used')
+         16 PRECALL                  1
+         20 CALL                     1
+         30 RAISE_VARARGS            1

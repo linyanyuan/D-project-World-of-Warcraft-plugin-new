@@ -1,0 +1,9 @@
+# skill_conditions.Enum.__init__
+co_filename=D:\project\Nirvana30\Nirvana30\enum.py
+co_names=()
+co_varnames=('self', 'args', 'kwds')
+co_consts=[None]
+1151           0 RESUME                   0
+
+1152           2 LOAD_CONST               0 (None)
+               4 RETURN_VALUE

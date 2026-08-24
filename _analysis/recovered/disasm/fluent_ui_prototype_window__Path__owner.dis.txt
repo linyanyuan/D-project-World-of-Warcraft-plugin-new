@@ -1,0 +1,45 @@
+# fluent_ui.prototype_window.Path.owner
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('pwd', 'getpwuid', 'stat', 'st_uid', 'pw_name', 'ImportError', 'NotImplementedError')
+co_varnames=('self', 'pwd')
+co_consts=['\n        Return the login name of the file owner.\n        ', 0, None, 'Path.owner() is unsupported on this system']
+1015           0 RESUME                   0
+
+1019           2 NOP
+
+1020           4 LOAD_CONST               1 (0)
+               6 LOAD_CONST               2 (None)
+               8 IMPORT_NAME              0 (pwd)
+              10 STORE_FAST               1 (pwd)
+
+1021          12 LOAD_FAST                1 (pwd)
+              14 LOAD_METHOD              1 (getpwuid)
+              36 LOAD_FAST                0 (self)
+              38 LOAD_METHOD              2 (stat)
+              60 PRECALL                  0
+              64 CALL                     0
+              74 LOAD_ATTR                3 (st_uid)
+              84 PRECALL                  1
+              88 CALL                     1
+              98 LOAD_ATTR                4 (pw_name)
+             108 RETURN_VALUE
+         >>  110 PUSH_EXC_INFO
+
+1022         112 LOAD_GLOBAL             10 (ImportError)
+             124 CHECK_EXC_MATCH
+             126 POP_JUMP_FORWARD_IF_FALSE    16 (to 160)
+             128 POP_TOP
+
+1023         130 LOAD_GLOBAL             13 (NULL + NotImplementedError)
+             142 LOAD_CONST               3 ('Path.owner() is unsupported on this system')
+             144 PRECALL                  1
+             148 CALL                     1
+             158 RAISE_VARARGS            1
+
+1022     >>  160 RERAISE                  0
+         >>  162 COPY                     3
+             164 POP_EXCEPT
+             166 RERAISE                  1
+ExceptionTable:
+  4 to 106 -> 110 [0]
+  110 to 160 -> 162 [1] lasti

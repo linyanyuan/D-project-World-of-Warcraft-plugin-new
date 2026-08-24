@@ -1,0 +1,14 @@
+# addon_update.Path.lstat
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('stat',)
+co_varnames=('self',)
+co_consts=["\n        Like stat(), except if the path points to a symlink, the symlink's\n        status information is returned, rather than its target's.\n        ", False, ('follow_symlinks',)]
+1158           0 RESUME                   0
+
+1163           2 LOAD_FAST                0 (self)
+               4 LOAD_METHOD              0 (stat)
+              26 LOAD_CONST               1 (False)
+              28 KW_NAMES                 2
+              30 PRECALL                  1
+              34 CALL                     1
+              44 RETURN_VALUE

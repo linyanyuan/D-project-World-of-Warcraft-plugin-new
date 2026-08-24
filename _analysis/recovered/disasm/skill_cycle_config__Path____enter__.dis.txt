@@ -1,0 +1,21 @@
+# skill_cycle_config.Path.__enter__
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('warnings', 'warn', 'DeprecationWarning')
+co_varnames=('self',)
+co_consts=[None, 'pathlib.Path.__enter__() is deprecated and scheduled for removal in Python 3.13; Path objects as a context manager is a no-op', 2, ('stacklevel',)]
+883           0 RESUME                   0
+
+891           2 LOAD_GLOBAL              1 (NULL + warnings)
+             14 LOAD_ATTR                1 (warn)
+             24 LOAD_CONST               1 ('pathlib.Path.__enter__() is deprecated and scheduled for removal in Python 3.13; Path objects as a context manager is a no-op')
+
+894          26 LOAD_GLOBAL              4 (DeprecationWarning)
+             38 LOAD_CONST               2 (2)
+
+891          40 KW_NAMES                 3
+             42 PRECALL                  3
+             46 CALL                     3
+             56 POP_TOP
+
+895          58 LOAD_FAST                0 (self)
+             60 RETURN_VALUE

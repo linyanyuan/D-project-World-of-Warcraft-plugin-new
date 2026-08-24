@@ -1,0 +1,119 @@
+# skill_conditions.Enum._generate_next_value_
+co_filename=D:\project\Nirvana30\Nirvana30\enum.py
+co_names=('sort', 'TypeError', 'warnings', 'warn', 'DeprecationWarning', 'reversed')
+co_varnames=('name', 'start', 'count', 'last_values', 'last', 'warnings', 'v')
+co_consts=['\n        Generate the next value when not given.\n\n        name: the name of the member\n        start: the initial start value or None\n        count: the number of existing members\n        last_values: the list of values assigned\n        ', -1, 1, 0, None, 'In 3.13 the default `auto()`/`_generate_next_value_` will require all values to be sortable and support adding +1\nand the value returned will be the largest value in the enum incremented by 1', 3, ('stacklevel',)]
+1154           0 RESUME                   0
+
+1163           2 LOAD_FAST                3 (last_values)
+               4 POP_JUMP_FORWARD_IF_TRUE     2 (to 10)
+
+1164           6 LOAD_FAST                1 (start)
+               8 RETURN_VALUE
+
+1165     >>   10 NOP
+
+1166          12 LOAD_FAST                3 (last_values)
+              14 LOAD_CONST               1 (-1)
+              16 BINARY_SUBSCR
+              26 STORE_FAST               4 (last)
+
+1167          28 LOAD_FAST                3 (last_values)
+              30 LOAD_METHOD              0 (sort)
+              52 PRECALL                  0
+              56 CALL                     0
+              66 POP_TOP
+
+1168          68 LOAD_FAST                4 (last)
+              70 LOAD_FAST                3 (last_values)
+              72 LOAD_CONST               1 (-1)
+              74 BINARY_SUBSCR
+              84 COMPARE_OP               2 (==)
+              90 POP_JUMP_FORWARD_IF_FALSE     5 (to 102)
+
+1170          92 LOAD_FAST                4 (last)
+              94 LOAD_CONST               2 (1)
+              96 BINARY_OP                0 (+)
+             100 RETURN_VALUE
+
+1173     >>  102 LOAD_GLOBAL              2 (TypeError)
+             114 RAISE_VARARGS            1
+         >>  116 PUSH_EXC_INFO
+
+1174         118 LOAD_GLOBAL              2 (TypeError)
+             130 CHECK_EXC_MATCH
+             132 POP_JUMP_FORWARD_IF_FALSE    81 (to 296)
+             134 POP_TOP
+
+1175         136 LOAD_CONST               3 (0)
+             138 LOAD_CONST               4 (None)
+             140 IMPORT_NAME              2 (warnings)
+             142 STORE_FAST               5 (warnings)
+
+1176         144 LOAD_FAST                5 (warnings)
+             146 LOAD_METHOD              3 (warn)
+
+1177         168 LOAD_CONST               5 ('In 3.13 the default `auto()`/`_generate_next_value_` will require all values to be sortable and support adding +1\nand the value returned will be the largest value in the enum incremented by 1')
+
+1179         170 LOAD_GLOBAL              8 (DeprecationWarning)
+
+1180         182 LOAD_CONST               6 (3)
+
+1176         184 KW_NAMES                 7
+             186 PRECALL                  3
+             190 CALL                     3
+             200 POP_TOP
+
+1182         202 LOAD_GLOBAL             11 (NULL + reversed)
+             214 LOAD_FAST                3 (last_values)
+             216 PRECALL                  1
+             220 CALL                     1
+             230 GET_ITER
+         >>  232 FOR_ITER                27 (to 288)
+             234 STORE_FAST               6 (v)
+
+1183         236 NOP
+
+1184         238 LOAD_FAST                6 (v)
+             240 LOAD_CONST               2 (1)
+             242 BINARY_OP                0 (+)
+             246 SWAP                     2
+             248 POP_TOP
+             250 SWAP                     2
+             252 POP_EXCEPT
+             254 RETURN_VALUE
+         >>  256 PUSH_EXC_INFO
+
+1185         258 LOAD_GLOBAL              2 (TypeError)
+             270 CHECK_EXC_MATCH
+             272 POP_JUMP_FORWARD_IF_FALSE     3 (to 280)
+             274 POP_TOP
+
+1186         276 POP_EXCEPT
+             278 JUMP_BACKWARD           24 (to 232)
+
+1185     >>  280 RERAISE                  0
+         >>  282 COPY                     3
+             284 POP_EXCEPT
+             286 RERAISE                  1
+
+1187     >>  288 LOAD_FAST                1 (start)
+             290 SWAP                     2
+             292 POP_EXCEPT
+             294 RETURN_VALUE
+
+1174     >>  296 RERAISE                  0
+         >>  298 COPY                     3
+             300 POP_EXCEPT
+             302 RERAISE                  1
+ExceptionTable:
+  12 to 98 -> 116 [0]
+  102 to 114 -> 116 [0]
+  116 to 234 -> 298 [1] lasti
+  238 to 244 -> 256 [2]
+  246 to 250 -> 298 [1] lasti
+  256 to 274 -> 282 [3] lasti
+  276 to 278 -> 298 [1] lasti
+  280 to 280 -> 282 [3] lasti
+  282 to 290 -> 298 [1] lasti
+  296 to 296 -> 298 [1] lasti

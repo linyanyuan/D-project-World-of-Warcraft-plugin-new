@@ -1,0 +1,21 @@
+# skill_cycle_config.Path.rename
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('os', 'rename', '__class__')
+co_varnames=('self', 'target')
+co_consts=['\n        Rename this path to the target path.\n\n        The target path may be absolute or relative. Relative paths are\n        interpreted relative to the current working directory, *not* the\n        directory of the Path object.\n\n        Returns the new Path instance pointing to the target path.\n        ']
+1165           0 RESUME                   0
+
+1175           2 LOAD_GLOBAL              1 (NULL + os)
+              14 LOAD_ATTR                1 (rename)
+              24 LOAD_FAST                0 (self)
+              26 LOAD_FAST                1 (target)
+              28 PRECALL                  2
+              32 CALL                     2
+              42 POP_TOP
+
+1176          44 LOAD_FAST                0 (self)
+              46 LOAD_METHOD              2 (__class__)
+              68 LOAD_FAST                1 (target)
+              70 PRECALL                  1
+              74 CALL                     1
+              84 RETURN_VALUE

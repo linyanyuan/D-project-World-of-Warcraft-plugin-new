@@ -1,0 +1,57 @@
+# skill_cycle_config.Path.samefile
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('stat', 'AttributeError', '__class__', 'os', 'path', 'samestat')
+co_varnames=('self', 'other_path', 'st', 'other_st')
+co_consts=['Return whether other_path is the same or not as this file\n        (as returned by os.path.samefile()).\n        ']
+916           0 RESUME                   0
+
+920           2 LOAD_FAST                0 (self)
+              4 LOAD_METHOD              0 (stat)
+             26 PRECALL                  0
+             30 CALL                     0
+             40 STORE_FAST               2 (st)
+
+921          42 NOP
+
+922          44 LOAD_FAST                1 (other_path)
+             46 LOAD_METHOD              0 (stat)
+             68 PRECALL                  0
+             72 CALL                     0
+             82 STORE_FAST               3 (other_st)
+             84 JUMP_FORWARD            55 (to 196)
+        >>   86 PUSH_EXC_INFO
+
+923          88 LOAD_GLOBAL              2 (AttributeError)
+            100 CHECK_EXC_MATCH
+            102 POP_JUMP_FORWARD_IF_FALSE    42 (to 188)
+            104 POP_TOP
+
+924         106 LOAD_FAST                0 (self)
+            108 LOAD_METHOD              2 (__class__)
+            130 LOAD_FAST                1 (other_path)
+            132 PRECALL                  1
+            136 CALL                     1
+            146 LOAD_METHOD              0 (stat)
+            168 PRECALL                  0
+            172 CALL                     0
+            182 STORE_FAST               3 (other_st)
+            184 POP_EXCEPT
+            186 JUMP_FORWARD             4 (to 196)
+
+923     >>  188 RERAISE                  0
+        >>  190 COPY                     3
+            192 POP_EXCEPT
+            194 RERAISE                  1
+
+925     >>  196 LOAD_GLOBAL              6 (os)
+            208 LOAD_ATTR                4 (path)
+            218 LOAD_METHOD              5 (samestat)
+            240 LOAD_FAST                2 (st)
+            242 LOAD_FAST                3 (other_st)
+            244 PRECALL                  2
+            248 CALL                     2
+            258 RETURN_VALUE
+ExceptionTable:
+  44 to 82 -> 86 [0]
+  86 to 182 -> 190 [1] lasti
+  188 to 188 -> 190 [1] lasti

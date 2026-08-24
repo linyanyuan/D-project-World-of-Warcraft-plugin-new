@@ -1,0 +1,11 @@
+# window_capture._printwindow_once
+co_filename=D:\project\Nirvana30\Nirvana30\window_capture.py
+co_names=('RuntimeError',)
+co_varnames=('hwnd', 'hwnd_dc', 'cap_w', 'cap_h', 'flags', 'mfc_dc', 'save_dc', 'save_bmp_handle', 'old_bmp', 'bmpstr', 'bmpinfo', 'ok', 'save_bitmap')
+co_consts=[None, 'Compiled function bytecode used']
+          0 RESUME                   0
+          2 LOAD_GLOBAL              1 (NULL + RuntimeError)
+         14 LOAD_CONST               1 ('Compiled function bytecode used')
+         16 PRECALL                  1
+         20 CALL                     1
+         30 RAISE_VARARGS            1

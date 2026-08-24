@@ -1,0 +1,9 @@
+-- frames=7
+
+FRAME name=UIParent type=Frame w=nil h=nil points=0 textures=0 events=0
+FRAME name=WorldFrame type=Frame w=nil h=nil points=0 textures=0 events=0
+FRAME name=GameTooltip type=GameTooltip w=nil h=nil points=0 textures=0 events=0
+FRAME name=PlayerFrame type=Frame w=nil h=nil points=0 textures=0 events=0
+FRAME name=PetFrame type=Frame w=nil h=nil points=0 textures=0 events=0
+FRAME name=TargetFrame type=Frame w=nil h=nil points=0 textures=0 events=0
+FRAME name=Minimap type=Frame w=nil h=nil points=0 textures=0 events=0

@@ -1,0 +1,13 @@
+# skill_conditions.Enum.__hash__
+co_filename=D:\project\Nirvana30\Nirvana30\enum.py
+co_names=('hash', '_name_')
+co_varnames=('self',)
+co_consts=[None]
+1232           0 RESUME                   0
+
+1233           2 LOAD_GLOBAL              1 (NULL + hash)
+              14 LOAD_FAST                0 (self)
+              16 LOAD_ATTR                1 (_name_)
+              26 PRECALL                  1
+              30 CALL                     1
+              40 RETURN_VALUE

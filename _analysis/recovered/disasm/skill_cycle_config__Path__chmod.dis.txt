@@ -1,0 +1,18 @@
+# skill_cycle_config.Path.chmod
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('os', 'chmod')
+co_varnames=('self', 'mode', 'follow_symlinks')
+co_consts=['\n        Change the permissions of the path, like os.chmod().\n        ', ('follow_symlinks',), None]
+1128           0 RESUME                   0
+
+1132           2 LOAD_GLOBAL              1 (NULL + os)
+              14 LOAD_ATTR                1 (chmod)
+              24 LOAD_FAST                0 (self)
+              26 LOAD_FAST                1 (mode)
+              28 LOAD_FAST                2 (follow_symlinks)
+              30 KW_NAMES                 1
+              32 PRECALL                  3
+              36 CALL                     3
+              46 POP_TOP
+              48 LOAD_CONST               2 (None)
+              50 RETURN_VALUE

@@ -1,0 +1,9 @@
+# skill_conditions.Enum.__deepcopy__
+co_filename=D:\project\Nirvana30\Nirvana30\enum.py
+co_names=()
+co_varnames=('self', 'memo')
+co_consts=[None]
+1238           0 RESUME                   0
+
+1239           2 LOAD_FAST                0 (self)
+               4 RETURN_VALUE

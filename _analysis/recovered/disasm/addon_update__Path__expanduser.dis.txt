@@ -1,0 +1,74 @@
+# addon_update.Path.expanduser
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('_drv', '_root', '_parts', 'os', 'path', 'expanduser', 'RuntimeError', '_from_parts')
+co_varnames=('self', 'homedir')
+co_consts=[' Return a new path with expanded ~ and ~user constructs\n        (as returned by os.path.expanduser)\n        ', 0, None, 1, '~', 'Could not determine home directory.']
+1377           0 RESUME                   0
+
+1381           2 LOAD_FAST                0 (self)
+               4 LOAD_ATTR                0 (_drv)
+              14 POP_JUMP_FORWARD_IF_TRUE   148 (to 312)
+              16 LOAD_FAST                0 (self)
+              18 LOAD_ATTR                1 (_root)
+              28 POP_JUMP_FORWARD_IF_TRUE   141 (to 312)
+
+1382          30 LOAD_FAST                0 (self)
+              32 LOAD_ATTR                2 (_parts)
+
+1381          42 POP_JUMP_FORWARD_IF_FALSE   134 (to 312)
+
+1382          44 LOAD_FAST                0 (self)
+              46 LOAD_ATTR                2 (_parts)
+              56 LOAD_CONST               1 (0)
+              58 BINARY_SUBSCR
+              68 LOAD_CONST               2 (None)
+              70 LOAD_CONST               3 (1)
+              72 BUILD_SLICE              2
+              74 BINARY_SUBSCR
+              84 LOAD_CONST               4 ('~')
+              86 COMPARE_OP               2 (==)
+              92 POP_JUMP_FORWARD_IF_FALSE   109 (to 312)
+
+1383          94 LOAD_GLOBAL              6 (os)
+             106 LOAD_ATTR                4 (path)
+             116 LOAD_METHOD              5 (expanduser)
+             138 LOAD_FAST                0 (self)
+             140 LOAD_ATTR                2 (_parts)
+             150 LOAD_CONST               1 (0)
+             152 BINARY_SUBSCR
+             162 PRECALL                  1
+             166 CALL                     1
+             176 STORE_FAST               1 (homedir)
+
+1384         178 LOAD_FAST                1 (homedir)
+             180 LOAD_CONST               2 (None)
+             182 LOAD_CONST               3 (1)
+             184 BUILD_SLICE              2
+             186 BINARY_SUBSCR
+             196 LOAD_CONST               4 ('~')
+             198 COMPARE_OP               2 (==)
+             204 POP_JUMP_FORWARD_IF_FALSE    15 (to 236)
+
+1385         206 LOAD_GLOBAL             13 (NULL + RuntimeError)
+             218 LOAD_CONST               5 ('Could not determine home directory.')
+             220 PRECALL                  1
+             224 CALL                     1
+             234 RAISE_VARARGS            1
+
+1386     >>  236 LOAD_FAST                0 (self)
+             238 LOAD_METHOD              7 (_from_parts)
+             260 LOAD_FAST                1 (homedir)
+             262 BUILD_LIST               1
+             264 LOAD_FAST                0 (self)
+             266 LOAD_ATTR                2 (_parts)
+             276 LOAD_CONST               3 (1)
+             278 LOAD_CONST               2 (None)
+             280 BUILD_SLICE              2
+             282 BINARY_SUBSCR
+             292 BINARY_OP                0 (+)
+             296 PRECALL                  1
+             300 CALL                     1
+             310 RETURN_VALUE
+
+1388     >>  312 LOAD_FAST                0 (self)
+             314 RETURN_VALUE

@@ -1,0 +1,102 @@
+# addon_update.Path.glob
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('sys', 'audit', 'ValueError', 'format', '_flavour', 'parse_parts', 'NotImplementedError', 'sep', 'altsep', 'append', '_make_selector', 'tuple', 'select_from')
+co_varnames=('self', 'pattern', 'drv', 'root', 'pattern_parts', 'selector', 'p')
+co_consts=['Iterate over this subtree and yield all existing files (of any\n        kind, including directories) matching the given relative pattern.\n        ', 'pathlib.Path.glob', 'Unacceptable pattern: {!r}', 'Non-relative patterns are unsupported', -1, '', None]
+940           0 RETURN_GENERATOR
+              2 POP_TOP
+              4 RESUME                   0
+
+944           6 LOAD_GLOBAL              1 (NULL + sys)
+             18 LOAD_ATTR                1 (audit)
+             28 LOAD_CONST               1 ('pathlib.Path.glob')
+             30 LOAD_FAST                0 (self)
+             32 LOAD_FAST                1 (pattern)
+             34 PRECALL                  3
+             38 CALL                     3
+             48 POP_TOP
+
+945          50 LOAD_FAST                1 (pattern)
+             52 POP_JUMP_FORWARD_IF_TRUE    34 (to 122)
+
+946          54 LOAD_GLOBAL              5 (NULL + ValueError)
+             66 LOAD_CONST               2 ('Unacceptable pattern: {!r}')
+             68 LOAD_METHOD              3 (format)
+             90 LOAD_FAST                1 (pattern)
+             92 PRECALL                  1
+             96 CALL                     1
+            106 PRECALL                  1
+            110 CALL                     1
+            120 RAISE_VARARGS            1
+
+947     >>  122 LOAD_FAST                0 (self)
+            124 LOAD_ATTR                4 (_flavour)
+            134 LOAD_METHOD              5 (parse_parts)
+            156 LOAD_FAST                1 (pattern)
+            158 BUILD_TUPLE              1
+            160 PRECALL                  1
+            164 CALL                     1
+            174 UNPACK_SEQUENCE          3
+            178 STORE_FAST               2 (drv)
+            180 STORE_FAST               3 (root)
+            182 STORE_FAST               4 (pattern_parts)
+
+948         184 LOAD_FAST                2 (drv)
+            186 POP_JUMP_FORWARD_IF_TRUE     2 (to 192)
+            188 LOAD_FAST                3 (root)
+            190 POP_JUMP_FORWARD_IF_FALSE    15 (to 222)
+
+949     >>  192 LOAD_GLOBAL             13 (NULL + NotImplementedError)
+            204 LOAD_CONST               3 ('Non-relative patterns are unsupported')
+            206 PRECALL                  1
+            210 CALL                     1
+            220 RAISE_VARARGS            1
+
+950     >>  222 LOAD_FAST                1 (pattern)
+            224 LOAD_CONST               4 (-1)
+            226 BINARY_SUBSCR
+            236 LOAD_FAST                0 (self)
+            238 LOAD_ATTR                4 (_flavour)
+            248 LOAD_ATTR                7 (sep)
+            258 LOAD_FAST                0 (self)
+            260 LOAD_ATTR                4 (_flavour)
+            270 LOAD_ATTR                8 (altsep)
+            280 BUILD_TUPLE              2
+            282 CONTAINS_OP              0
+            284 POP_JUMP_FORWARD_IF_FALSE    21 (to 328)
+
+951         286 LOAD_FAST                4 (pattern_parts)
+            288 LOAD_METHOD              9 (append)
+            310 LOAD_CONST               5 ('')
+            312 PRECALL                  1
+            316 CALL                     1
+            326 POP_TOP
+
+952     >>  328 LOAD_GLOBAL             21 (NULL + _make_selector)
+            340 LOAD_GLOBAL             23 (NULL + tuple)
+            352 LOAD_FAST                4 (pattern_parts)
+            354 PRECALL                  1
+            358 CALL                     1
+            368 LOAD_FAST                0 (self)
+            370 LOAD_ATTR                4 (_flavour)
+            380 PRECALL                  2
+            384 CALL                     2
+            394 STORE_FAST               5 (selector)
+
+953         396 LOAD_FAST                5 (selector)
+            398 LOAD_METHOD             12 (select_from)
+            420 LOAD_FAST                0 (self)
+            422 PRECALL                  1
+            426 CALL                     1
+            436 GET_ITER
+        >>  438 FOR_ITER                 6 (to 452)
+            440 STORE_FAST               6 (p)
+
+954         442 LOAD_FAST                6 (p)
+            444 YIELD_VALUE
+            446 RESUME                   1
+            448 POP_TOP
+            450 JUMP_BACKWARD            7 (to 438)
+
+953     >>  452 LOAD_CONST               6 (None)
+            454 RETURN_VALUE

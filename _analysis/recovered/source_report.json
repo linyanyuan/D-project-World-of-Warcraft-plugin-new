@@ -1,0 +1,212 @@
+[
+  {
+    "name": "AutoPlayer",
+    "file": "None",
+    "ok": false,
+    "err": "TypeError(\"<module 'AutoPlayer' (D:\\\\project\\\\Nirvana30\\\\Nirvana30\\\\AutoPlayer\\\\__init__.py)> is a built-in module\")"
+  },
+  {
+    "name": "AutoPlayer.ui_settings",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\AutoPlayer\\ui_settings.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "addon_update",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\addon_update.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "dxcam",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\dxcam\\__init__.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "dxcam._libs",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\dxcam\\_libs\\__init__.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "dxcam._libs.d3d11",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\dxcam\\_libs\\d3d11.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "dxcam._libs.dxgi",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\dxcam\\_libs\\dxgi.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "dxcam._libs.user32",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\dxcam\\_libs\\user32.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "dxcam.core",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\dxcam\\core\\__init__.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "dxcam.core.backend",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\dxcam\\core\\backend.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "dxcam.core.capture_loop",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\dxcam\\core\\capture_loop.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "dxcam.core.capture_runtime",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\dxcam\\core\\capture_runtime.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "dxcam.core.device",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\dxcam\\core\\device.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "dxcam.core.display_recovery",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\dxcam\\core\\display_recovery.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "dxcam.core.dxgi_duplicator",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\dxcam\\core\\dxgi_duplicator.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "dxcam.core.dxgi_errors",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\dxcam\\core\\dxgi_errors.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "dxcam.core.output",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\dxcam\\core\\output.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "dxcam.core.output_recovery",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\dxcam\\core\\output_recovery.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "dxcam.core.stagesurf",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\dxcam\\core\\stagesurf.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "dxcam.dxcam",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\dxcam\\dxcam.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "dxcam.processor",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\dxcam\\processor\\__init__.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "dxcam.processor.base",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\dxcam\\processor\\base.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "dxcam.types",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\dxcam\\types.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "dxcam.util",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\dxcam\\util\\__init__.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "dxcam.util.io",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\dxcam\\util\\io.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "dxcam.util.timer",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\dxcam\\util\\timer.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "fluent_ui",
+    "file": "None",
+    "ok": false,
+    "err": "TypeError(\"<module 'fluent_ui' (D:\\\\project\\\\Nirvana30\\\\Nirvana30\\\\fluent_ui\\\\__init__.py)> is a built-in module\")"
+  },
+  {
+    "name": "fluent_ui.data_loader",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\fluent_ui\\data_loader.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "fluent_ui.fluent_windows",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\fluent_ui\\fluent_windows.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "fluent_ui.prototype_window",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\fluent_ui\\prototype_window.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "fluent_ui.void_protocol_theme",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\fluent_ui\\void_protocol_theme.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "skill_conditions",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\skill_conditions.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "skill_cycle_config",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\skill_cycle_config.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "update_checker",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\update_checker.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  },
+  {
+    "name": "window_capture",
+    "file": "D:\\project\\Nirvana30\\Nirvana30\\window_capture.py",
+    "ok": false,
+    "err": "OSError('could not get source code')"
+  }
+]

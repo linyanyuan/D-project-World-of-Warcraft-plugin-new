@@ -1,0 +1,13 @@
+# addon_update.Path._scandir
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('os', 'scandir')
+co_varnames=('self',)
+co_consts=[None]
+934           0 RESUME                   0
+
+938           2 LOAD_GLOBAL              1 (NULL + os)
+             14 LOAD_ATTR                1 (scandir)
+             24 LOAD_FAST                0 (self)
+             26 PRECALL                  1
+             30 CALL                     1
+             40 RETURN_VALUE

@@ -1,0 +1,63 @@
+# fluent_ui.prototype_window.Path.is_fifo
+co_filename=D:\project\Nirvana30\Nirvana30\pathlib.py
+co_names=('S_ISFIFO', 'stat', 'st_mode', 'OSError', '_ignore_error', 'ValueError')
+co_varnames=('self', 'e')
+co_consts=['\n        Whether this path is a FIFO.\n        ', None, False]
+1345           0 RESUME                   0
+
+1349           2 NOP
+
+1350           4 LOAD_GLOBAL              1 (NULL + S_ISFIFO)
+              16 LOAD_FAST                0 (self)
+              18 LOAD_METHOD              1 (stat)
+              40 PRECALL                  0
+              44 CALL                     0
+              54 LOAD_ATTR                2 (st_mode)
+              64 PRECALL                  1
+              68 CALL                     1
+              78 RETURN_VALUE
+         >>   80 PUSH_EXC_INFO
+
+1351          82 LOAD_GLOBAL              6 (OSError)
+              94 CHECK_EXC_MATCH
+              96 POP_JUMP_FORWARD_IF_FALSE    27 (to 152)
+              98 STORE_FAST               1 (e)
+
+1352         100 LOAD_GLOBAL              9 (NULL + _ignore_error)
+             112 LOAD_FAST                1 (e)
+             114 PRECALL                  1
+             118 CALL                     1
+             128 POP_JUMP_FORWARD_IF_TRUE     1 (to 132)
+
+1353         130 RAISE_VARARGS            0
+
+1356     >>  132 POP_EXCEPT
+             134 LOAD_CONST               1 (None)
+             136 STORE_FAST               1 (e)
+             138 DELETE_FAST              1 (e)
+             140 LOAD_CONST               2 (False)
+             142 RETURN_VALUE
+         >>  144 LOAD_CONST               1 (None)
+             146 STORE_FAST               1 (e)
+             148 DELETE_FAST              1 (e)
+             150 RERAISE                  1
+
+1357     >>  152 LOAD_GLOBAL             10 (ValueError)
+             164 CHECK_EXC_MATCH
+             166 POP_JUMP_FORWARD_IF_FALSE     4 (to 176)
+             168 POP_TOP
+
+1359         170 POP_EXCEPT
+             172 LOAD_CONST               2 (False)
+             174 RETURN_VALUE
+
+1357     >>  176 RERAISE                  0
+         >>  178 COPY                     3
+             180 POP_EXCEPT
+             182 RERAISE                  1
+ExceptionTable:
+  4 to 76 -> 80 [0]
+  80 to 98 -> 178 [1] lasti
+  100 to 130 -> 144 [1] lasti
+  144 to 168 -> 178 [1] lasti
+  176 to 176 -> 178 [1] lasti

@@ -90,6 +90,7 @@ class MainWindow(FluentWindow):
         self.control_page.start_requested.connect(self._on_start)
         self.control_page.stop_requested.connect(self._on_stop)
         self.vision_page.calibrator_requested.connect(self._on_open_calibrator)
+        self.vision_page.preview_requested.connect(self._on_preview)
         self.settings_page.save_btn.clicked.connect(self._on_save_settings)
         self.dry_run_cb.stateChanged.connect(self._on_dry_run_changed)
 
@@ -263,9 +264,7 @@ class MainWindow(FluentWindow):
         dry_run = bool(settings.get("dry_run", True))
         if not dry_run and not self._live_input_confirmed:
             if not self._confirm_live_input():
-                self._append_log(
-                    "无法启动: 未确认真实按键，请勾选只记日志或确认后重试"
-                )
+                self._append_log("无法启动: 未确认真实按键，请勾选只记日志或确认后重试")
                 self._suppress_dry_run_guard = True
                 try:
                     self.dry_run_cb.setChecked(True)
@@ -354,6 +353,39 @@ class MainWindow(FluentWindow):
         self.vision_page.set_status(f"已载入区域目录: {path}")
         self._append_log(f"标定已保存并载入区域目录: {path}")
         self._persist_config(note_prefix="标定目录已写入")
+
+    @Slot()
+    def _on_preview(self) -> None:
+        """Grab one frame for the Recognition page preview."""
+        capture = self.control_page.capture_mode()
+        backend_key = self._map_capture_for_calibrator(capture)
+        keywords = tuple(self.settings_page.values().get("window_keywords") or ())
+        hwnd: int | None = None
+        try:
+            hwnd = find_wow_hwnd(keywords)
+        except (RuntimeError, OSError, TypeError, ValueError):
+            hwnd = None
+
+        try:
+            backend = create_backend(capture)
+            frame = backend.grab(hwnd)
+        except Exception as exc:  # noqa: BLE001
+            self.vision_page.show_preview(
+                None,
+                capture_label=capture,
+                capture_backend=backend_key,
+                hwnd=hwnd,
+                error=str(exc),
+            )
+            self._append_log(f"预览失败: {exc}")
+            return
+
+        self.vision_page.show_preview(
+            frame,
+            capture_label=capture,
+            capture_backend=backend_key,
+            hwnd=hwnd,
+        )
 
     @Slot()
     def _on_open_calibrator(self) -> None:

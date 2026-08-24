@@ -28,3 +28,33 @@ def test_engine_dry_run_logs_action() -> None:
     engine.stop()
     assert any("法术ID=77575" in line for line in logs)
     assert pressed == []
+
+
+def test_engine_emits_one_vision_tip_when_bindings_empty() -> None:
+    from clean_client.engine.loop import EngineLoop
+    from clean_client.models.state import CombatState
+    import time
+
+    logs: list[str] = []
+    frame = object()
+
+    def grab():
+        return frame
+
+    def read_state(_frame):
+        return CombatState()
+
+    engine = EngineLoop(
+        grab=grab,
+        read_state=read_state,
+        actions=[{"spell_id": 1, "fallback_key": "1"}],
+        on_log=logs.append,
+        dry_run=True,
+        tick_ms=20,
+    )
+    engine.start()
+    time.sleep(0.12)
+    engine.stop()
+    tips = [line for line in logs if line.startswith("提示:")]
+    assert len(tips) == 1
+    assert "未读到技能绑定" in tips[0]
